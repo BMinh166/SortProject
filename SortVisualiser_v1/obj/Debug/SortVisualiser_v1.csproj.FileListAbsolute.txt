@@ -1,0 +1,13 @@
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.exe.config
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.exe
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.pdb
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.csproj.AssemblyReference.cache
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.Properties.Resources.resources
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.csproj.GenerateResource.cache
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.csproj.CoreCompileInputs.cache
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.exe
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.pdb
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fMenu.resources
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fDescription.resources
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fMain.resources
+D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.ucNode.resources
