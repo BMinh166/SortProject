@@ -147,59 +147,6 @@ Xem dãy hiện hành chỉ còn N-1 phần tử của dãy hiện hành ban đ�
         }
         #endregion
 
-        #region Shaker Sort
-        public static void ShakerSort(bool tang = true)
-        {
-            //Vietnamese
-            yTuongVi = @"Trong mỗi lần sắp xếp, duyệt mảng theo 2 lượt từ 2 phía khác nhau:
-    Lượt đi: đẩy phần tử nhỏ về đầu mảng.
-    Lượt về: đẩy phần tử lớn về cuối mảng.
-Ghi nhận lại những đoạn đã sắp xếp nhằm tiết kiệm các phép so sánh thừa.";
-            //English
-            yTuongEn = @"A variant of the bubble sort method, in shaker sort, n elements are sorted in n/2 phases:
-• Each phase of shaker sort consists of a left to right bubbling pass followed by a right to left bubbling pass.
-• In a bubbling pass pairs of adjacent elements are compared and swapped if they are out of order.";
-            //thêm ytuong
-            addYTuong();
-
-            string[] code = ChuyenText(
-@"void ShakerSort(int a[], int N)
-{
-    int j, left, right, k;
-    left = 0; right = N - 1, k = N - 1;
-    while(left < right)
-    {
-    for(j = right; j > left; j--)
-        if(a[j] < a[j - 1])
-        {
-            Swap(a[j], a[j - 1]);
-            k = j;
-        }
-    left = k;
-    for(j = left; j < right; j++)
-        if(a[j + 1] < a[j])
-        {
-            Swap(a[j], a[j + 1]);
-            k = j;
-        }
-    right = k;
-    }
-}");
-            //thêm code vào codeListBox
-            codeListBox.Items.Clear();
-            foreach (string item in code)
-            {
-                codeListBox.Items.Add(item);
-            }
-            // nếu sắp giảm thì sửa lại
-            if (!tang)
-            {
-                codeListBox.Items[7] = "        if(a[j] > a[j - 1])";
-                codeListBox.Items[14] = "        if(a[j + 1] > a[j])";
-            }
-        }
-        #endregion
-
         #region Quick Sort
         public static void QuickSort(bool tang = true)
         {
@@ -259,49 +206,6 @@ disjoint groups:
                 codeListBox.Items[7] = "        while(a[i] > x)";
                 codeListBox.Items[9] = "        while(x > a[j])";
             }
-        }
-        #endregion
-
-        #region Shell Sort
-        public static void ShellSort(bool tang = true)
-        {
-            //Vietnamese
-            yTuongVi =
-@"Cải tiến của phương pháp chèn trực tiếp (Insertion Sort).
-Phân hoạch dãy thành các dãy con.
-Sắp xếp các dãy con theo phương pháp chèn trực tiếp.
-Dùng phương pháp chèn trực tiếp sắp xếp lại cả dãy.";
-            //English
-            yTuongEn = @"• Arrange the data sequence in a two-dimensional array.
-• Sort the columns of the array.";
-            //Thêm yTuong vào yTuongThuatToan
-            addYTuong();
-
-            string[] code = ChuyenText(
-@"void ShellSort (int a[], int N)
-{
-    for (int gap = N / 2; gap > 0; gap /= 2)
-    {
-        for (int i = gap; i < N; i++)
-        {
-            for (int j = i; j >= gap && a[j] < a[j - gap]; j -= gap)
-            {
-                Swap(a[j], a[j - gap]);
-            }
-        } 
-    }
-}");
-            //thêm code vào codeListBox 
-            codeListBox.Items.Clear();
-            foreach (string item in code)
-            {
-                codeListBox.Items.Add(item);
-            }
-            //nếu sắp giảm thì sửa lại
-            //if (!tang)
-            //{
-
-            //}
         }
         #endregion
 
