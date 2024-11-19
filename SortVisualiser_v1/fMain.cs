@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace SortVisualiser_v1
 {
@@ -16,6 +19,43 @@ namespace SortVisualiser_v1
         {
             InitializeComponent();
         }
+
+        #region Các biến toàn cục
+        public static bool isEnglish = false;
+        CultureInfo culture;
+
+        public int loaiThuatToan;
+        HienThiThuatToan HienThuattoan = new HienThiThuatToan();
+        private bool isRunning;
+        private bool isTang;
+        public static bool isDebug = false;
+        private int SoLuongNode;
+        public List<int> DanhSachThamSo;
+        public List<ucNode> DanhSachNode;
+        public List<Label> danhSachLabel;
+
+        public List<int> MangChuaSapXep;
+        Random rank = new Random();
+
+
+        private int Phut = 0;
+        private int Giay = 0;
+        //String thông báo
+
+
+        private string thoatMessageBoxName;
+        private string thoat;
+        private string hoanTatMessageBoxName;
+        private string hoanTat;
+        private string strSoLuongNode;
+
+
+        Action ThuatToanSapXep;// giong delegate
+        //thread điều khiển quá trình sắp xếp
+        private Thread sapxepThread;
+        private Dictionary<string, Label> bienArr;
+
+        #endregion
 
         //Event nhấn nút của các hàm sắp xếp ở hàng trên
         private void lblBUB_Click(object sender, EventArgs e)
