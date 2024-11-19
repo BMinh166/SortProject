@@ -229,5 +229,48 @@ namespace SortVisualiser_v1
                 pnlDescription.Controls.Clear();
             }
         }
+
+        /// <summary>
+        /// Điều chỉnh các picture box Resume, Stop, Arrow dưới dạng button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        
+        //Picture box sẽ sáng lên khi trỏ chuột vào
+        private void picStop_MouseEnter(object sender, EventArgs e)
+        {
+            picStop.Image = new Bitmap(Application.StartupPath + "\\Resources\\Stop.png");
+        }
+
+        private void picStop_MouseLeave(object sender, EventArgs e)
+        {
+            picStop.Image = new Bitmap(Application.StartupPath + "\\Resources\\Stop_Off1.png");
+        }
+
+        private void picArrow_MouseEnter(object sender, EventArgs e)
+        {
+            picArrow.Image = new Bitmap(Application.StartupPath + "\\Resources\\Arrow.png");
+        }
+
+        private void picArrow_MouseLeave(object sender, EventArgs e)
+        {
+            picArrow.Image = new Bitmap(Application.StartupPath + "\\Resources\\Arrow_Off.png");
+        }
+
+        //Thay đổi qua lại giữa Resume và Pause khi nhấn
+        bool isPause = true;
+        private void picResPau_Click(object sender, EventArgs e)
+        {
+            if(isPause)
+            {
+                picResPau.Image = new Bitmap(Application.StartupPath + "\\Resources\\Resume.png");
+                isPause = false;
+            }
+            else
+            {
+                picResPau.Image = new Bitmap(Application.StartupPath + "\\Resources\\Pause.png");
+                isPause = true;
+            }
+        }
     }
 }

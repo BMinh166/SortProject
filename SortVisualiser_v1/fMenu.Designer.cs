@@ -36,16 +36,17 @@
             this.lblN = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpCreate = new System.Windows.Forms.TabPage();
-            this.tpSetting = new System.Windows.Forms.TabPage();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.lblSortHow = new System.Windows.Forms.Label();
-            this.lblLanguage = new System.Windows.Forms.Label();
-            this.tbCustomize = new System.Windows.Forms.TabPage();
-            this.btnIncOrDes = new System.Windows.Forms.Button();
-            this.btnLanguage = new System.Windows.Forms.Button();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.lblSpeed = new System.Windows.Forms.Label();
+            this.tpSetting = new System.Windows.Forms.TabPage();
             this.lblSpeedShow = new System.Windows.Forms.Label();
+            this.lblSpeed = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.btnLanguage = new System.Windows.Forms.Button();
+            this.btnIncOrDes = new System.Windows.Forms.Button();
+            this.lblLanguage = new System.Windows.Forms.Label();
+            this.lblSortHow = new System.Windows.Forms.Label();
+            this.tbCustomize = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -111,7 +112,7 @@
             // 
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(205, 113);
+            this.btnStart.Location = new System.Drawing.Point(154, 113);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(127, 38);
             this.btnStart.TabIndex = 6;
@@ -142,6 +143,7 @@
             // 
             // tpCreate
             // 
+            this.tpCreate.Controls.Add(this.button1);
             this.tpCreate.Controls.Add(this.btnDelete);
             this.tpCreate.Controls.Add(this.panel1);
             this.tpCreate.Controls.Add(this.lblN);
@@ -155,6 +157,17 @@
             this.tpCreate.TabIndex = 0;
             this.tpCreate.Text = "Khởi tạo";
             this.tpCreate.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(409, 21);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(127, 38);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "Xóa mảng";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // tpSetting
             // 
@@ -173,56 +186,33 @@
             this.tpSetting.Text = "Cài đặt";
             this.tpSetting.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
+            // lblSpeedShow
             // 
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(409, 21);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(127, 38);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "Xóa mảng";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.lblSpeedShow.AutoSize = true;
+            this.lblSpeedShow.Location = new System.Drawing.Point(349, 173);
+            this.lblSpeedShow.Name = "lblSpeedShow";
+            this.lblSpeedShow.Size = new System.Drawing.Size(18, 19);
+            this.lblSpeedShow.TabIndex = 18;
+            this.lblSpeedShow.Text = "0";
             // 
-            // lblSortHow
+            // lblSpeed
             // 
-            this.lblSortHow.AutoSize = true;
-            this.lblSortHow.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortHow.Location = new System.Drawing.Point(17, 23);
-            this.lblSortHow.Name = "lblSortHow";
-            this.lblSortHow.Size = new System.Drawing.Size(82, 23);
-            this.lblSortHow.TabIndex = 12;
-            this.lblSortHow.Text = "Sắp xếp";
+            this.lblSpeed.AutoSize = true;
+            this.lblSpeed.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpeed.Location = new System.Drawing.Point(17, 127);
+            this.lblSpeed.Name = "lblSpeed";
+            this.lblSpeed.Size = new System.Drawing.Size(71, 23);
+            this.lblSpeed.TabIndex = 17;
+            this.lblSpeed.Text = "Tốc độ";
             // 
-            // lblLanguage
+            // trackBar1
             // 
-            this.lblLanguage.AutoSize = true;
-            this.lblLanguage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLanguage.Location = new System.Drawing.Point(17, 75);
-            this.lblLanguage.Name = "lblLanguage";
-            this.lblLanguage.Size = new System.Drawing.Size(95, 23);
-            this.lblLanguage.TabIndex = 13;
-            this.lblLanguage.Text = "Ngôn ngữ";
-            // 
-            // tbCustomize
-            // 
-            this.tbCustomize.Location = new System.Drawing.Point(4, 28);
-            this.tbCustomize.Name = "tbCustomize";
-            this.tbCustomize.Size = new System.Drawing.Size(583, 198);
-            this.tbCustomize.TabIndex = 2;
-            this.tbCustomize.Text = "Tùy chỉnh";
-            this.tbCustomize.UseVisualStyleBackColor = true;
-            // 
-            // btnIncOrDes
-            // 
-            this.btnIncOrDes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncOrDes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncOrDes.Location = new System.Drawing.Point(140, 11);
-            this.btnIncOrDes.Name = "btnIncOrDes";
-            this.btnIncOrDes.Size = new System.Drawing.Size(435, 46);
-            this.btnIncOrDes.TabIndex = 14;
-            this.btnIncOrDes.Text = "Tăng";
-            this.btnIncOrDes.UseVisualStyleBackColor = true;
+            this.trackBar1.Location = new System.Drawing.Point(142, 114);
+            this.trackBar1.Maximum = 8;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(433, 56);
+            this.trackBar1.TabIndex = 16;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
             // 
             // btnLanguage
             // 
@@ -235,33 +225,56 @@
             this.btnLanguage.Text = "Tiếng Việt";
             this.btnLanguage.UseVisualStyleBackColor = true;
             // 
-            // trackBar1
+            // btnIncOrDes
             // 
-            this.trackBar1.Location = new System.Drawing.Point(142, 114);
-            this.trackBar1.Maximum = 8;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(433, 56);
-            this.trackBar1.TabIndex = 16;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.btnIncOrDes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncOrDes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIncOrDes.Location = new System.Drawing.Point(140, 11);
+            this.btnIncOrDes.Name = "btnIncOrDes";
+            this.btnIncOrDes.Size = new System.Drawing.Size(435, 46);
+            this.btnIncOrDes.TabIndex = 14;
+            this.btnIncOrDes.Text = "Tăng";
+            this.btnIncOrDes.UseVisualStyleBackColor = true;
             // 
-            // lblSpeed
+            // lblLanguage
             // 
-            this.lblSpeed.AutoSize = true;
-            this.lblSpeed.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeed.Location = new System.Drawing.Point(17, 127);
-            this.lblSpeed.Name = "lblSpeed";
-            this.lblSpeed.Size = new System.Drawing.Size(71, 23);
-            this.lblSpeed.TabIndex = 17;
-            this.lblSpeed.Text = "Tốc độ";
+            this.lblLanguage.AutoSize = true;
+            this.lblLanguage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLanguage.Location = new System.Drawing.Point(17, 75);
+            this.lblLanguage.Name = "lblLanguage";
+            this.lblLanguage.Size = new System.Drawing.Size(95, 23);
+            this.lblLanguage.TabIndex = 13;
+            this.lblLanguage.Text = "Ngôn ngữ";
             // 
-            // lblSpeedShow
+            // lblSortHow
             // 
-            this.lblSpeedShow.AutoSize = true;
-            this.lblSpeedShow.Location = new System.Drawing.Point(349, 173);
-            this.lblSpeedShow.Name = "lblSpeedShow";
-            this.lblSpeedShow.Size = new System.Drawing.Size(18, 19);
-            this.lblSpeedShow.TabIndex = 18;
-            this.lblSpeedShow.Text = "0";
+            this.lblSortHow.AutoSize = true;
+            this.lblSortHow.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSortHow.Location = new System.Drawing.Point(17, 23);
+            this.lblSortHow.Name = "lblSortHow";
+            this.lblSortHow.Size = new System.Drawing.Size(82, 23);
+            this.lblSortHow.TabIndex = 12;
+            this.lblSortHow.Text = "Sắp xếp";
+            // 
+            // tbCustomize
+            // 
+            this.tbCustomize.Location = new System.Drawing.Point(4, 28);
+            this.tbCustomize.Name = "tbCustomize";
+            this.tbCustomize.Size = new System.Drawing.Size(583, 198);
+            this.tbCustomize.TabIndex = 2;
+            this.tbCustomize.Text = "Tùy chỉnh";
+            this.tbCustomize.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(287, 113);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 38);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "NULL";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // fMenu
             // 
@@ -304,5 +317,6 @@
         private System.Windows.Forms.Label lblSpeed;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label lblSpeedShow;
+        private System.Windows.Forms.Button button1;
     }
 }

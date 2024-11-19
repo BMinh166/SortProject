@@ -53,6 +53,11 @@
             this.pnlDescription = new System.Windows.Forms.Panel();
             this.pnlMiddle = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.lblInitialArray = new System.Windows.Forms.Label();
+            this.picStop = new System.Windows.Forms.PictureBox();
+            this.picArrow = new System.Windows.Forms.PictureBox();
+            this.picResPau = new System.Windows.Forms.PictureBox();
             this.pnlTitle.SuspendLayout();
             this.pnlINT.SuspendLayout();
             this.pnlBIN.SuspendLayout();
@@ -61,8 +66,13 @@
             this.pnlHEA.SuspendLayout();
             this.pnlMER.SuspendLayout();
             this.pnlQUI.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.pnlMiddle.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picStop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picArrow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picResPau)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitle
@@ -254,7 +264,7 @@
             // 
             this.pnlMain.Location = new System.Drawing.Point(0, 47);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1250, 424);
+            this.pnlMain.Size = new System.Drawing.Size(1250, 376);
             this.pnlMain.TabIndex = 3;
             // 
             // label1
@@ -274,7 +284,7 @@
             this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.Location = new System.Drawing.Point(0, 3);
+            this.btnMenu.Location = new System.Drawing.Point(0, 52);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(44, 232);
             this.btnMenu.TabIndex = 7;
@@ -298,6 +308,9 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel10.Controls.Add(this.picStop);
+            this.panel10.Controls.Add(this.picArrow);
+            this.panel10.Controls.Add(this.picResPau);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel10.Location = new System.Drawing.Point(0, 702);
             this.panel10.Name = "panel10";
@@ -306,14 +319,14 @@
             // 
             // pnlMenu
             // 
-            this.pnlMenu.Location = new System.Drawing.Point(41, 3);
+            this.pnlMenu.Location = new System.Drawing.Point(41, 52);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(591, 232);
             this.pnlMenu.TabIndex = 7;
             // 
             // pnlDescription
             // 
-            this.pnlDescription.Location = new System.Drawing.Point(638, 3);
+            this.pnlDescription.Location = new System.Drawing.Point(638, 52);
             this.pnlDescription.Name = "pnlDescription";
             this.pnlDescription.Size = new System.Drawing.Size(580, 232);
             this.pnlDescription.TabIndex = 8;
@@ -321,25 +334,82 @@
             // pnlMiddle
             // 
             this.pnlMiddle.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlMiddle.Controls.Add(this.panel9);
             this.pnlMiddle.Controls.Add(this.panel8);
             this.pnlMiddle.Controls.Add(this.btnMenu);
             this.pnlMiddle.Controls.Add(this.pnlDescription);
             this.pnlMiddle.Controls.Add(this.pnlMenu);
-            this.pnlMiddle.Location = new System.Drawing.Point(0, 470);
+            this.pnlMiddle.Location = new System.Drawing.Point(0, 421);
             this.pnlMiddle.Name = "pnlMiddle";
-            this.pnlMiddle.Size = new System.Drawing.Size(1262, 235);
+            this.pnlMiddle.Size = new System.Drawing.Size(1262, 284);
             this.pnlMiddle.TabIndex = 7;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.Desktop;
             this.panel8.Controls.Add(this.btnDescription);
-            this.panel8.Location = new System.Drawing.Point(1213, 3);
+            this.panel8.Location = new System.Drawing.Point(1213, 52);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(46, 232);
             this.panel8.TabIndex = 9;
             // 
-            // Form1
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.lblInitialArray);
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1256, 46);
+            this.panel9.TabIndex = 10;
+            // 
+            // lblInitialArray
+            // 
+            this.lblInitialArray.AutoSize = true;
+            this.lblInitialArray.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInitialArray.Location = new System.Drawing.Point(12, 15);
+            this.lblInitialArray.Name = "lblInitialArray";
+            this.lblInitialArray.Size = new System.Drawing.Size(141, 23);
+            this.lblInitialArray.TabIndex = 0;
+            this.lblInitialArray.Text = "Mảng ban đầu:";
+            // 
+            // picStop
+            // 
+            this.picStop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picStop.Image = global::SortVisualiser_v1.Properties.Resources.Stop_Off;
+            this.picStop.Location = new System.Drawing.Point(560, 3);
+            this.picStop.Name = "picStop";
+            this.picStop.Size = new System.Drawing.Size(45, 45);
+            this.picStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picStop.TabIndex = 2;
+            this.picStop.TabStop = false;
+            this.picStop.MouseEnter += new System.EventHandler(this.picStop_MouseEnter);
+            this.picStop.MouseLeave += new System.EventHandler(this.picStop_MouseLeave);
+            // 
+            // picArrow
+            // 
+            this.picArrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picArrow.Image = global::SortVisualiser_v1.Properties.Resources.Arrow_Off;
+            this.picArrow.Location = new System.Drawing.Point(672, 7);
+            this.picArrow.Name = "picArrow";
+            this.picArrow.Size = new System.Drawing.Size(38, 38);
+            this.picArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picArrow.TabIndex = 1;
+            this.picArrow.TabStop = false;
+            this.picArrow.MouseEnter += new System.EventHandler(this.picArrow_MouseEnter);
+            this.picArrow.MouseLeave += new System.EventHandler(this.picArrow_MouseLeave);
+            // 
+            // picResPau
+            // 
+            this.picResPau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picResPau.Image = global::SortVisualiser_v1.Properties.Resources.Pause;
+            this.picResPau.Location = new System.Drawing.Point(611, 0);
+            this.picResPau.Name = "picResPau";
+            this.picResPau.Size = new System.Drawing.Size(53, 50);
+            this.picResPau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picResPau.TabIndex = 0;
+            this.picResPau.TabStop = false;
+            this.picResPau.Click += new System.EventHandler(this.picResPau_Click);
+            // 
+            // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -351,7 +421,7 @@
             this.Controls.Add(this.pnlTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "fMain";
             this.Text = "Form1";
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
@@ -369,8 +439,14 @@
             this.pnlMER.PerformLayout();
             this.pnlQUI.ResumeLayout(false);
             this.pnlQUI.PerformLayout();
+            this.panel10.ResumeLayout(false);
             this.pnlMiddle.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picStop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picArrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picResPau)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,6 +485,11 @@
         private System.Windows.Forms.Panel pnlMER;
         private System.Windows.Forms.Panel pnlMiddle;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label lblInitialArray;
+        private System.Windows.Forms.PictureBox picStop;
+        private System.Windows.Forms.PictureBox picArrow;
+        private System.Windows.Forms.PictureBox picResPau;
     }
 }
 
