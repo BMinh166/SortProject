@@ -12,18 +12,25 @@ namespace SortVisualiser_v1
 {
     public partial class fMain : Form
     {
+        fMenu fmenu;
+        fDescription fdes;
         public fMain()
         {
             InitializeComponent();
+            BUBClickAction();
         }
 
         //Event nhấn nút của các hàm sắp xếp ở hàng trên
-        private void lblBUB_Click(object sender, EventArgs e)
+        void BUBClickAction()
         {
             lblButtonDefault();
             lblBUB.Text = "BUBLE SORT";
             lblBUB.ForeColor = SystemColors.HighlightText;
             lblBUB.Font = new Font(lblBUB.Font, FontStyle.Bold);
+        }
+        private void lblBUB_Click(object sender, EventArgs e)
+        {
+            BUBClickAction();
         }
 
         private void lblINT_Click(object sender, EventArgs e)
@@ -197,15 +204,17 @@ namespace SortVisualiser_v1
             if (btnMenu.Text == ">")
             {
                 btnMenu.Text = "<";
-                fMenu fmenu = new fMenu();
+                fmenu = new fMenu();
                 fmenu.TopLevel = false;
                 fmenu.Dock = DockStyle.Fill;
                 pnlMenu.Controls.Add(fmenu);
+                SetMenuChange();
                 fmenu.Show();
             }
             else
             {
                 btnMenu.Text = ">";
+                SaveMenuChange();
                 pnlMenu.Controls.Clear();
             }
             
@@ -217,7 +226,7 @@ namespace SortVisualiser_v1
             if (btnDescription.Text == "<")
             {
                 btnDescription.Text = ">";
-                fDescription fdes = new fDescription();
+                fdes = new fDescription();
                 fdes.TopLevel = false;
                 fdes.Dock = DockStyle.Fill;
                 pnlDescription.Controls.Add(fdes);
@@ -272,5 +281,35 @@ namespace SortVisualiser_v1
                 isPause = true;
             }
         }
+
+
+        ///Khởi tạo các biến lưu trữ giá trị cho các form con
+
+        //Biến lưu trữ liên quan đến form con Menu
+        string menu_Language = "Tiếng Việt";
+        string menu_InsOrDes = "Tăng";
+        decimal menu_N = 10;
+        int menu_Speed = 4;
+
+        //Lưu những thay đổi
+        void SaveMenuChange()
+        {
+            menu_Language = fmenu.btnLanguage.Text;
+            menu_InsOrDes = fmenu.btnIncOrDes.Text;
+            menu_N = fmenu.nudN.Value;
+            menu_Speed = fmenu.trbSpeed.Value;
+        }
+
+        //Áp dụng những thay đổi
+        void SetMenuChange()
+        {
+            fmenu.btnLanguage.Text = menu_Language;
+            fmenu.btnIncOrDes.Text = menu_InsOrDes;
+            fmenu.nudN.Value = menu_N;
+            fmenu.trbSpeed.Value = menu_Speed;
+            fmenu.SpeedShowChange();
+        }
+        ///
+
     }
 }

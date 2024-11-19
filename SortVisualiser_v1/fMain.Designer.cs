@@ -49,15 +49,15 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnDescription = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlDescription = new System.Windows.Forms.Panel();
-            this.pnlMiddle = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.lblInitialArray = new System.Windows.Forms.Label();
             this.picStop = new System.Windows.Forms.PictureBox();
             this.picArrow = new System.Windows.Forms.PictureBox();
             this.picResPau = new System.Windows.Forms.PictureBox();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlDescription = new System.Windows.Forms.Panel();
+            this.pnlMiddle = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.lblInitialArray = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.pnlTitle.SuspendLayout();
             this.pnlINT.SuspendLayout();
             this.pnlBIN.SuspendLayout();
@@ -67,12 +67,12 @@
             this.pnlMER.SuspendLayout();
             this.pnlQUI.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.pnlMiddle.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResPau)).BeginInit();
+            this.pnlMiddle.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitle
@@ -317,60 +317,6 @@
             this.panel10.Size = new System.Drawing.Size(1250, 50);
             this.panel10.TabIndex = 6;
             // 
-            // pnlMenu
-            // 
-            this.pnlMenu.Location = new System.Drawing.Point(41, 52);
-            this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(591, 232);
-            this.pnlMenu.TabIndex = 7;
-            // 
-            // pnlDescription
-            // 
-            this.pnlDescription.Location = new System.Drawing.Point(638, 52);
-            this.pnlDescription.Name = "pnlDescription";
-            this.pnlDescription.Size = new System.Drawing.Size(580, 232);
-            this.pnlDescription.TabIndex = 8;
-            // 
-            // pnlMiddle
-            // 
-            this.pnlMiddle.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pnlMiddle.Controls.Add(this.panel9);
-            this.pnlMiddle.Controls.Add(this.panel8);
-            this.pnlMiddle.Controls.Add(this.btnMenu);
-            this.pnlMiddle.Controls.Add(this.pnlDescription);
-            this.pnlMiddle.Controls.Add(this.pnlMenu);
-            this.pnlMiddle.Location = new System.Drawing.Point(0, 421);
-            this.pnlMiddle.Name = "pnlMiddle";
-            this.pnlMiddle.Size = new System.Drawing.Size(1262, 284);
-            this.pnlMiddle.TabIndex = 7;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.SystemColors.Desktop;
-            this.panel8.Controls.Add(this.btnDescription);
-            this.panel8.Location = new System.Drawing.Point(1213, 52);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(46, 232);
-            this.panel8.TabIndex = 9;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.lblInitialArray);
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1256, 46);
-            this.panel9.TabIndex = 10;
-            // 
-            // lblInitialArray
-            // 
-            this.lblInitialArray.AutoSize = true;
-            this.lblInitialArray.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInitialArray.Location = new System.Drawing.Point(12, 15);
-            this.lblInitialArray.Name = "lblInitialArray";
-            this.lblInitialArray.Size = new System.Drawing.Size(141, 23);
-            this.lblInitialArray.TabIndex = 0;
-            this.lblInitialArray.Text = "Mảng ban đầu:";
-            // 
             // picStop
             // 
             this.picStop.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -409,6 +355,63 @@
             this.picResPau.TabStop = false;
             this.picResPau.Click += new System.EventHandler(this.picResPau_Click);
             // 
+            // pnlMenu
+            // 
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlMenu.Location = new System.Drawing.Point(41, 52);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(595, 232);
+            this.pnlMenu.TabIndex = 7;
+            // 
+            // pnlDescription
+            // 
+            this.pnlDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnlDescription.Location = new System.Drawing.Point(636, 52);
+            this.pnlDescription.Name = "pnlDescription";
+            this.pnlDescription.Size = new System.Drawing.Size(582, 232);
+            this.pnlDescription.TabIndex = 8;
+            // 
+            // pnlMiddle
+            // 
+            this.pnlMiddle.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnlMiddle.Controls.Add(this.panel9);
+            this.pnlMiddle.Controls.Add(this.panel8);
+            this.pnlMiddle.Controls.Add(this.btnMenu);
+            this.pnlMiddle.Controls.Add(this.pnlDescription);
+            this.pnlMiddle.Controls.Add(this.pnlMenu);
+            this.pnlMiddle.Location = new System.Drawing.Point(0, 421);
+            this.pnlMiddle.Name = "pnlMiddle";
+            this.pnlMiddle.Size = new System.Drawing.Size(1262, 284);
+            this.pnlMiddle.TabIndex = 7;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel9.Controls.Add(this.lblInitialArray);
+            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(1256, 52);
+            this.panel9.TabIndex = 10;
+            // 
+            // lblInitialArray
+            // 
+            this.lblInitialArray.AutoSize = true;
+            this.lblInitialArray.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInitialArray.Location = new System.Drawing.Point(12, 15);
+            this.lblInitialArray.Name = "lblInitialArray";
+            this.lblInitialArray.Size = new System.Drawing.Size(141, 23);
+            this.lblInitialArray.TabIndex = 0;
+            this.lblInitialArray.Text = "Mảng ban đầu:";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.SystemColors.Desktop;
+            this.panel8.Controls.Add(this.btnDescription);
+            this.panel8.Location = new System.Drawing.Point(1213, 52);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(46, 232);
+            this.panel8.TabIndex = 9;
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -440,13 +443,13 @@
             this.pnlQUI.ResumeLayout(false);
             this.pnlQUI.PerformLayout();
             this.panel10.ResumeLayout(false);
-            this.pnlMiddle.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResPau)).EndInit();
+            this.pnlMiddle.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
