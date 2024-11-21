@@ -48,25 +48,25 @@
             this.lblSortHow = new System.Windows.Forms.Label();
             this.tbCustomize = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbNodeSize = new System.Windows.Forms.Label();
-            this.lbNodeSpace = new System.Windows.Forms.Label();
-            this.lbNodeBackColor = new System.Windows.Forms.Label();
-            this.tbNodeSize = new System.Windows.Forms.TextBox();
-            this.btnNodeSizeChange = new System.Windows.Forms.Button();
-            this.btnNodeSizeDes = new System.Windows.Forms.Button();
-            this.btnNodeSizeInc = new System.Windows.Forms.Button();
+            this.btnDefault = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.lbNodeSortedColor = new System.Windows.Forms.Label();
+            this.btnNodeSortedColor = new System.Windows.Forms.Button();
+            this.btnNodeChoosingColor = new System.Windows.Forms.Button();
+            this.lbNodeChoosingColor = new System.Windows.Forms.Label();
+            this.btnNodeBackColor = new System.Windows.Forms.Button();
             this.btnNodeSpaceInc = new System.Windows.Forms.Button();
             this.btnNodeSpaceDes = new System.Windows.Forms.Button();
             this.btnNodeSpace = new System.Windows.Forms.Button();
             this.tbNodeSpace = new System.Windows.Forms.TextBox();
-            this.btnNodeBackColor = new System.Windows.Forms.Button();
-            this.lbNodeChoosingColor = new System.Windows.Forms.Label();
-            this.btnNodeChoosingColor = new System.Windows.Forms.Button();
-            this.btnNodeSortedColor = new System.Windows.Forms.Button();
-            this.lbNodeSortedColor = new System.Windows.Forms.Label();
+            this.btnNodeSizeInc = new System.Windows.Forms.Button();
+            this.btnNodeSizeDes = new System.Windows.Forms.Button();
+            this.btnNodeSizeChange = new System.Windows.Forms.Button();
+            this.tbNodeSize = new System.Windows.Forms.TextBox();
+            this.lbNodeBackColor = new System.Windows.Forms.Label();
+            this.lbNodeSpace = new System.Windows.Forms.Label();
+            this.lbNodeSize = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDefault = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudN)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -180,7 +180,7 @@
             this.tpCreate.Location = new System.Drawing.Point(4, 28);
             this.tpCreate.Name = "tpCreate";
             this.tpCreate.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCreate.Size = new System.Drawing.Size(584, 196);
+            this.tpCreate.Size = new System.Drawing.Size(583, 196);
             this.tpCreate.TabIndex = 0;
             this.tpCreate.Text = "Khởi tạo";
             // 
@@ -221,7 +221,7 @@
             this.tpSetting.Location = new System.Drawing.Point(4, 28);
             this.tpSetting.Name = "tpSetting";
             this.tpSetting.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSetting.Size = new System.Drawing.Size(584, 196);
+            this.tpSetting.Size = new System.Drawing.Size(583, 196);
             this.tpSetting.TabIndex = 1;
             this.tpSetting.Text = "Cài đặt";
             // 
@@ -338,75 +338,83 @@
             this.panel2.Size = new System.Drawing.Size(578, 190);
             this.panel2.TabIndex = 0;
             // 
-            // lbNodeSize
+            // btnDefault
             // 
-            this.lbNodeSize.AutoSize = true;
-            this.lbNodeSize.Location = new System.Drawing.Point(18, 25);
-            this.lbNodeSize.Name = "lbNodeSize";
-            this.lbNodeSize.Size = new System.Drawing.Size(89, 23);
-            this.lbNodeSize.TabIndex = 0;
-            this.lbNodeSize.Text = "Cỡ Node";
+            this.btnDefault.BackColor = System.Drawing.Color.White;
+            this.btnDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDefault.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDefault.Location = new System.Drawing.Point(299, 318);
+            this.btnDefault.Name = "btnDefault";
+            this.btnDefault.Size = new System.Drawing.Size(255, 46);
+            this.btnDefault.TabIndex = 29;
+            this.btnDefault.Text = "Mặc định";
+            this.btnDefault.UseVisualStyleBackColor = false;
             // 
-            // lbNodeSpace
+            // btnUpdate
             // 
-            this.lbNodeSpace.AutoSize = true;
-            this.lbNodeSpace.Location = new System.Drawing.Point(18, 81);
-            this.lbNodeSpace.Name = "lbNodeSpace";
-            this.lbNodeSpace.Size = new System.Drawing.Size(123, 23);
-            this.lbNodeSpace.TabIndex = 1;
-            this.lbNodeSpace.Text = "Khoảng cách";
+            this.btnUpdate.BackColor = System.Drawing.Color.White;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(8, 320);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(255, 46);
+            this.btnUpdate.TabIndex = 28;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
-            // lbNodeBackColor
+            // lbNodeSortedColor
             // 
-            this.lbNodeBackColor.AutoSize = true;
-            this.lbNodeBackColor.Location = new System.Drawing.Point(18, 140);
-            this.lbNodeBackColor.Name = "lbNodeBackColor";
-            this.lbNodeBackColor.Size = new System.Drawing.Size(137, 23);
-            this.lbNodeBackColor.TabIndex = 2;
-            this.lbNodeBackColor.Text = "Màu nền Node";
+            this.lbNodeSortedColor.AutoSize = true;
+            this.lbNodeSortedColor.Location = new System.Drawing.Point(18, 258);
+            this.lbNodeSortedColor.Name = "lbNodeSortedColor";
+            this.lbNodeSortedColor.Size = new System.Drawing.Size(165, 23);
+            this.lbNodeSortedColor.TabIndex = 27;
+            this.lbNodeSortedColor.Text = "Màu Node đã xếp";
             // 
-            // tbNodeSize
+            // btnNodeSortedColor
             // 
-            this.tbNodeSize.Location = new System.Drawing.Point(275, 18);
-            this.tbNodeSize.Name = "tbNodeSize";
-            this.tbNodeSize.Size = new System.Drawing.Size(185, 30);
-            this.tbNodeSize.TabIndex = 3;
+            this.btnNodeSortedColor.BackColor = System.Drawing.Color.White;
+            this.btnNodeSortedColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNodeSortedColor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNodeSortedColor.Location = new System.Drawing.Point(224, 246);
+            this.btnNodeSortedColor.Name = "btnNodeSortedColor";
+            this.btnNodeSortedColor.Size = new System.Drawing.Size(280, 46);
+            this.btnNodeSortedColor.TabIndex = 26;
+            this.btnNodeSortedColor.UseVisualStyleBackColor = false;
+            this.btnNodeSortedColor.Click += new System.EventHandler(this.btnNodeSortedColor_Click);
             // 
-            // btnNodeSizeChange
+            // btnNodeChoosingColor
             // 
-            this.btnNodeSizeChange.BackColor = System.Drawing.Color.White;
-            this.btnNodeSizeChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNodeSizeChange.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNodeSizeChange.Location = new System.Drawing.Point(178, 10);
-            this.btnNodeSizeChange.Name = "btnNodeSizeChange";
-            this.btnNodeSizeChange.Size = new System.Drawing.Size(374, 46);
-            this.btnNodeSizeChange.TabIndex = 15;
-            this.btnNodeSizeChange.Text = "30";
-            this.btnNodeSizeChange.UseVisualStyleBackColor = false;
+            this.btnNodeChoosingColor.BackColor = System.Drawing.Color.White;
+            this.btnNodeChoosingColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNodeChoosingColor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNodeChoosingColor.Location = new System.Drawing.Point(226, 187);
+            this.btnNodeChoosingColor.Name = "btnNodeChoosingColor";
+            this.btnNodeChoosingColor.Size = new System.Drawing.Size(280, 46);
+            this.btnNodeChoosingColor.TabIndex = 24;
+            this.btnNodeChoosingColor.UseVisualStyleBackColor = false;
+            this.btnNodeChoosingColor.Click += new System.EventHandler(this.btnNodeChoosingColor_Click);
             // 
-            // btnNodeSizeDes
+            // lbNodeChoosingColor
             // 
-            this.btnNodeSizeDes.BackColor = System.Drawing.Color.White;
-            this.btnNodeSizeDes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNodeSizeDes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNodeSizeDes.Location = new System.Drawing.Point(178, 10);
-            this.btnNodeSizeDes.Name = "btnNodeSizeDes";
-            this.btnNodeSizeDes.Size = new System.Drawing.Size(48, 46);
-            this.btnNodeSizeDes.TabIndex = 16;
-            this.btnNodeSizeDes.Text = "<";
-            this.btnNodeSizeDes.UseVisualStyleBackColor = false;
+            this.lbNodeChoosingColor.AutoSize = true;
+            this.lbNodeChoosingColor.Location = new System.Drawing.Point(18, 199);
+            this.lbNodeChoosingColor.Name = "lbNodeChoosingColor";
+            this.lbNodeChoosingColor.Size = new System.Drawing.Size(200, 23);
+            this.lbNodeChoosingColor.TabIndex = 23;
+            this.lbNodeChoosingColor.Text = "Màu Node được chọn";
             // 
-            // btnNodeSizeInc
+            // btnNodeBackColor
             // 
-            this.btnNodeSizeInc.BackColor = System.Drawing.Color.White;
-            this.btnNodeSizeInc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNodeSizeInc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNodeSizeInc.Location = new System.Drawing.Point(504, 10);
-            this.btnNodeSizeInc.Name = "btnNodeSizeInc";
-            this.btnNodeSizeInc.Size = new System.Drawing.Size(48, 46);
-            this.btnNodeSizeInc.TabIndex = 17;
-            this.btnNodeSizeInc.Text = ">";
-            this.btnNodeSizeInc.UseVisualStyleBackColor = false;
+            this.btnNodeBackColor.BackColor = System.Drawing.Color.White;
+            this.btnNodeBackColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNodeBackColor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNodeBackColor.Location = new System.Drawing.Point(226, 128);
+            this.btnNodeBackColor.Name = "btnNodeBackColor";
+            this.btnNodeBackColor.Size = new System.Drawing.Size(280, 46);
+            this.btnNodeBackColor.TabIndex = 22;
+            this.btnNodeBackColor.UseVisualStyleBackColor = false;
+            this.btnNodeBackColor.Click += new System.EventHandler(this.btnNodeBackColor_Click);
             // 
             // btnNodeSpaceInc
             // 
@@ -419,6 +427,7 @@
             this.btnNodeSpaceInc.TabIndex = 21;
             this.btnNodeSpaceInc.Text = ">";
             this.btnNodeSpaceInc.UseVisualStyleBackColor = false;
+            this.btnNodeSpaceInc.Click += new System.EventHandler(this.btnNodeSpaceInc_Click);
             // 
             // btnNodeSpaceDes
             // 
@@ -431,6 +440,7 @@
             this.btnNodeSpaceDes.TabIndex = 20;
             this.btnNodeSpaceDes.Text = "<";
             this.btnNodeSpaceDes.UseVisualStyleBackColor = false;
+            this.btnNodeSpaceDes.Click += new System.EventHandler(this.btnNodeSpaceDes_Click);
             // 
             // btnNodeSpace
             // 
@@ -451,80 +461,77 @@
             this.tbNodeSpace.Size = new System.Drawing.Size(185, 30);
             this.tbNodeSpace.TabIndex = 18;
             // 
-            // btnNodeBackColor
+            // btnNodeSizeInc
             // 
-            this.btnNodeBackColor.BackColor = System.Drawing.Color.White;
-            this.btnNodeBackColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNodeBackColor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNodeBackColor.Location = new System.Drawing.Point(226, 128);
-            this.btnNodeBackColor.Name = "btnNodeBackColor";
-            this.btnNodeBackColor.Size = new System.Drawing.Size(280, 46);
-            this.btnNodeBackColor.TabIndex = 22;
-            this.btnNodeBackColor.UseVisualStyleBackColor = false;
+            this.btnNodeSizeInc.BackColor = System.Drawing.Color.White;
+            this.btnNodeSizeInc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNodeSizeInc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNodeSizeInc.Location = new System.Drawing.Point(504, 10);
+            this.btnNodeSizeInc.Name = "btnNodeSizeInc";
+            this.btnNodeSizeInc.Size = new System.Drawing.Size(48, 46);
+            this.btnNodeSizeInc.TabIndex = 17;
+            this.btnNodeSizeInc.Text = ">";
+            this.btnNodeSizeInc.UseVisualStyleBackColor = false;
+            this.btnNodeSizeInc.Click += new System.EventHandler(this.btnNodeSizeInc_Click);
             // 
-            // lbNodeChoosingColor
+            // btnNodeSizeDes
             // 
-            this.lbNodeChoosingColor.AutoSize = true;
-            this.lbNodeChoosingColor.Location = new System.Drawing.Point(18, 199);
-            this.lbNodeChoosingColor.Name = "lbNodeChoosingColor";
-            this.lbNodeChoosingColor.Size = new System.Drawing.Size(200, 23);
-            this.lbNodeChoosingColor.TabIndex = 23;
-            this.lbNodeChoosingColor.Text = "Màu Node được chọn";
+            this.btnNodeSizeDes.BackColor = System.Drawing.Color.White;
+            this.btnNodeSizeDes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNodeSizeDes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNodeSizeDes.Location = new System.Drawing.Point(178, 10);
+            this.btnNodeSizeDes.Name = "btnNodeSizeDes";
+            this.btnNodeSizeDes.Size = new System.Drawing.Size(48, 46);
+            this.btnNodeSizeDes.TabIndex = 16;
+            this.btnNodeSizeDes.Text = "<";
+            this.btnNodeSizeDes.UseVisualStyleBackColor = false;
+            this.btnNodeSizeDes.Click += new System.EventHandler(this.btnNodeSizeDes_Click);
             // 
-            // btnNodeChoosingColor
+            // btnNodeSizeChange
             // 
-            this.btnNodeChoosingColor.BackColor = System.Drawing.Color.White;
-            this.btnNodeChoosingColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNodeChoosingColor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNodeChoosingColor.Location = new System.Drawing.Point(226, 187);
-            this.btnNodeChoosingColor.Name = "btnNodeChoosingColor";
-            this.btnNodeChoosingColor.Size = new System.Drawing.Size(280, 46);
-            this.btnNodeChoosingColor.TabIndex = 24;
-            this.btnNodeChoosingColor.UseVisualStyleBackColor = false;
+            this.btnNodeSizeChange.BackColor = System.Drawing.Color.White;
+            this.btnNodeSizeChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNodeSizeChange.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNodeSizeChange.Location = new System.Drawing.Point(178, 10);
+            this.btnNodeSizeChange.Name = "btnNodeSizeChange";
+            this.btnNodeSizeChange.Size = new System.Drawing.Size(374, 46);
+            this.btnNodeSizeChange.TabIndex = 15;
+            this.btnNodeSizeChange.Text = "30";
+            this.btnNodeSizeChange.UseVisualStyleBackColor = false;
             // 
-            // btnNodeSortedColor
+            // tbNodeSize
             // 
-            this.btnNodeSortedColor.BackColor = System.Drawing.Color.White;
-            this.btnNodeSortedColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNodeSortedColor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNodeSortedColor.Location = new System.Drawing.Point(224, 246);
-            this.btnNodeSortedColor.Name = "btnNodeSortedColor";
-            this.btnNodeSortedColor.Size = new System.Drawing.Size(280, 46);
-            this.btnNodeSortedColor.TabIndex = 26;
-            this.btnNodeSortedColor.UseVisualStyleBackColor = false;
+            this.tbNodeSize.Location = new System.Drawing.Point(275, 18);
+            this.tbNodeSize.Name = "tbNodeSize";
+            this.tbNodeSize.Size = new System.Drawing.Size(185, 30);
+            this.tbNodeSize.TabIndex = 3;
             // 
-            // lbNodeSortedColor
+            // lbNodeBackColor
             // 
-            this.lbNodeSortedColor.AutoSize = true;
-            this.lbNodeSortedColor.Location = new System.Drawing.Point(18, 258);
-            this.lbNodeSortedColor.Name = "lbNodeSortedColor";
-            this.lbNodeSortedColor.Size = new System.Drawing.Size(165, 23);
-            this.lbNodeSortedColor.TabIndex = 27;
-            this.lbNodeSortedColor.Text = "Màu Node đã xếp";
+            this.lbNodeBackColor.AutoSize = true;
+            this.lbNodeBackColor.Location = new System.Drawing.Point(18, 140);
+            this.lbNodeBackColor.Name = "lbNodeBackColor";
+            this.lbNodeBackColor.Size = new System.Drawing.Size(137, 23);
+            this.lbNodeBackColor.TabIndex = 2;
+            this.lbNodeBackColor.Text = "Màu nền Node";
             // 
-            // btnUpdate
+            // lbNodeSpace
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.White;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(8, 320);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(255, 46);
-            this.btnUpdate.TabIndex = 28;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.lbNodeSpace.AutoSize = true;
+            this.lbNodeSpace.Location = new System.Drawing.Point(18, 81);
+            this.lbNodeSpace.Name = "lbNodeSpace";
+            this.lbNodeSpace.Size = new System.Drawing.Size(123, 23);
+            this.lbNodeSpace.TabIndex = 1;
+            this.lbNodeSpace.Text = "Khoảng cách";
             // 
-            // btnDefault
+            // lbNodeSize
             // 
-            this.btnDefault.BackColor = System.Drawing.Color.White;
-            this.btnDefault.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDefault.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDefault.Location = new System.Drawing.Point(299, 318);
-            this.btnDefault.Name = "btnDefault";
-            this.btnDefault.Size = new System.Drawing.Size(255, 46);
-            this.btnDefault.TabIndex = 29;
-            this.btnDefault.Text = "Mặc định";
-            this.btnDefault.UseVisualStyleBackColor = false;
+            this.lbNodeSize.AutoSize = true;
+            this.lbNodeSize.Location = new System.Drawing.Point(18, 25);
+            this.lbNodeSize.Name = "lbNodeSize";
+            this.lbNodeSize.Size = new System.Drawing.Size(89, 23);
+            this.lbNodeSize.TabIndex = 0;
+            this.lbNodeSize.Text = "Cỡ Node";
             // 
             // fMenu
             // 

@@ -18,6 +18,11 @@ namespace SortVisualiser_v1
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Thực thi chức năng của cái button ở tabpage Cài Đặt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIncOrDes_Click(object sender, EventArgs e)
         {
             if(btnIncOrDes.Text == "Tăng")
@@ -77,6 +82,70 @@ namespace SortVisualiser_v1
                 case 8:
                     lblSpeedShow.Text = "5x";
                     break;
+            }
+        }
+
+        /// <summary>
+        /// Thực thi chức năng của cái button ở tabpage Tùy Chỉnh
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        
+        //Tăng giảm kích thước Node
+        private void btnNodeSizeDes_Click(object sender, EventArgs e)
+        {
+            int term = Int32.Parse(btnNodeSizeChange.Text);
+            if (term > 1)
+                term--;
+            btnNodeSizeChange.Text = term.ToString();
+        }
+
+        private void btnNodeSizeInc_Click(object sender, EventArgs e)
+        {
+            int term = Int32.Parse(btnNodeSizeChange.Text);
+            if (term < 50)
+                term++;
+            btnNodeSizeChange.Text = term.ToString();
+        }
+
+        //Tăng giảm khoảng cách giữa cách Node
+        private void btnNodeSpaceDes_Click(object sender, EventArgs e)
+        {
+            int term = Int32.Parse(btnNodeSpace.Text);
+            if (term > 1)
+                term--;
+            btnNodeSpace.Text = term.ToString();
+        }
+
+        private void btnNodeSpaceInc_Click(object sender, EventArgs e)
+        {
+            int term = Int32.Parse(btnNodeSpace.Text);
+            if (term < 50)
+                term++;
+            btnNodeSpace.Text = term.ToString();
+        }
+
+        private void btnNodeBackColor_Click(object sender, EventArgs e)
+        {
+            if(colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                btnNodeBackColor.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void btnNodeChoosingColor_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                btnNodeChoosingColor.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void btnNodeSortedColor_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                btnNodeSortedColor.BackColor = colorDialog1.Color;
             }
         }
     }
