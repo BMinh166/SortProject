@@ -453,6 +453,7 @@
             this.btnNodeSpace.TabIndex = 19;
             this.btnNodeSpace.Text = "30";
             this.btnNodeSpace.UseVisualStyleBackColor = false;
+            this.btnNodeSpace.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnNodeSpace_MouseDown);
             // 
             // tbNodeSpace
             // 
@@ -460,6 +461,8 @@
             this.tbNodeSpace.Name = "tbNodeSpace";
             this.tbNodeSpace.Size = new System.Drawing.Size(185, 30);
             this.tbNodeSpace.TabIndex = 18;
+            this.tbNodeSpace.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbNodeSpace_KeyDown);
+            this.tbNodeSpace.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNodeSpace_KeyPress);
             // 
             // btnNodeSizeInc
             // 
@@ -498,6 +501,7 @@
             this.btnNodeSizeChange.TabIndex = 15;
             this.btnNodeSizeChange.Text = "30";
             this.btnNodeSizeChange.UseVisualStyleBackColor = false;
+            this.btnNodeSizeChange.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnNodeSizeChange_MouseDown);
             // 
             // tbNodeSize
             // 
@@ -505,6 +509,8 @@
             this.tbNodeSize.Name = "tbNodeSize";
             this.tbNodeSize.Size = new System.Drawing.Size(185, 30);
             this.tbNodeSize.TabIndex = 3;
+            this.tbNodeSize.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbNodeSize_KeyDown);
+            this.tbNodeSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNodeSize_KeyPress);
             // 
             // lbNodeBackColor
             // 

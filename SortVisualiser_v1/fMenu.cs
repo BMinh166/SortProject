@@ -85,12 +85,13 @@ namespace SortVisualiser_v1
             }
         }
 
+        #region TabPage Tùy chỉnh
         /// <summary>
         /// Thực thi chức năng của cái button ở tabpage Tùy Chỉnh
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
+
         //Tăng giảm kích thước Node
         private void btnNodeSizeDes_Click(object sender, EventArgs e)
         {
@@ -107,6 +108,7 @@ namespace SortVisualiser_v1
                 term++;
             btnNodeSizeChange.Text = term.ToString();
         }
+
 
         //Tăng giảm khoảng cách giữa cách Node
         private void btnNodeSpaceDes_Click(object sender, EventArgs e)
@@ -125,6 +127,8 @@ namespace SortVisualiser_v1
             btnNodeSpace.Text = term.ToString();
         }
 
+
+        //Thay đổi màu
         private void btnNodeBackColor_Click(object sender, EventArgs e)
         {
             if(colorDialog1.ShowDialog() == DialogResult.OK)
@@ -148,5 +152,88 @@ namespace SortVisualiser_v1
                 btnNodeSortedColor.BackColor = colorDialog1.Color;
             }
         }
+
+        
+        //Tùy chỉnh nhập tay kích thước Node
+        private void btnNodeSizeChange_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(e.Clicks == 2)
+            {
+                tbNodeSize.BringToFront();
+                tbNodeSize.Focus();
+            }
+        }
+
+        private void tbNodeSize_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                
+                int number ;
+                if(Int32.TryParse(tbNodeSize.Text, out number))
+                {
+                    if (number > 50)
+                        tbNodeSize.Text = "50";
+                    else if (number < 1)
+                        tbNodeSize.Text = "1";
+                    btnNodeSizeChange.Text = tbNodeSize.Text;
+                }
+                
+                tbNodeSize.Text = "";
+                tbNodeSize.SendToBack();
+            }
+        }
+
+        private void tbNodeSize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+
+        //Tùy chỉnh nhập tay khoảng cách Node
+        private void btnNodeSpace_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(e.Clicks == 2)
+            {
+                tbNodeSpace.BringToFront();
+                tbNodeSpace.Focus();
+            }
+        }
+
+        private void tbNodeSpace_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                
+                int number;
+                if(Int32.TryParse(tbNodeSpace.Text, out number))
+                {
+                    if (number > 50)
+                        tbNodeSpace.Text = "50";
+                    else if (number < 1)
+                        tbNodeSpace.Text = "1";
+                    btnNodeSpace.Text = tbNodeSpace.Text;
+                }    
+                tbNodeSpace.Text = "";
+                tbNodeSpace.SendToBack();
+            }
+        }
+
+        private void tbNodeSpace_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+
+
+        #endregion
+
+
     }
 }
