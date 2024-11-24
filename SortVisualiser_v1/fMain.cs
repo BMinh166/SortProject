@@ -15,12 +15,13 @@ namespace SortVisualiser_v1
 {
     public partial class fMain : Form
     {
-        fMenu fmenu;
+        fMenu fmenu = new fMenu();
         fDescription fdes = new fDescription();
         
         public fMain()
         {
             fdes.Visible = false;
+            fmenu.Visible = false;
             InitializeComponent();
             BUBClickAction();
         }
@@ -272,18 +273,16 @@ namespace SortVisualiser_v1
             if (btnMenu.Text == ">")
             {
                 btnMenu.Text = "<";
-                fmenu = new fMenu();
+                fmenu.Visible = true;
                 fmenu.TopLevel = false;
                 fmenu.Dock = DockStyle.Fill;
                 pnlMenu.Controls.Add(fmenu);
-                SetMenuChange();
                 fmenu.Show();
             }
             else
             {
                 btnMenu.Text = ">";
-                SaveMenuChange();
-                pnlMenu.Controls.Clear();
+                fmenu.Visible = false;
             }
             
         }

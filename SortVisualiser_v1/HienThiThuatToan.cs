@@ -38,6 +38,9 @@ namespace SortVisualiser_v1
             }
         }
 
+
+        #region Phân loại sort 
+        //Phân loại sort
         public static void Type_Sort() 
         {
             switch(fMain.typeSort)
@@ -69,6 +72,7 @@ namespace SortVisualiser_v1
             }
                 
         }
+        #endregion
 
         #endregion
         public static void ChayCodeC(int line)

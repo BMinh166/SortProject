@@ -253,6 +253,7 @@
             this.trbSpeed.Size = new System.Drawing.Size(433, 56);
             this.trbSpeed.TabIndex = 16;
             this.trbSpeed.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trbSpeed.Value = 4;
             this.trbSpeed.Scroll += new System.EventHandler(this.trbSpeed_Scroll);
             // 
             // btnLanguage
