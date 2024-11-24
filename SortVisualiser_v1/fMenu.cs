@@ -25,25 +25,29 @@ namespace SortVisualiser_v1
         /// <param name="e"></param>
         private void btnIncOrDes_Click(object sender, EventArgs e)
         {
-            if(btnIncOrDes.Text == "Tăng")
+            if(fMain.isIncrease)
             {
                 btnIncOrDes.Text = "Giảm";
+                fMain.isIncrease = false;
             }
             else
             {
                 btnIncOrDes.Text = "Tăng";
+                fMain.isIncrease = true;
             }
         }
 
         private void btnLanguage_Click(object sender, EventArgs e)
         {
-            if (btnLanguage.Text == "Tiếng Việt")
+            if (!fMain.isEnglish)
             {
                 btnLanguage.Text = "English";
+                fMain.isEnglish = true;
             }
             else
             {
                 btnLanguage.Text = "Tiếng Việt";
+                fMain.isEnglish = false;
             }
         }
 

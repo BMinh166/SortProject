@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tpDescription = new System.Windows.Forms.TabPage();
+            this.tpAlgorithm = new System.Windows.Forms.TabPage();
+            this.tbDescription = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
+            this.tpDescription.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tpDescription);
+            this.tabControl1.Controls.Add(this.tpAlgorithm);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -45,25 +47,35 @@
             this.tabControl1.Size = new System.Drawing.Size(584, 236);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // tpDescription
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(576, 204);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Mô tả";
+            this.tpDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tpDescription.Controls.Add(this.tbDescription);
+            this.tpDescription.Location = new System.Drawing.Point(4, 28);
+            this.tpDescription.Name = "tpDescription";
+            this.tpDescription.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDescription.Size = new System.Drawing.Size(576, 204);
+            this.tpDescription.TabIndex = 0;
+            this.tpDescription.Text = "Mô tả";
             // 
-            // tabPage2
+            // tpAlgorithm
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(576, 204);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Giải thuật";
+            this.tpAlgorithm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tpAlgorithm.Location = new System.Drawing.Point(4, 28);
+            this.tpAlgorithm.Name = "tpAlgorithm";
+            this.tpAlgorithm.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAlgorithm.Size = new System.Drawing.Size(576, 204);
+            this.tpAlgorithm.TabIndex = 1;
+            this.tpAlgorithm.Text = "Giải thuật";
+            // 
+            // tbDescription
+            // 
+            this.tbDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tbDescription.Location = new System.Drawing.Point(0, 0);
+            this.tbDescription.Multiline = true;
+            this.tbDescription.Name = "tbDescription";
+            this.tbDescription.Size = new System.Drawing.Size(576, 208);
+            this.tbDescription.TabIndex = 0;
             // 
             // fDescription
             // 
@@ -76,6 +88,8 @@
             this.Name = "fDescription";
             this.Text = "fDescription";
             this.tabControl1.ResumeLayout(false);
+            this.tpDescription.ResumeLayout(false);
+            this.tpDescription.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -83,7 +97,8 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tpDescription;
+        private System.Windows.Forms.TabPage tpAlgorithm;
+        private System.Windows.Forms.TextBox tbDescription;
     }
 }
