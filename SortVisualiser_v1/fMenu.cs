@@ -13,10 +13,15 @@ namespace SortVisualiser_v1
 {
     public partial class fMenu : Form
     {
+
+    
+
         public fMenu()
         {
             InitializeComponent();
         }
+
+       
 
         /// <summary>
         /// Thực thi chức năng của cái button ở tabpage Cài Đặt
@@ -236,8 +241,17 @@ namespace SortVisualiser_v1
 
 
 
+
         #endregion
 
+        private void nudN_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
 
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

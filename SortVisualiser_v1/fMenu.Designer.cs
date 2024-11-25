@@ -120,6 +120,7 @@
             0,
             0,
             0});
+            this.nudN.ValueChanged += new System.EventHandler(this.nudN_ValueChanged);
             // 
             // btnHand
             // 
@@ -144,6 +145,7 @@
             this.btnStart.TabIndex = 6;
             this.btnStart.Text = "Bắt đầu";
             this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // lblN
             // 
