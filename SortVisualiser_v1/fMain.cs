@@ -15,16 +15,21 @@ namespace SortVisualiser_v1
 {
     public partial class fMain : Form
     {
-        fMenu fmenu;
-        fDescription fdes;
+        fMenu fmenu = new fMenu();
+        fDescription fdes = new fDescription();
+        
         public fMain()
         {
+            fdes.Visible = false;
+            fmenu.Visible = false;
             InitializeComponent();
             BUBClickAction();
         }
 
         #region Các biến toàn cục
         public static bool isEnglish = false;
+        public static int typeSort = 0;
+        public static bool isIncrease = true;
         CultureInfo culture;
 
         public int loaiThuatToan;
@@ -67,6 +72,9 @@ namespace SortVisualiser_v1
             lblBUB.Text = "BUBLE SORT";
             lblBUB.ForeColor = SystemColors.HighlightText;
             lblBUB.Font = new Font(lblBUB.Font, FontStyle.Bold);
+            typeSort = 0;
+            HienThiThuatToan.Type_Sort();
+            fdes.DescriptionTextChange();
         }
         private void lblBUB_Click(object sender, EventArgs e)
         {
@@ -79,6 +87,9 @@ namespace SortVisualiser_v1
             lblINT.Text = "INTERCHANGE SORT";
             lblINT.ForeColor = SystemColors.HighlightText;
             lblINT.Font = new Font(lblINT.Font, FontStyle.Bold);
+            typeSort = 1;
+            HienThiThuatToan.Type_Sort();
+            fdes.DescriptionTextChange();
         }
 
         private void lblBIN_Click(object sender, EventArgs e)
@@ -87,6 +98,9 @@ namespace SortVisualiser_v1
             lblBIN.Text = "BINARY INSERTION SORT";
             lblBIN.ForeColor = SystemColors.HighlightText;
             lblBIN.Font = new Font(lblBIN.Font, FontStyle.Bold);
+            typeSort = 2;
+            HienThiThuatToan.Type_Sort();
+            fdes.DescriptionTextChange();
         }
 
         private void lblINS_Click(object sender, EventArgs e)
@@ -95,6 +109,9 @@ namespace SortVisualiser_v1
             lblINS.Text = "INSERTION SORT";
             lblINS.ForeColor = SystemColors.HighlightText;
             lblINS.Font = new Font(lblINS.Font, FontStyle.Bold);
+            typeSort = 3;
+            HienThiThuatToan.Type_Sort();
+            fdes.DescriptionTextChange();
         }
 
         private void lblSEL_Click(object sender, EventArgs e)
@@ -103,6 +120,9 @@ namespace SortVisualiser_v1
             lblSEL.Text = "SELECTION SORT";
             lblSEL.ForeColor = SystemColors.HighlightText;
             lblSEL.Font = new Font(lblSEL.Font, FontStyle.Bold);
+            typeSort = 4;
+            HienThiThuatToan.Type_Sort();
+            fdes.DescriptionTextChange();
         }
 
         private void lblHEA_Click(object sender, EventArgs e)
@@ -111,6 +131,9 @@ namespace SortVisualiser_v1
             lblHEA.Text = "HEAP SORT";
             lblHEA.ForeColor = SystemColors.HighlightText;
             lblHEA.Font = new Font(lblHEA.Font, FontStyle.Bold);
+            typeSort = 5;
+            HienThiThuatToan.Type_Sort();
+            fdes.DescriptionTextChange();
         }
 
         private void lblMER_Click(object sender, EventArgs e)
@@ -119,6 +142,9 @@ namespace SortVisualiser_v1
             lblMER.Text = "MERGE SORT";
             lblMER.ForeColor = SystemColors.HighlightText;
             lblMER.Font = new Font(lblMER.Font, FontStyle.Bold);
+            typeSort = 6;
+            HienThiThuatToan.Type_Sort();
+            fdes.DescriptionTextChange();
         }
 
         private void lblQUI_Click(object sender, EventArgs e)
@@ -127,6 +153,9 @@ namespace SortVisualiser_v1
             lblQUI.Text = "QUICK SORT";
             lblQUI.ForeColor = SystemColors.HighlightText;
             lblQUI.Font = new Font(lblQUI.Font, FontStyle.Bold);
+            typeSort = 7; 
+            HienThiThuatToan.Type_Sort();
+            fdes.DescriptionTextChange();
         }
         #endregion
 
@@ -245,18 +274,16 @@ namespace SortVisualiser_v1
             if (btnMenu.Text == ">")
             {
                 btnMenu.Text = "<";
-                fmenu = new fMenu();
+                fmenu.Visible = true;
                 fmenu.TopLevel = false;
                 fmenu.Dock = DockStyle.Fill;
                 pnlMenu.Controls.Add(fmenu);
-                SetMenuChange();
                 fmenu.Show();
             }
             else
             {
                 btnMenu.Text = ">";
-                SaveMenuChange();
-                pnlMenu.Controls.Clear();
+                fmenu.Visible = false;
             }
             
         }
@@ -267,7 +294,7 @@ namespace SortVisualiser_v1
             if (btnDescription.Text == "<")
             {
                 btnDescription.Text = ">";
-                fdes = new fDescription();
+                fdes.Visible = true;
                 fdes.TopLevel = false;
                 fdes.Dock = DockStyle.Fill;
                 pnlDescription.Controls.Add(fdes);
@@ -276,7 +303,7 @@ namespace SortVisualiser_v1
             else
             {
                 btnDescription.Text = "<";
-                pnlDescription.Controls.Clear();
+                fdes.Visible=false;
             }
         }
 
@@ -331,6 +358,7 @@ namespace SortVisualiser_v1
         string menu_InsOrDes = "Tăng";
         decimal menu_N = 10;
         int menu_Speed = 4;
+        
 
         //Lưu những thay đổi
         void SaveMenuChange()

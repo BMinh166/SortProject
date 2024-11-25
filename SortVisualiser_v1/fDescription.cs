@@ -16,5 +16,13 @@ namespace SortVisualiser_v1
         {
             InitializeComponent();
         }
+
+        public void DescriptionTextChange()
+        {
+            if (fMain.isEnglish)
+                tbDescription.Text = HienThiThuatToan.yTuongEn;
+            else
+                tbDescription.Text = HienThiThuatToan.yTuongVi;
+        }
     }
 }

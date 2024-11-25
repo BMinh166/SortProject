@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -29,13 +30,49 @@ namespace SortVisualiser_v1
             yTuongThuatToan.Clear();
             if (fMain.isEnglish == true)
             {
-                yTuongThuatToan.Text = yTuongEn;
+                yTuongThuatToan.Text = yTuongEn;                
             }
             else if (fMain.isEnglish == false)
             {
                 yTuongThuatToan.Text = yTuongVi;
             }
         }
+
+
+        #region Phân loại sort 
+        //Phân loại sort
+        public static void Type_Sort() 
+        {
+            switch(fMain.typeSort)
+            {
+                case 0:
+                    BubbleSort(fMain.isIncrease);
+                    break;
+                case 1:
+                    InterchangeSort(fMain.isIncrease);
+                    break;
+                case 2:
+                    BinaryInsertionSort(fMain.isIncrease);
+                    break;
+                case 3:
+                    InsertionSort(fMain.isIncrease);
+                    break;
+                case 4:
+                    SelectionSort(fMain.isIncrease);
+                    break;
+                case 5:
+                    HeapSort(fMain.isIncrease);
+                    break;
+                case 6:
+                    MergeSort(fMain.isIncrease);
+                    break;
+                case 7:
+                    QuickSort(fMain.isIncrease);
+                    break;
+            }
+                
+        }
+        #endregion
 
         #endregion
         public static void ChayCodeC(int line)
@@ -66,7 +103,7 @@ Tìm cách chèn phần tử ai vào vị trí thích hợp của đoạn đã �
 • Consider the fourth element; insert it into the proper position among the first four elements.
 • … …";
             // Thêm yTuong vào yTuongThuatToan
-            addYTuong();
+            //addYTuong();
 
             string[] code = ChuyenText(
 @"void InsertionSort(int a[], int N)
@@ -86,15 +123,15 @@ Tìm cách chèn phần tử ai vào vị trí thích hợp của đoạn đã �
 }");
             // Thêm code vào codeListBox
 
-            codeListBox.Items.Clear();
-            foreach (string item in code)
-            {
-                codeListBox.Items.Add(item);
-            }
-            if (!tang)
-            {
-                codeListBox.Items[7] = "        while((pos >= 0) && (x > a[pos]))";
-            }
+            //codeListBox.Items.Clear();
+            //foreach (string item in code)
+            //{
+            //    codeListBox.Items.Add(item);
+            //}
+            //if (!tang)
+            //{
+            //    codeListBox.Items[7] = "        while((pos >= 0) && (x > a[pos]))";
+            //}
         }
         #endregion
 
@@ -106,8 +143,8 @@ Tìm cách chèn phần tử ai vào vị trí thích hợp của đoạn đã �
  @"Chọn phần tử nhỏ nhất trong N phần tử trong dãy hiện hành ban đầu.
 Đưa phần tử này về vị trí đầu dãy hiện hành.
 Xem dãy hiện hành chỉ còn N-1 phần tử của dãy hiện hành ban đầu.
-    Bắt đầu từ vị trí thứ 2;
-    Lặp lại quá trình trên cho dãy hiện hành... đến khi dãy hiện hành chỉ còn 1 phần tử.";
+Bắt đầu từ vị trí thứ 2;
+Lặp lại quá trình trên cho dãy hiện hành... đến khi dãy hiện hành chỉ còn 1 phần tử.";
             //English
             yTuongEn = @"• find the smallest element
 • put it in the first position
@@ -116,7 +153,7 @@ Xem dãy hiện hành chỉ còn N-1 phần tử của dãy hiện hành ban đ�
 • …
 • And so on, until we get to the end of the array";
             //Thêm yTuong vào yTuongThuatToan
-            addYTuong();
+            //addYTuong();
 
 
             string[] code = ChuyenText(
@@ -134,16 +171,16 @@ Xem dãy hiện hành chỉ còn N-1 phần tử của dãy hiện hành ban đ�
 }");
             //thêm code vào codeListBox
 
-            codeListBox.Items.Clear();
-            foreach (string item in code)
-            {
-                codeListBox.Items.Add(item);
-            }
-            //Nếu sắp xếp giảm dần thì sửa lại
-            if (!tang)
-            {
-                codeListBox.Items[7] = "             if (a[j] > a[min])";
-            }
+            //codeListBox.Items.Clear();
+            //foreach (string item in code)
+            //{
+            //    codeListBox.Items.Add(item);
+            //}
+            ////Nếu sắp xếp giảm dần thì sửa lại
+            //if (!tang)
+            //{
+            //    codeListBox.Items[7] = "             if (a[j] > a[min])";
+            //}
         }
         #endregion
 
@@ -165,11 +202,9 @@ return (base case).
 disjoint groups:
     • S1 = {x ∈ S – {v} | x ≤ v}
     • S2 = {x ∈ S – {v} | x ≥ v}
-•  Return {QuickSort(S1
-) + v + QuickSort(S2
-)}";
+•  Return {QuickSort(S1) + v + QuickSort(S2)}";
             //Thêm yTuong vào yTuongThuatToan
-            addYTuong();
+            //addYTuong();
 
             string[] code = ChuyenText(
 @"void QuickSort(int a[], int left, int right)
@@ -195,17 +230,17 @@ disjoint groups:
         QuickSort(a, i, right);
 }");
             //thêm code vào codeListBox 
-            codeListBox.Items.Clear();
-            foreach (string item in code)
-            {
-                codeListBox.Items.Add(item);
-            }
-            //nếu sắp giảm thì sửa lại
-            if (!tang)
-            {
-                codeListBox.Items[7] = "        while(a[i] > x)";
-                codeListBox.Items[9] = "        while(x > a[j])";
-            }
+            //codeListBox.Items.Clear();
+            //foreach (string item in code)
+            //{
+            //    codeListBox.Items.Add(item);
+            //}
+            ////nếu sắp giảm thì sửa lại
+            //if (!tang)
+            //{
+            //    codeListBox.Items[7] = "        while(a[i] > x)";
+            //    codeListBox.Items[9] = "        while(x > a[j])";
+            //}
         }
         #endregion
 
@@ -220,7 +255,7 @@ disjoint groups:
 • Then find the second smallest number, and swap it with the number in the second position.
 • So on.";
             //Thêm yTuong vào yTuongThuatToan
-            addYTuong();
+            //addYTuong();
 
             string[] code = ChuyenText(
 @"void InterchangeSort( int a[], int N)
@@ -233,16 +268,16 @@ disjoint groups:
 }
 ");
             //thêm code vào codeListBox 
-            codeListBox.Items.Clear();
-            foreach (string item in code)
-            {
-                codeListBox.Items.Add(item);
-            }
-            //nếu sắp giảm thì sửa lại
-            if (!tang)
-            {
-                codeListBox.Items[5] = "            if( a[j] > a[i] )";
-            }
+            //codeListBox.Items.Clear();
+            //foreach (string item in code)
+            //{
+            //    codeListBox.Items.Add(item);
+            //}
+            ////nếu sắp giảm thì sửa lại
+            //if (!tang)
+            //{
+            //    codeListBox.Items[5] = "            if( a[j] > a[i] )";
+            //}
         }
         #endregion
 
@@ -256,7 +291,7 @@ disjoint groups:
             yTuongEn = @"• Use binary search to reduce the number of comparisons in normal insertion sort.
 • Binary Insertion Sort find use binary search to find the proper location to insert the selected item at each iteration.";
             //Thêm yTuong vào yTuongThuatToan
-            addYTuong();
+            //addYTuong();
 
             string[] code = ChuyenText(
 @"void BinaryInsertionSort(int a[], int N)
@@ -278,16 +313,16 @@ disjoint groups:
     }
 }");
             //thêm code vào codeListBox 
-            codeListBox.Items.Clear();
-            foreach (string item in code)
-            {
-                codeListBox.Items.Add(item);
-            }
-            //nếu sắp giảm thì sửa lại
-            if (!tang)
-            {
-                codeListBox.Items[11] = "         if(x > a[m]) right = m - 1;";
-            }
+            //codeListBox.Items.Clear();
+            //foreach (string item in code)
+            //{
+            //    codeListBox.Items.Add(item);
+            //}
+            ////nếu sắp giảm thì sửa lại
+            //if (!tang)
+            //{
+            //    codeListBox.Items[11] = "         if(x > a[m]) right = m - 1;";
+            //}
         }
         #endregion
 
@@ -302,7 +337,7 @@ Lặp lại xử lý trên cho đến khi không còn cặp phần tử nào đ�
             yTuongEn = @"• Exchange neighboring items until the largest item reaches the end of the array.
 • Repeat the above step for the rest of the array.";
             //Thêm yTuong vào yTuongThuatToan
-            addYTuong();
+            //addYTuong();
 
             string[] code = ChuyenText(
 @"void BubbleSort(int a[], int N)
@@ -315,16 +350,16 @@ Lặp lại xử lý trên cho đến khi không còn cặp phần tử nào đ�
 }
 ");
             //thêm code vào codeListBox 
-            codeListBox.Items.Clear();
-            foreach (string item in code)
-            {
-                codeListBox.Items.Add(item);
-            }
-            //nếu sắp giảm thì sửa lại
-            if (!tang)
-            {
-                codeListBox.Items[5] = "       if(a[j] > a[j - 1])";
-            }
+            //codeListBox.Items.Clear();
+            //foreach (string item in code)
+            //{
+            //    codeListBox.Items.Add(item);
+            //}
+            ////nếu sắp giảm thì sửa lại
+            //if (!tang)
+            //{
+            //    codeListBox.Items[5] = "       if(a[j] > a[j - 1])";
+            //}
         }
         #endregion
 
@@ -339,7 +374,7 @@ Lặp lại xử lý trên cho đến khi không còn cặp phần tử nào đ�
             yTuongEn = @"• Transform the array of items into a heap.
 • Invoke the “retrieve & delete” operation repeatedly, to extract the largest item remaining in the heap, until the heap is empty.  Store each item retrieved from the heap into the array from back to front.";
             //Thêm yTuong vào yTuongThuatToan
-            addYTuong();
+            //addYTuong();
 
             string[] code = ChuyenText(
 @"void HeapSort(int a[], int N)
@@ -385,16 +420,16 @@ void Shift(int a[], int l, int r)
     }
 }");
             //thêm code vào codeListBox 
-            codeListBox.Items.Clear();
-            foreach (string item in code)
-            {
-                codeListBox.Items.Add(item);
-            }
-            //nếu sắp giảm thì sửa lại
-            if (!tang)
-            {
+            //codeListBox.Items.Clear();
+            //foreach (string item in code)
+            //{
+            //    codeListBox.Items.Add(item);
+            //}
+            ////nếu sắp giảm thì sửa lại
+            //if (!tang)
+            //{
 
-            }
+            //}
         }
         #endregion
 
@@ -412,7 +447,7 @@ Hướng tiếp cận : tìm cách làm giảm số dãy con không giảm của
 • Conquer each half by sorting it recursively
 • Combine the results obtained, by merging the two halves to obtain one fully sorted array";
             //Thêm yTuong vào yTuongThuatToan
-            addYTuong();
+            //addYTuong();
 
             string[] code = ChuyenText(
 @"int b[MAX], c[MAX], nb, nc;
@@ -476,16 +511,16 @@ void MergeSort(int a[], int N)
 }
 ");
             //thêm code vào codeListBox 
-            codeListBox.Items.Clear();
-            foreach (string item in code)
-            {
-                codeListBox.Items.Add(item);
-            }
-            //nếu sắp giảm thì sửa lại
-            if (!tang)
-            {
-                codeListBox.Items[26] = "        if(c[pc + ic] > b[pb + ib] == false)";
-            }
+            //codeListBox.Items.Clear();
+            //foreach (string item in code)
+            //{
+            //    codeListBox.Items.Add(item);
+            //}
+            ////nếu sắp giảm thì sửa lại
+            //if (!tang)
+            //{
+            //    codeListBox.Items[26] = "        if(c[pc + ic] > b[pb + ib] == false)";
+            //}
         }
         #endregion
     }
