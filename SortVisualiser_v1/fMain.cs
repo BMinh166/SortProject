@@ -60,7 +60,7 @@ namespace SortVisualiser_v1
 
         #endregion
 
-        //Event nhấn nút của các hàm sắp xếp ở hàng trên
+        #region Event nhấn nút của các hàm sắp xếp ở hàng trên
         void BUBClickAction()
         {
             lblButtonDefault();
@@ -128,6 +128,7 @@ namespace SortVisualiser_v1
             lblQUI.ForeColor = SystemColors.HighlightText;
             lblQUI.Font = new Font(lblQUI.Font, FontStyle.Bold);
         }
+        #endregion
 
         /// Chỉnh các label button về mặc định 
         void lblButtonDefault()
