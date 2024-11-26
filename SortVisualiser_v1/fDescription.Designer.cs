@@ -32,7 +32,7 @@
             this.tpDescription = new System.Windows.Forms.TabPage();
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.tpAlgorithm = new System.Windows.Forms.TabPage();
-            this.rtbAlgorithm = new System.Windows.Forms.RichTextBox();
+            rtbAlgorithm = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tpDescription.SuspendLayout();
             this.tpAlgorithm.SuspendLayout();
@@ -72,7 +72,7 @@
             // tpAlgorithm
             // 
             this.tpAlgorithm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.tpAlgorithm.Controls.Add(this.rtbAlgorithm);
+            this.tpAlgorithm.Controls.Add(rtbAlgorithm);
             this.tpAlgorithm.Location = new System.Drawing.Point(4, 28);
             this.tpAlgorithm.Name = "tpAlgorithm";
             this.tpAlgorithm.Padding = new System.Windows.Forms.Padding(3);
@@ -82,20 +82,12 @@
             // 
             // rtbAlgorithm
             // 
-<<<<<<< HEAD
-            this.rtbAlgorithm.Location = new System.Drawing.Point(0, 0);
-            this.rtbAlgorithm.Name = "rtbAlgorithm";
-            this.rtbAlgorithm.Size = new System.Drawing.Size(576, 294);
-            this.rtbAlgorithm.TabIndex = 0;
-            this.rtbAlgorithm.Text = "";
-=======
             rtbAlgorithm.Location = new System.Drawing.Point(0, 0);
             rtbAlgorithm.Name = "rtbAlgorithm";
             rtbAlgorithm.ReadOnly = true;
             rtbAlgorithm.Size = new System.Drawing.Size(576, 294);
             rtbAlgorithm.TabIndex = 0;
             rtbAlgorithm.Text = "";
->>>>>>> 3f73371a523ff72a4ac7717f5a94c05ec0858a78
             // 
             // fDescription
             // 
@@ -121,6 +113,6 @@
         private System.Windows.Forms.TabPage tpDescription;
         private System.Windows.Forms.TabPage tpAlgorithm;
         private System.Windows.Forms.TextBox tbDescription;
-        public System.Windows.Forms.RichTextBox rtbAlgorithm;
+        public static System.Windows.Forms.RichTextBox rtbAlgorithm;
     }
 }

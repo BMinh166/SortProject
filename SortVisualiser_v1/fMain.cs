@@ -414,7 +414,7 @@ namespace SortVisualiser_v1
             Mangchuasapxep();
 
             culture = CultureInfo.CurrentCulture;
-            picStop.Enabled = false;
+            //picStop.Enabled = false;
             fmenu.trbSpeed.Maximum = ThamSo.ThoiGianDoi * 2 / 5;
             fmenu.trbSpeed.Minimum = 0;
             fmenu.trbSpeed.Value = ThamSo.ThoiGianDoi / 5;
