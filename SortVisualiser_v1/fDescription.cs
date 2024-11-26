@@ -23,6 +23,9 @@ namespace SortVisualiser_v1
                 tbDescription.Text = HienThiThuatToan.yTuongEn;
             else
                 tbDescription.Text = HienThiThuatToan.yTuongVi;
+            rtbAlgorithm.Text = HienThiThuatToan.algorithm;
         }
+
+        
     }
 }

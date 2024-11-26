@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -12,12 +13,13 @@ namespace SortVisualiser_v1
     public class HienThiThuatToan
     {
         //Một số biến toàn cục
-        public static ListBox codeListBox;
+        //public static ListBox codeListBox;
         public static TextBox yTuongThuatToan;
         public static string yTuongVi;
         public static string yTuongEn;
+        public static string algorithm;
         public static bool isEn = false;
-        public static ManualResetEvent tamdunglistbox = new ManualResetEvent(true);
+        public static ManualResetEvent tamdung = new ManualResetEvent(true);
         public static string[] ChuyenText(string doc)
         {
             string[] text;
@@ -79,14 +81,27 @@ namespace SortVisualiser_v1
         {
             Thread.Sleep(ThamSo.ThoiGianDoi * 50);
             // chờ sign nếu có thì đợi đến vô tận 
-            tamdunglistbox.WaitOne(Timeout.Infinite);
+            tamdung.WaitOne(Timeout.Infinite);
 
-            codeListBox.SelectedIndex = line;
+            //codeListBox.SelectedIndex = line;
+            UpdateTextbox(line);
             if (fMain.isDebug == true)
             {
-                tamdunglistbox.Reset();
+                tamdung.Reset();
             }
+        }
 
+        static void UpdateTextbox(int num)
+        {
+            fDescription.rtbAlgorithm.BackColor = Color.White;
+            fDescription.rtbAlgorithm.ForeColor = Color.Black;
+            int lineIndex = num;
+            int start = fDescription.rtbAlgorithm.GetFirstCharIndexFromLine(lineIndex);
+            int length = fDescription.rtbAlgorithm.Lines[num].Length;
+            fDescription.rtbAlgorithm.Select(start, length);
+            fDescription.rtbAlgorithm.SelectionFont = new Font(fDescription.rtbAlgorithm.Font, FontStyle.Bold);
+            fDescription.rtbAlgorithm.SelectionBackColor = Color.Black;
+            fDescription.rtbAlgorithm.SelectionColor = Color.White;
         }
 
 
@@ -105,7 +120,7 @@ Tìm cách chèn phần tử ai vào vị trí thích hợp của đoạn đã �
             // Thêm yTuong vào yTuongThuatToan
             //addYTuong();
 
-            string[] code = ChuyenText(
+            algorithm =
 @"void InsertionSort(int a[], int N)
 {
     int pos, i;
@@ -120,18 +135,27 @@ Tìm cách chèn phần tử ai vào vị trí thích hợp của đoạn đã �
         }
         a[pos + 1] = x;
     }
-}");
-            // Thêm code vào codeListBox
+}";
 
-            //codeListBox.Items.Clear();
-            //foreach (string item in code)
-            //{
-            //    codeListBox.Items.Add(item);
-            //}
-            //if (!tang)
-            //{
-            //    codeListBox.Items[7] = "        while((pos >= 0) && (x > a[pos]))";
-            //}
+            if (!tang)
+            {
+                algorithm =
+@"void InsertionSort(int a[], int N)
+{
+    int pos, i;
+    int x;
+    for(i = 1; i < N; i++)
+    {
+        x = a[i]; pos = i - 1;
+        while((pos >= 0) && (x > a[pos]))
+        {
+            a[pos + 1] = a[pos];
+            pos--;
+        }
+        a[pos + 1] = x;
+    }
+}";
+            }
         }
         #endregion
 
@@ -156,7 +180,7 @@ Lặp lại quá trình trên cho dãy hiện hành... đến khi dãy hiện h�
             //addYTuong();
 
 
-            string[] code = ChuyenText(
+            algorithm =
 @"void SelecttionSort(int arr[], int N)
 {
     int min, i, j;
@@ -168,19 +192,25 @@ Lặp lại quá trình trên cho dãy hiện hành... đến khi dãy hiện h�
                  min=j;
                  Swap(a[min], a[i]);   
         } 
-}");
-            //thêm code vào codeListBox
+}";
 
-            //codeListBox.Items.Clear();
-            //foreach (string item in code)
-            //{
-            //    codeListBox.Items.Add(item);
-            //}
-            ////Nếu sắp xếp giảm dần thì sửa lại
-            //if (!tang)
-            //{
-            //    codeListBox.Items[7] = "             if (a[j] > a[min])";
-            //}
+            //Nếu sắp xếp giảm dần thì sửa lại
+            if (!tang)
+            {
+                algorithm =
+@"void SelecttionSort(int arr[], int N)
+{
+    int min, i, j;
+    for (i=0; i < N-1; i++)
+        {
+             min = i;
+             for (j=i+1; j <N; j++)
+             if (a[j] > a[min])
+                 min=j;
+                 Swap(a[min], a[i]);   
+        } 
+}";
+            }
         }
         #endregion
 
@@ -206,7 +236,7 @@ disjoint groups:
             //Thêm yTuong vào yTuongThuatToan
             //addYTuong();
 
-            string[] code = ChuyenText(
+            algorithm =
 @"void QuickSort(int a[], int left, int right)
 {
     int i, j, x;
@@ -228,19 +258,35 @@ disjoint groups:
         QuickSort(a, left, j);
     if(i < right)
         QuickSort(a, i, right);
-}");
-            //thêm code vào codeListBox 
-            //codeListBox.Items.Clear();
-            //foreach (string item in code)
-            //{
-            //    codeListBox.Items.Add(item);
-            //}
-            ////nếu sắp giảm thì sửa lại
-            //if (!tang)
-            //{
-            //    codeListBox.Items[7] = "        while(a[i] > x)";
-            //    codeListBox.Items[9] = "        while(x > a[j])";
-            //}
+}";
+
+            //nếu sắp giảm thì sửa lại
+            if (!tang)
+            {
+                algorithm =
+@"void QuickSort(int a[], int left, int right)
+{
+    int i, j, x;
+    x = a[(left + night)/2];
+    i = left, j = right;
+    do
+    {
+        while(a[i] > x)
+            i++;
+        while(x > a[j])
+            j--;
+        if(i <= j)
+        {
+            Swap(a[i], a[j]);
+            i++, j--;
+        }            
+    }while(i <= j);
+    if(left < j)
+        QuickSort(a, left, j);
+    if(i < right)
+        QuickSort(a, i, right);
+}";
+            }
         }
         #endregion
 
@@ -257,7 +303,7 @@ disjoint groups:
             //Thêm yTuong vào yTuongThuatToan
             //addYTuong();
 
-            string[] code = ChuyenText(
+            algorithm =
 @"void InterchangeSort( int a[], int N)
 {
     int i, j;
@@ -265,19 +311,21 @@ disjoint groups:
         for(j = i + 1; j < N; j++)
             if( a[j] < a[i] )
                 Swap( a[i], a[j]);
-}
-");
-            //thêm code vào codeListBox 
-            //codeListBox.Items.Clear();
-            //foreach (string item in code)
-            //{
-            //    codeListBox.Items.Add(item);
-            //}
-            ////nếu sắp giảm thì sửa lại
-            //if (!tang)
-            //{
-            //    codeListBox.Items[5] = "            if( a[j] > a[i] )";
-            //}
+}";
+
+            //nếu sắp giảm thì sửa lại
+            if (!tang)
+            {
+                algorithm =
+@"void InterchangeSort( int a[], int N)
+{
+    int i, j;
+    for(i = 0; i < N - 1; i++)
+        for(j = i + 1; j < N; j++)
+            if( a[j] > a[i] )
+                Swap( a[i], a[j]);
+}";
+            }
         }
         #endregion
 
@@ -293,7 +341,7 @@ disjoint groups:
             //Thêm yTuong vào yTuongThuatToan
             //addYTuong();
 
-            string[] code = ChuyenText(
+            algorithm =
 @"void BinaryInsertionSort(int a[], int N)
 {
    int left, right, m, i , pos;
@@ -311,18 +359,30 @@ disjoint groups:
          a[pos+1] = a[pos];
       a[left] = x;
     }
-}");
-            //thêm code vào codeListBox 
-            //codeListBox.Items.Clear();
-            //foreach (string item in code)
-            //{
-            //    codeListBox.Items.Add(item);
-            //}
-            ////nếu sắp giảm thì sửa lại
-            //if (!tang)
-            //{
-            //    codeListBox.Items[11] = "         if(x > a[m]) right = m - 1;";
-            //}
+}";
+            //nếu sắp giảm thì sửa lại
+            if (!tang)
+            {
+                algorithm =
+@"void BinaryInsertionSort(int a[], int N)
+{
+   int left, right, m, i , pos;
+   int x;
+   for(int i = 1; i < N ; i++)
+   {
+      x = a[i]; left = 0; right = i - 1;
+      while(left <= right)
+      {
+         m = (left + right)/2;
+         if(x > a[m]) right = m - 1;
+         else left = m + 1;                    
+      }
+      for(pos = i - 1; pos >= left; pos--)
+         a[pos+1] = a[pos];
+      a[left] = x;
+    }
+}";
+            }
         }
         #endregion
 
@@ -339,7 +399,7 @@ Lặp lại xử lý trên cho đến khi không còn cặp phần tử nào đ�
             //Thêm yTuong vào yTuongThuatToan
             //addYTuong();
 
-            string[] code = ChuyenText(
+            algorithm =
 @"void BubbleSort(int a[], int N)
 {
    int i,j;
@@ -348,18 +408,21 @@ Lặp lại xử lý trên cho đến khi không còn cặp phần tử nào đ�
         if(a[j] < a[j - 1])
             Swap(a[j], a[j - 1]);
 }
-");
-            //thêm code vào codeListBox 
-            //codeListBox.Items.Clear();
-            //foreach (string item in code)
-            //{
-            //    codeListBox.Items.Add(item);
-            //}
-            ////nếu sắp giảm thì sửa lại
-            //if (!tang)
-            //{
-            //    codeListBox.Items[5] = "       if(a[j] > a[j - 1])";
-            //}
+";
+            //nếu sắp giảm thì sửa lại
+            if (!tang)
+            {
+                algorithm =
+@"void BubbleSort(int a[], int N)
+{
+   int i,j;
+   for(i = 0; i < N - 1; i++)
+      for(j = N - 1; j > i; j--)
+        if(a[j] > a[j - 1])
+            Swap(a[j], a[j - 1]);
+}
+";
+            }
         }
         #endregion
 
@@ -376,7 +439,7 @@ Lặp lại xử lý trên cho đến khi không còn cặp phần tử nào đ�
             //Thêm yTuong vào yTuongThuatToan
             //addYTuong();
 
-            string[] code = ChuyenText(
+            algorithm =
 @"void HeapSort(int a[], int N)
 {
     CreateHeap(a,N - 1);
@@ -418,13 +481,7 @@ void Shift(int a[], int l, int r)
         }
         else return;
     }
-}");
-            //thêm code vào codeListBox 
-            //codeListBox.Items.Clear();
-            //foreach (string item in code)
-            //{
-            //    codeListBox.Items.Add(item);
-            //}
+}";
             ////nếu sắp giảm thì sửa lại
             //if (!tang)
             //{
@@ -449,7 +506,7 @@ Hướng tiếp cận : tìm cách làm giảm số dãy con không giảm của
             //Thêm yTuong vào yTuongThuatToan
             //addYTuong();
 
-            string[] code = ChuyenText(
+            algorithm =
 @"int b[MAX], c[MAX], nb, nc;
 int Min(int a, int b)
 {
@@ -509,18 +566,72 @@ void MergeSort(int a[], int N)
             Merge(a, nb, nc, k);
         }
 }
-");
-            //thêm code vào codeListBox 
-            //codeListBox.Items.Clear();
-            //foreach (string item in code)
-            //{
-            //    codeListBox.Items.Add(item);
-            //}
-            ////nếu sắp giảm thì sửa lại
-            //if (!tang)
-            //{
-            //    codeListBox.Items[26] = "        if(c[pc + ic] > b[pb + ib] == false)";
-            //}
+";
+            //nếu sắp giảm thì sửa lại
+            if (!tang)
+            {
+                algorithm =
+@"int b[MAX], c[MAX], nb, nc;
+int Min(int a, int b)
+{
+    if(a > b) return b;
+    else return a;
+}
+void Distribute(int a[], int N, int &nb, int &nc, int k)
+{
+    int i, pa, pb, pc;
+    pa = pb = pc = 0 ;
+    while(pa < N)
+    {
+        for(i = 0; (pa < N) && (i < k); i++, pa++, pb++)
+            b[pb] = a[pa];
+        for(i = 0; (pa < N) && (i < k); i++, pa++, pc++)
+            c[pc] = a[pa];
+    }
+    nb = pb; nc = pc;
+}
+void Merge(int a[], int nb, int nc, int k)
+{
+    int p, pb, pc, ib, ic, kb, kc;
+    p = pb = pc = 0; ib = ic = 0;
+    while((nb > 0) && (nc > 0))
+    {
+        kb = Min(k, nb); kc = Min(k, nc);
+        if(c[pc + ic] > b[pb + ib] == false)
+        {
+            a[p++] = b[pb + ib]; ib++;
+            if(ib == kb)
+            {
+                for(;ic < kc; ic++)
+                    a[p++] = c[pc + ic];
+                pb += kb; pc += kc; ib = ic = 0;
+                nb -= kb; nc -= kc;
+            }
+        }
+        else
+        {
+            a[p++] = c[pc + ic]; ic++;
+            if(ic == kc)
+            {
+                for(;ib < kb; ib++)
+                    a[p++] = b[pb + ib];
+                pb += kb; pc += kc; ib = ib = 0;
+                nb -= kb; nc -= kc;
+            }
+        }
+    }
+}
+void MergeSort(int a[], int N)
+{
+        int k;
+        for(k = 1; k < N; k*= 2)
+        {
+            Distribute(a, N, nb, nc, k);
+            Merge(a, nb, nc, k);
+        }
+}
+";
+            }
         }
         #endregion
     }

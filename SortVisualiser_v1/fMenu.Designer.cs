@@ -82,7 +82,7 @@
             this.btnRandom.BackColor = System.Drawing.Color.White;
             this.btnRandom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRandom.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRandom.Location = new System.Drawing.Point(154, 21);
+            this.btnRandom.Location = new System.Drawing.Point(154, 75);
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.Size = new System.Drawing.Size(127, 38);
             this.btnRandom.TabIndex = 0;
@@ -92,7 +92,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.nudN);
-            this.panel1.Location = new System.Drawing.Point(61, 22);
+            this.panel1.Location = new System.Drawing.Point(61, 76);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(87, 38);
             this.panel1.TabIndex = 2;
@@ -127,19 +127,20 @@
             this.btnHand.BackColor = System.Drawing.Color.White;
             this.btnHand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHand.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHand.Location = new System.Drawing.Point(287, 21);
+            this.btnHand.Location = new System.Drawing.Point(287, 75);
             this.btnHand.Name = "btnHand";
             this.btnHand.Size = new System.Drawing.Size(116, 38);
             this.btnHand.TabIndex = 3;
             this.btnHand.Text = "Nhập tay";
             this.btnHand.UseVisualStyleBackColor = false;
+            this.btnHand.Click += new System.EventHandler(this.btnHand_Click);
             // 
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.Color.White;
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(154, 113);
+            this.btnStart.Location = new System.Drawing.Point(154, 194);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(127, 38);
             this.btnStart.TabIndex = 6;
@@ -151,7 +152,7 @@
             // 
             this.lblN.AutoSize = true;
             this.lblN.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblN.Location = new System.Drawing.Point(23, 29);
+            this.lblN.Location = new System.Drawing.Point(23, 83);
             this.lblN.Name = "lblN";
             this.lblN.Size = new System.Drawing.Size(32, 22);
             this.lblN.TabIndex = 7;
@@ -166,7 +167,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(591, 228);
+            this.tabControl1.Size = new System.Drawing.Size(595, 330);
             this.tabControl1.TabIndex = 8;
             // 
             // tpCreate
@@ -182,7 +183,7 @@
             this.tpCreate.Location = new System.Drawing.Point(4, 28);
             this.tpCreate.Name = "tpCreate";
             this.tpCreate.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCreate.Size = new System.Drawing.Size(583, 196);
+            this.tpCreate.Size = new System.Drawing.Size(587, 298);
             this.tpCreate.TabIndex = 0;
             this.tpCreate.Text = "Khởi tạo";
             // 
@@ -191,7 +192,7 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(287, 113);
+            this.button1.Location = new System.Drawing.Point(287, 194);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 38);
             this.button1.TabIndex = 9;
@@ -203,7 +204,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.White;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(409, 21);
+            this.btnDelete.Location = new System.Drawing.Point(409, 75);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(127, 38);
             this.btnDelete.TabIndex = 8;
@@ -223,14 +224,14 @@
             this.tpSetting.Location = new System.Drawing.Point(4, 28);
             this.tpSetting.Name = "tpSetting";
             this.tpSetting.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSetting.Size = new System.Drawing.Size(583, 196);
+            this.tpSetting.Size = new System.Drawing.Size(587, 298);
             this.tpSetting.TabIndex = 1;
             this.tpSetting.Text = "Cài đặt";
             // 
             // lblSpeedShow
             // 
             this.lblSpeedShow.AutoSize = true;
-            this.lblSpeedShow.Location = new System.Drawing.Point(350, 164);
+            this.lblSpeedShow.Location = new System.Drawing.Point(350, 249);
             this.lblSpeedShow.Name = "lblSpeedShow";
             this.lblSpeedShow.Size = new System.Drawing.Size(25, 19);
             this.lblSpeedShow.TabIndex = 18;
@@ -240,7 +241,7 @@
             // 
             this.lblSpeed.AutoSize = true;
             this.lblSpeed.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeed.Location = new System.Drawing.Point(17, 127);
+            this.lblSpeed.Location = new System.Drawing.Point(19, 221);
             this.lblSpeed.Name = "lblSpeed";
             this.lblSpeed.Size = new System.Drawing.Size(71, 23);
             this.lblSpeed.TabIndex = 17;
@@ -249,7 +250,7 @@
             // trbSpeed
             // 
             this.trbSpeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.trbSpeed.Location = new System.Drawing.Point(142, 127);
+            this.trbSpeed.Location = new System.Drawing.Point(144, 221);
             this.trbSpeed.Maximum = 8;
             this.trbSpeed.Name = "trbSpeed";
             this.trbSpeed.Size = new System.Drawing.Size(433, 56);
@@ -263,7 +264,7 @@
             this.btnLanguage.BackColor = System.Drawing.Color.White;
             this.btnLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLanguage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLanguage.Location = new System.Drawing.Point(142, 63);
+            this.btnLanguage.Location = new System.Drawing.Point(144, 123);
             this.btnLanguage.Name = "btnLanguage";
             this.btnLanguage.Size = new System.Drawing.Size(433, 46);
             this.btnLanguage.TabIndex = 15;
@@ -276,7 +277,7 @@
             this.btnIncOrDes.BackColor = System.Drawing.Color.White;
             this.btnIncOrDes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncOrDes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIncOrDes.Location = new System.Drawing.Point(140, 11);
+            this.btnIncOrDes.Location = new System.Drawing.Point(142, 35);
             this.btnIncOrDes.Name = "btnIncOrDes";
             this.btnIncOrDes.Size = new System.Drawing.Size(435, 46);
             this.btnIncOrDes.TabIndex = 14;
@@ -288,7 +289,7 @@
             // 
             this.lblLanguage.AutoSize = true;
             this.lblLanguage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLanguage.Location = new System.Drawing.Point(17, 75);
+            this.lblLanguage.Location = new System.Drawing.Point(19, 135);
             this.lblLanguage.Name = "lblLanguage";
             this.lblLanguage.Size = new System.Drawing.Size(95, 23);
             this.lblLanguage.TabIndex = 13;
@@ -298,7 +299,7 @@
             // 
             this.lblSortHow.AutoSize = true;
             this.lblSortHow.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSortHow.Location = new System.Drawing.Point(17, 23);
+            this.lblSortHow.Location = new System.Drawing.Point(19, 47);
             this.lblSortHow.Name = "lblSortHow";
             this.lblSortHow.Size = new System.Drawing.Size(82, 23);
             this.lblSortHow.TabIndex = 12;
@@ -310,7 +311,7 @@
             this.tbCustomize.Controls.Add(this.panel2);
             this.tbCustomize.Location = new System.Drawing.Point(4, 28);
             this.tbCustomize.Name = "tbCustomize";
-            this.tbCustomize.Size = new System.Drawing.Size(583, 196);
+            this.tbCustomize.Size = new System.Drawing.Size(587, 298);
             this.tbCustomize.TabIndex = 2;
             this.tbCustomize.Text = "Tùy chỉnh";
             // 
@@ -338,7 +339,7 @@
             this.panel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(578, 190);
+            this.panel2.Size = new System.Drawing.Size(578, 291);
             this.panel2.TabIndex = 0;
             // 
             // btnDefault
@@ -358,7 +359,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.White;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(8, 320);
+            this.btnUpdate.Location = new System.Drawing.Point(3, 318);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(255, 46);
             this.btnUpdate.TabIndex = 28;
@@ -547,7 +548,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(591, 228);
+            this.ClientSize = new System.Drawing.Size(595, 331);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fMenu";
