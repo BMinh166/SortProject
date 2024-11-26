@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SortVisualiser_v1
 {
@@ -22,6 +23,7 @@ namespace SortVisualiser_v1
         {
             fdes.Visible = false;
             fmenu.Visible = false;
+            EventRegister();
             InitializeComponent();
             BUBClickAction();
         }
@@ -63,7 +65,17 @@ namespace SortVisualiser_v1
         private Thread sapxepThread;
         private Dictionary<string, Label> bienArr;
 
+        void EventRegister()
+        {
+            fmenu.LanguageChange += fmenu_LanguageChange;
+        }
+
+
+
         #endregion
+
+
+
 
         #region Event nhấn nút của các hàm sắp xếp ở hàng trên
         void BUBClickAction()
@@ -159,7 +171,7 @@ namespace SortVisualiser_v1
         }
         #endregion
 
-        /// Chỉnh các label button về mặc định 
+        #region Chỉnh các label button về mặc định 
         void lblButtonDefault()
         {
             //Các label button chuyển về text mặc định
@@ -212,8 +224,9 @@ namespace SortVisualiser_v1
             pnlMER.Location = new Point(43, 0);
             pnlQUI.Location = new Point(48, 0);
         }
+        #endregion
 
-        //Đẩy các label button khác sang phải khi size của 1 label button tăng
+        #region Đẩy các label button khác sang phải khi size của 1 label button tăng
         private void lblBUB_SizeChanged(object sender, EventArgs e)
         {
             if (lblBUB.Text == "BUB")
@@ -267,7 +280,9 @@ namespace SortVisualiser_v1
         {
 
         }
+        #endregion
 
+        #region Thực hiện hành động khi mở fChild
         //Thực hiện hành động bấm nút Menu
         private void button1_Click(object sender, EventArgs e)
         {
@@ -306,13 +321,15 @@ namespace SortVisualiser_v1
                 fdes.Visible=false;
             }
         }
+        #endregion
 
+        #region Thiết lập các nút nhấn Pause, Resume, Stop
         /// <summary>
         /// Điều chỉnh các picture box Resume, Stop, Arrow dưới dạng button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
+
         //Picture box sẽ sáng lên khi trỏ chuột vào
         private void picStop_MouseEnter(object sender, EventArgs e)
         {
@@ -349,6 +366,7 @@ namespace SortVisualiser_v1
                 isPause = true;
             }
         }
+        #endregion
 
 
         ///Khởi tạo các biến lưu trữ giá trị cho các form con
@@ -378,6 +396,179 @@ namespace SortVisualiser_v1
             fmenu.trbSpeed.Value = menu_Speed;
             fmenu.SpeedShowChange();
         }
+
+
+        private void fmenu_LanguageChange(object sender, EventArgs e)
+        {
+            fdes.DescriptionTextChange();
+        }
+
+
+        // Cac thong so mac dinh khi form duoc tao ra
+        private void fMain_Load(object sender, EventArgs e)
+        {
+
+            KhoiTaoMacDinh();
+            VeNut();
+            Mangchuasapxep();
+
+            culture = CultureInfo.CurrentCulture;
+            picStop.Enabled = false;
+            fmenu.trbSpeed.Maximum = ThamSo.ThoiGianDoi * 2 / 5;
+            fmenu.trbSpeed.Minimum = 0;
+            fmenu.trbSpeed.Value = ThamSo.ThoiGianDoi / 5;
+            fmenu.trbSpeed.LargeChange = 1;
+        }
+
+
+        private void KhoiTaoMacDinh()
+        {
+            bienArr = new Dictionary<string, Label>();
+            List<string> bienArrString = new List<string>() { "i", "j", "min", "right", "left", "k", "pos", "m", "vt_x", "gap", "a:", "b:", "c:" };
+            foreach (string item in bienArrString)
+            {
+                bienArr.Add(item, new Label());
+            }
+            foreach (var item in bienArr)
+            {
+
+                this.pnlMain.Controls.Add(item.Value);
+                item.Value.TextAlign = ContentAlignment.MiddleCenter;
+            }
+
+            bienArr["i"].Size = bienArr["j"].Size = new Size(ThamSo.KichCoNode, 15);
+
+            bienArr["min"].Size = new Size(60, 20);
+            bienArr["left"].Size = new Size(60, 20);
+            bienArr["right"].Size = new Size(60, 20);
+            bienArr["m"].Size = bienArr["k"].Size = new Size(40, 15);
+            bienArr["pos"].Size = new Size(60, 20);
+            bienArr["vt_x"].Size = new Size(60, 20);
+            bienArr["gap"].Size = new Size(60, 20);
+            bienArr["a:"].Size = bienArr["b:"].Size = bienArr["c:"].Size = new Size(40, 15);
+            bienArr["i"].ForeColor = bienArr["j"].ForeColor = bienArr["left"].ForeColor = bienArr["right"].ForeColor = bienArr["m"].ForeColor =
+            bienArr["pos"].ForeColor = bienArr["vt_x"].ForeColor = bienArr["gap"].ForeColor = bienArr["a:"].ForeColor = bienArr["b:"].ForeColor = bienArr["c:"].ForeColor = bienArr["k"].ForeColor = Color.White;
+
+            bienArr["i"].BorderStyle = bienArr["left"].BorderStyle = bienArr["j"].BorderStyle = bienArr["min"].BorderStyle =
+            bienArr["m"].BorderStyle = bienArr["right"].BorderStyle = bienArr["pos"].BorderStyle = bienArr["vt_x"].BorderStyle =
+            bienArr["gap"].BorderStyle = bienArr["k"].BorderStyle = BorderStyle.FixedSingle;
+
+            //interchangerdbtn.Checked = true;
+            //tangrdbtn.Checked = true;
+            isRunning = false;
+            fmenu.nudN.Value = 5;
+            SoLuongNode = 5;
+            //dungbtn.Enabled = huybnt.Enabled = false;
+            VeNut();
+            //DieuChinhControls(isRunning);
+
+            // setMauAllControl();
+        }
+
+
+
+
+        #region Khởi tạo Node
+        void VeNut()
+        {
+            DanhSachThamSo = new List<int>(SoLuongNode);
+            DanhSachNode = new List<ucNode>(SoLuongNode);
+            danhSachLabel = new List<Label>(SoLuongNode);
+
+            pnlMain.Controls.Clear(); // Xóa những btn cũ trên panel ở phiên làm việc
+            int temp = -SoLuongNode / 2;
+            int temp2 = ThamSo.KhoangCachCacNode / 2;
+            int temp3 = temp + 1;
+            Point newPoint;
+            for (int i = 0; i < SoLuongNode; i++)
+            {
+                Label tam = new Label() { Text = i.ToString() };
+                tam.Size = new Size(ThamSo.KichCoNode / 2, ThamSo.KichCoNode / 2);
+                tam.ForeColor = Color.Black;
+                //tam.Enabled = false;
+                ucNode btn = new ucNode(i);
+                int Value = rank.Next(2, 100);
+                btn.Value = Value;
+                btn.Text = Value.ToString();
+                btn.BackColor = ThamSo.mauNen;
+                if (SoLuongNode % 2 != 0)
+                {
+                    newPoint = new Point(pnlMain.Width / 2 - btn.Width / 2,
+                                         pnlMain.Height / 2 - btn.Height / 2);
+                    btn.Location = new Point(newPoint.X + temp * btn.Width + temp * ThamSo.KhoangCachCacNode, newPoint.Y);
+                    temp++;
+                    tam.Location = new Point(btn.Location.X + btn.Width / 2 - tam.Width / 2, btn.Location.Y + 150);
+                }
+                else
+                {
+                    if (i == SoLuongNode / 2)
+                    {
+                        temp2 = -temp2;
+                        temp3 = 0;
+                    }
+
+                    newPoint = new Point(pnlMain.Width / 2 - btn.Width / 2 + ThamSo.KichCoNode / 2, pnlMain.Height / 2 - btn.Height / 2);
+                    btn.Location = new Point(newPoint.X - temp2 + temp3 * ThamSo.KhoangCachCacNode + temp * btn.Width, newPoint.Y);// Node Xuất hiện giữa panel
+                    tam.Location = new Point(btn.Location.X + btn.Width / 2 - tam.Width / 2, btn.Location.Y + 150);
+                    temp++;
+                    temp3++;
+                }
+                pnlMain.Controls.Add(tam);
+                pnlMain.Controls.Add(btn);
+                DanhSachNode.Add(btn);
+                DanhSachThamSo.Add(Value);
+                danhSachLabel.Add(tam);
+                btn.Capnhat += Btn_Capnhat;
+            }
+            if (isRunning == false)
+            {
+                MangChuaSapXep = new List<int>(SoLuongNode);
+                for (int i = 0; i < SoLuongNode; i++)
+                {
+                    MangChuaSapXep.Add(DanhSachThamSo[i]);
+                }
+            }
+            Mangchuasapxep();
+            fmenu.btnStart.Enabled = true;
+
+        }
+
+        private void Mangchuasapxep()
+        {
+            chuasapxepPanel.Controls.Clear();
+            lbMangChuaSapXep.Location = new Point(chuasapxepPanel.Location.X + 12, 12);
+            chuasapxepPanel.Controls.Add(lbMangChuaSapXep);
+
+            string _string = "";
+            foreach (var item in DanhSachThamSo)
+            {
+                _string += item + "    ";
+            }
+            Label lbtext = new Label() { Text = _string };
+            lbtext.ForeColor = Color.Black;
+            lbtext.Size = new Size(600, 20);
+            lbtext.Font = new Font("Minecrosoft Sans", 10f);
+            lbtext.Location = new Point(lbMangChuaSapXep.Location.X + lbMangChuaSapXep.Width + 8, 13);
+            chuasapxepPanel.Controls.Add(lbtext);
+
+
+        }
+        #endregion
+
+        private void Btn_Capnhat(object sender, EventArgs e)
+        {
+            for (int i = 0; i < SoLuongNode; i++)
+            {
+                DanhSachThamSo[i] = DanhSachNode[i].Value;
+            }
+            Mangchuasapxep();
+        }
+
+        private void picStop_Click(object sender, EventArgs e)
+        {
+
+        }
+
         ///
 
     }

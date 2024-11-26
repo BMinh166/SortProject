@@ -55,8 +55,8 @@
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlDescription = new System.Windows.Forms.Panel();
             this.pnlMiddle = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.lblInitialArray = new System.Windows.Forms.Label();
+            this.chuasapxepPanel = new System.Windows.Forms.Panel();
+            this.lbMangChuaSapXep = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pnlTitle.SuspendLayout();
             this.pnlINT.SuspendLayout();
@@ -71,7 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResPau)).BeginInit();
             this.pnlMiddle.SuspendLayout();
-            this.panel9.SuspendLayout();
+            this.chuasapxepPanel.SuspendLayout();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -327,6 +327,7 @@
             this.picStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picStop.TabIndex = 2;
             this.picStop.TabStop = false;
+            this.picStop.Click += new System.EventHandler(this.picStop_Click);
             this.picStop.MouseEnter += new System.EventHandler(this.picStop_MouseEnter);
             this.picStop.MouseLeave += new System.EventHandler(this.picStop_MouseLeave);
             // 
@@ -374,7 +375,7 @@
             // pnlMiddle
             // 
             this.pnlMiddle.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pnlMiddle.Controls.Add(this.panel9);
+            this.pnlMiddle.Controls.Add(this.chuasapxepPanel);
             this.pnlMiddle.Controls.Add(this.panel8);
             this.pnlMiddle.Controls.Add(this.btnMenu);
             this.pnlMiddle.Controls.Add(this.pnlDescription);
@@ -384,24 +385,24 @@
             this.pnlMiddle.Size = new System.Drawing.Size(1262, 284);
             this.pnlMiddle.TabIndex = 7;
             // 
-            // panel9
+            // chuasapxepPanel
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel9.Controls.Add(this.lblInitialArray);
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1256, 52);
-            this.panel9.TabIndex = 10;
+            this.chuasapxepPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.chuasapxepPanel.Controls.Add(this.lbMangChuaSapXep);
+            this.chuasapxepPanel.Location = new System.Drawing.Point(0, 0);
+            this.chuasapxepPanel.Name = "chuasapxepPanel";
+            this.chuasapxepPanel.Size = new System.Drawing.Size(1256, 52);
+            this.chuasapxepPanel.TabIndex = 10;
             // 
-            // lblInitialArray
+            // lbMangChuaSapXep
             // 
-            this.lblInitialArray.AutoSize = true;
-            this.lblInitialArray.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInitialArray.Location = new System.Drawing.Point(12, 15);
-            this.lblInitialArray.Name = "lblInitialArray";
-            this.lblInitialArray.Size = new System.Drawing.Size(141, 23);
-            this.lblInitialArray.TabIndex = 0;
-            this.lblInitialArray.Text = "Mảng ban đầu:";
+            this.lbMangChuaSapXep.AutoSize = true;
+            this.lbMangChuaSapXep.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMangChuaSapXep.Location = new System.Drawing.Point(12, 15);
+            this.lbMangChuaSapXep.Name = "lbMangChuaSapXep";
+            this.lbMangChuaSapXep.Size = new System.Drawing.Size(141, 23);
+            this.lbMangChuaSapXep.TabIndex = 0;
+            this.lbMangChuaSapXep.Text = "Mảng ban đầu:";
             // 
             // panel8
             // 
@@ -426,6 +427,7 @@
             this.MaximizeBox = false;
             this.Name = "fMain";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.fMain_Load);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
             this.pnlINT.ResumeLayout(false);
@@ -447,8 +449,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResPau)).EndInit();
             this.pnlMiddle.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
+            this.chuasapxepPanel.ResumeLayout(false);
+            this.chuasapxepPanel.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -488,8 +490,8 @@
         private System.Windows.Forms.Panel pnlMER;
         private System.Windows.Forms.Panel pnlMiddle;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label lblInitialArray;
+        private System.Windows.Forms.Panel chuasapxepPanel;
+        private System.Windows.Forms.Label lbMangChuaSapXep;
         private System.Windows.Forms.PictureBox picStop;
         private System.Windows.Forms.PictureBox picArrow;
         private System.Windows.Forms.PictureBox picResPau;

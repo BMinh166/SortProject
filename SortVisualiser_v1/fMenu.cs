@@ -13,10 +13,16 @@ namespace SortVisualiser_v1
 {
     public partial class fMenu : Form
     {
+
+    
+
         public fMenu()
         {
             InitializeComponent();
         }
+
+        public event EventHandler<EventArgs> LanguageChange;
+       
 
         /// <summary>
         /// Thực thi chức năng của cái button ở tabpage Cài Đặt
@@ -43,11 +49,13 @@ namespace SortVisualiser_v1
             {
                 btnLanguage.Text = "English";
                 fMain.isEnglish = true;
+                LanguageChange?.Invoke(this, new EventArgs());
             }
             else
             {
                 btnLanguage.Text = "Tiếng Việt";
                 fMain.isEnglish = false;
+                LanguageChange?.Invoke(this, new EventArgs());
             }
         }
 
@@ -236,8 +244,17 @@ namespace SortVisualiser_v1
 
 
 
+
         #endregion
 
+        private void nudN_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
 
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

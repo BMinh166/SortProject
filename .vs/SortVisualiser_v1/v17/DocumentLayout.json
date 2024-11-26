@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|c:\\users\\tan lee\\downloads\\documents\\lttq\\project\\sortproject\\sortvisualiser_v1\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\fmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\fmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|c:\\users\\tan lee\\downloads\\documents\\lttq\\project\\sortproject\\sortvisualiser_v1\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|c:\\users\\tan lee\\downloads\\documents\\lttq\\project\\sortproject\\sortvisualiser_v1\\hienthithuattoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\hienthithuattoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\fmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\fmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\hienthithuattoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\hienthithuattoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\fdescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\fdescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\fmenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\fmenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\fdescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\fdescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\thamso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,10 +47,6 @@
       "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\ucnode.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\fmenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\fmenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\sortvisualiser_v1\\fdescription.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EC230B38-4ACD-416E-A853-907D81450FF0}|SortVisualiser_v1\\SortVisualiser_v1.csproj|solutionrelative:sortvisualiser_v1\\fdescription.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -62,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,62 +74,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HienThiThuatToan.cs",
-              "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\HienThiThuatToan.cs",
-              "RelativeDocumentMoniker": "SortVisualiser_v1\\HienThiThuatToan.cs",
-              "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\HienThiThuatToan.cs",
-              "RelativeToolTip": "SortVisualiser_v1\\HienThiThuatToan.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAwGIAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T04:17:45.211Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "fMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMain.cs",
               "RelativeDocumentMoniker": "SortVisualiser_v1\\fMain.cs",
               "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMain.cs [Design]",
               "RelativeToolTip": "SortVisualiser_v1\\fMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T05:25:13.356Z",
+              "WhenOpened": "2024-11-25T16:09:28.871Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\Program.cs",
-              "RelativeDocumentMoniker": "SortVisualiser_v1\\Program.cs",
-              "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\Program.cs",
-              "RelativeToolTip": "SortVisualiser_v1\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T15:10:36.553Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "fMenu.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMenu.cs",
               "RelativeDocumentMoniker": "SortVisualiser_v1\\fMenu.cs",
               "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMenu.cs [Design]",
               "RelativeToolTip": "SortVisualiser_v1\\fMenu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T05:25:13.354Z"
+              "WhenOpened": "2024-11-17T05:25:13.354Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "fMenu.cs",
               "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMenu.cs",
               "RelativeDocumentMoniker": "SortVisualiser_v1\\fMenu.cs",
               "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMenu.cs",
               "RelativeToolTip": "SortVisualiser_v1\\fMenu.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAADwvyIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAIwPgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T05:25:13.352Z"
+              "WhenOpened": "2024-11-17T05:25:13.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HienThiThuatToan.cs",
+              "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\HienThiThuatToan.cs",
+              "RelativeDocumentMoniker": "SortVisualiser_v1\\HienThiThuatToan.cs",
+              "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\HienThiThuatToan.cs",
+              "RelativeToolTip": "SortVisualiser_v1\\HienThiThuatToan.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAYwCUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T04:17:45.211Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -143,33 +130,48 @@
               "RelativeDocumentMoniker": "SortVisualiser_v1\\fMain.cs",
               "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMain.cs",
               "RelativeToolTip": "SortVisualiser_v1\\fMain.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAYwCEAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAH4BAAAAAAAAAAAnwMEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T05:25:13.355Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "fMenu.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMenu.Designer.cs",
+              "RelativeDocumentMoniker": "SortVisualiser_v1\\fMenu.Designer.cs",
+              "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMenu.Designer.cs",
+              "RelativeToolTip": "SortVisualiser_v1\\fMenu.Designer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAEcCAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T05:25:13.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "fDescription.cs",
               "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fDescription.cs",
               "RelativeDocumentMoniker": "SortVisualiser_v1\\fDescription.cs",
               "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fDescription.cs",
               "RelativeToolTip": "SortVisualiser_v1\\fDescription.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T13:51:27.938Z"
+              "WhenOpened": "2024-11-19T13:51:27.938Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "fDescription.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fDescription.cs",
-              "RelativeDocumentMoniker": "SortVisualiser_v1\\fDescription.cs",
-              "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fDescription.cs [Design]",
-              "RelativeToolTip": "SortVisualiser_v1\\fDescription.cs [Design]",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\Program.cs",
+              "RelativeDocumentMoniker": "SortVisualiser_v1\\Program.cs",
+              "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\Program.cs",
+              "RelativeToolTip": "SortVisualiser_v1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T05:25:13.349Z"
+              "WhenOpened": "2024-11-17T15:10:36.553Z"
             },
             {
               "$type": "Document",
@@ -208,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "fDescription.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fDescription.Designer.cs",
               "RelativeDocumentMoniker": "SortVisualiser_v1\\fDescription.Designer.cs",
@@ -216,19 +218,8 @@
               "RelativeToolTip": "SortVisualiser_v1\\fDescription.Designer.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAAwEAAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T05:25:13.326Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "fMenu.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMenu.Designer.cs",
-              "RelativeDocumentMoniker": "SortVisualiser_v1\\fMenu.Designer.cs",
-              "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMenu.Designer.cs",
-              "RelativeToolTip": "SortVisualiser_v1\\fMenu.Designer.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAwDQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T05:25:13.352Z"
+              "WhenOpened": "2024-11-17T05:25:13.326Z",
+              "EditorCaption": ""
             }
           ]
         }
