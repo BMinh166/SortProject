@@ -37,7 +37,7 @@ namespace SortVisualiser_v1
         public int loaiThuatToan;
         HienThiThuatToan HienThuattoan = new HienThiThuatToan();
         private bool isRunning;
-        private bool isTang;
+        //private bool isTang;
         public static bool isDebug = false;
         private int SoLuongNode;
         public List<int> DanhSachThamSo;
@@ -454,8 +454,8 @@ namespace SortVisualiser_v1
             bienArr["m"].BorderStyle = bienArr["right"].BorderStyle = bienArr["pos"].BorderStyle = bienArr["vt_x"].BorderStyle =
             bienArr["gap"].BorderStyle = bienArr["k"].BorderStyle = BorderStyle.FixedSingle;
 
-            //interchangerdbtn.Checked = true;
-            //tangrdbtn.Checked = true;
+            //BUBClickAction();
+            //isIncrease = true;
             isRunning = false;
             fmenu.nudN.Value = 5;
             SoLuongNode = 5;
