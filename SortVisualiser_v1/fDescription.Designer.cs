@@ -84,6 +84,7 @@
             // 
             rtbAlgorithm.Location = new System.Drawing.Point(0, 0);
             rtbAlgorithm.Name = "rtbAlgorithm";
+            rtbAlgorithm.ReadOnly = true;
             rtbAlgorithm.Size = new System.Drawing.Size(576, 294);
             rtbAlgorithm.TabIndex = 0;
             rtbAlgorithm.Text = "";

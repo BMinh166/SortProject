@@ -49,15 +49,15 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnDescription = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.picStop = new System.Windows.Forms.PictureBox();
+            this.picArrow = new System.Windows.Forms.PictureBox();
+            this.picResPau = new System.Windows.Forms.PictureBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pnlDescription = new System.Windows.Forms.Panel();
             this.pnlMiddle = new System.Windows.Forms.Panel();
             this.chuasapxepPanel = new System.Windows.Forms.Panel();
             this.lbMangChuaSapXep = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.picStop = new System.Windows.Forms.PictureBox();
-            this.picArrow = new System.Windows.Forms.PictureBox();
-            this.picResPau = new System.Windows.Forms.PictureBox();
             this.pnlTitle.SuspendLayout();
             this.pnlINT.SuspendLayout();
             this.pnlBIN.SuspendLayout();
@@ -67,12 +67,12 @@
             this.pnlMER.SuspendLayout();
             this.pnlQUI.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.pnlMiddle.SuspendLayout();
-            this.chuasapxepPanel.SuspendLayout();
-            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArrow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResPau)).BeginInit();
+            this.pnlMiddle.SuspendLayout();
+            this.chuasapxepPanel.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitle
@@ -317,6 +317,45 @@
             this.panel10.Size = new System.Drawing.Size(1250, 50);
             this.panel10.TabIndex = 6;
             // 
+            // picStop
+            // 
+            this.picStop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picStop.Image = global::SortVisualiser_v1.Properties.Resources.Stop_Off;
+            this.picStop.Location = new System.Drawing.Point(560, 3);
+            this.picStop.Name = "picStop";
+            this.picStop.Size = new System.Drawing.Size(45, 45);
+            this.picStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picStop.TabIndex = 2;
+            this.picStop.TabStop = false;
+            this.picStop.Click += new System.EventHandler(this.picStop_Click);
+            this.picStop.MouseEnter += new System.EventHandler(this.picStop_MouseEnter);
+            this.picStop.MouseLeave += new System.EventHandler(this.picStop_MouseLeave);
+            // 
+            // picArrow
+            // 
+            this.picArrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picArrow.Image = global::SortVisualiser_v1.Properties.Resources.Arrow_Off;
+            this.picArrow.Location = new System.Drawing.Point(672, 7);
+            this.picArrow.Name = "picArrow";
+            this.picArrow.Size = new System.Drawing.Size(38, 38);
+            this.picArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picArrow.TabIndex = 1;
+            this.picArrow.TabStop = false;
+            this.picArrow.MouseEnter += new System.EventHandler(this.picArrow_MouseEnter);
+            this.picArrow.MouseLeave += new System.EventHandler(this.picArrow_MouseLeave);
+            // 
+            // picResPau
+            // 
+            this.picResPau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picResPau.Image = global::SortVisualiser_v1.Properties.Resources.Pause;
+            this.picResPau.Location = new System.Drawing.Point(611, 0);
+            this.picResPau.Name = "picResPau";
+            this.picResPau.Size = new System.Drawing.Size(53, 50);
+            this.picResPau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picResPau.TabIndex = 0;
+            this.picResPau.TabStop = false;
+            this.picResPau.Click += new System.EventHandler(this.picResPau_Click);
+            // 
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -374,45 +413,6 @@
             this.panel8.Size = new System.Drawing.Size(46, 331);
             this.panel8.TabIndex = 9;
             // 
-            // picStop
-            // 
-            this.picStop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picStop.Image = global::SortVisualiser_v1.Properties.Resources.Stop_Off;
-            this.picStop.Location = new System.Drawing.Point(560, 3);
-            this.picStop.Name = "picStop";
-            this.picStop.Size = new System.Drawing.Size(45, 45);
-            this.picStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picStop.TabIndex = 2;
-            this.picStop.TabStop = false;
-            this.picStop.Click += new System.EventHandler(this.picStop_Click);
-            this.picStop.MouseEnter += new System.EventHandler(this.picStop_MouseEnter);
-            this.picStop.MouseLeave += new System.EventHandler(this.picStop_MouseLeave);
-            // 
-            // picArrow
-            // 
-            this.picArrow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picArrow.Image = global::SortVisualiser_v1.Properties.Resources.Arrow_Off;
-            this.picArrow.Location = new System.Drawing.Point(672, 7);
-            this.picArrow.Name = "picArrow";
-            this.picArrow.Size = new System.Drawing.Size(38, 38);
-            this.picArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picArrow.TabIndex = 1;
-            this.picArrow.TabStop = false;
-            this.picArrow.MouseEnter += new System.EventHandler(this.picArrow_MouseEnter);
-            this.picArrow.MouseLeave += new System.EventHandler(this.picArrow_MouseLeave);
-            // 
-            // picResPau
-            // 
-            this.picResPau.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picResPau.Image = global::SortVisualiser_v1.Properties.Resources.Pause;
-            this.picResPau.Location = new System.Drawing.Point(611, 0);
-            this.picResPau.Name = "picResPau";
-            this.picResPau.Size = new System.Drawing.Size(53, 50);
-            this.picResPau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picResPau.TabIndex = 0;
-            this.picResPau.TabStop = false;
-            this.picResPau.Click += new System.EventHandler(this.picResPau_Click);
-            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,13 +446,13 @@
             this.pnlQUI.ResumeLayout(false);
             this.pnlQUI.PerformLayout();
             this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picStop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picArrow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picResPau)).EndInit();
             this.pnlMiddle.ResumeLayout(false);
             this.chuasapxepPanel.ResumeLayout(false);
             this.chuasapxepPanel.PerformLayout();
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picStop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picArrow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picResPau)).EndInit();
             this.ResumeLayout(false);
 
         }

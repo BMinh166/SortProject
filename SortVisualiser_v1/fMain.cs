@@ -567,7 +567,7 @@ namespace SortVisualiser_v1
 
         private void picStop_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         ///
