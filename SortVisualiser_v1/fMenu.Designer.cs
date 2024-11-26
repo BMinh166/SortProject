@@ -116,7 +116,7 @@
             this.nudN.Size = new System.Drawing.Size(87, 27);
             this.nudN.TabIndex = 3;
             this.nudN.Value = new decimal(new int[] {
-            2,
+            10,
             0,
             0,
             0});
