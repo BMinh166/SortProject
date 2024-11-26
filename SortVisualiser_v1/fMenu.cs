@@ -14,12 +14,13 @@ namespace SortVisualiser_v1
     public partial class fMenu : Form
     {
 
-    
+        fManually fman;
 
         public fMenu()
         {
             InitializeComponent();
         }
+
 
         public event EventHandler<EventArgs> LanguageChange;
        
@@ -41,6 +42,12 @@ namespace SortVisualiser_v1
                 btnIncOrDes.Text = "Tăng";
                 fMain.isIncrease = true;
             }
+        }
+
+        private void btnHand_Click(object sender, EventArgs e)
+        {
+                fman = new fManually();
+                fman.ShowDialog();
         }
 
         private void btnLanguage_Click(object sender, EventArgs e)
@@ -256,5 +263,7 @@ namespace SortVisualiser_v1
         {
 
         }
+
+
     }
 }

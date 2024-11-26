@@ -52,6 +52,12 @@
     <Compile Include="fDescription.Designer.cs">
       <DependentUpon>fDescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="fManually.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fManually.Designer.cs">
+      <DependentUpon>fManually.cs</DependentUpon>
+    </Compile>
     <Compile Include="fMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <EmbeddedResource Include="fDescription.resx">
       <DependentUpon>fDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fManually.resx">
+      <DependentUpon>fManually.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMenu.resx">
       <DependentUpon>fMenu.cs</DependentUpon>

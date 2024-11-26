@@ -30,10 +30,12 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpDescription = new System.Windows.Forms.TabPage();
-            this.tpAlgorithm = new System.Windows.Forms.TabPage();
             this.tbDescription = new System.Windows.Forms.TextBox();
+            this.tpAlgorithm = new System.Windows.Forms.TabPage();
+            rtbAlgorithm = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tpDescription.SuspendLayout();
+            this.tpAlgorithm.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -44,7 +46,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(584, 236);
+            this.tabControl1.Size = new System.Drawing.Size(584, 332);
             this.tabControl1.TabIndex = 0;
             // 
             // tpDescription
@@ -54,19 +56,9 @@
             this.tpDescription.Location = new System.Drawing.Point(4, 28);
             this.tpDescription.Name = "tpDescription";
             this.tpDescription.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDescription.Size = new System.Drawing.Size(576, 204);
+            this.tpDescription.Size = new System.Drawing.Size(576, 300);
             this.tpDescription.TabIndex = 0;
             this.tpDescription.Text = "Mô tả";
-            // 
-            // tpAlgorithm
-            // 
-            this.tpAlgorithm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.tpAlgorithm.Location = new System.Drawing.Point(4, 28);
-            this.tpAlgorithm.Name = "tpAlgorithm";
-            this.tpAlgorithm.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAlgorithm.Size = new System.Drawing.Size(576, 204);
-            this.tpAlgorithm.TabIndex = 1;
-            this.tpAlgorithm.Text = "Giải thuật";
             // 
             // tbDescription
             // 
@@ -74,15 +66,34 @@
             this.tbDescription.Location = new System.Drawing.Point(0, 0);
             this.tbDescription.Multiline = true;
             this.tbDescription.Name = "tbDescription";
-            this.tbDescription.Size = new System.Drawing.Size(576, 208);
+            this.tbDescription.Size = new System.Drawing.Size(576, 297);
             this.tbDescription.TabIndex = 0;
+            // 
+            // tpAlgorithm
+            // 
+            this.tpAlgorithm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tpAlgorithm.Controls.Add(rtbAlgorithm);
+            this.tpAlgorithm.Location = new System.Drawing.Point(4, 28);
+            this.tpAlgorithm.Name = "tpAlgorithm";
+            this.tpAlgorithm.Padding = new System.Windows.Forms.Padding(3);
+            this.tpAlgorithm.Size = new System.Drawing.Size(576, 300);
+            this.tpAlgorithm.TabIndex = 1;
+            this.tpAlgorithm.Text = "Giải thuật";
+            // 
+            // rtbAlgorithm
+            // 
+            rtbAlgorithm.Location = new System.Drawing.Point(0, 0);
+            rtbAlgorithm.Name = "rtbAlgorithm";
+            rtbAlgorithm.Size = new System.Drawing.Size(576, 294);
+            rtbAlgorithm.TabIndex = 0;
+            rtbAlgorithm.Text = "";
             // 
             // fDescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(580, 232);
+            this.ClientSize = new System.Drawing.Size(582, 331);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fDescription";
@@ -90,6 +101,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tpDescription.ResumeLayout(false);
             this.tpDescription.PerformLayout();
+            this.tpAlgorithm.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -100,5 +112,6 @@
         private System.Windows.Forms.TabPage tpDescription;
         private System.Windows.Forms.TabPage tpAlgorithm;
         private System.Windows.Forms.TextBox tbDescription;
+        public static System.Windows.Forms.RichTextBox rtbAlgorithm;
     }
 }
