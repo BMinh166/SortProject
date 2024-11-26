@@ -25,3 +25,4 @@ C:\Users\Tan Lee\Downloads\Documents\LTTQ\Project\SortProject\SortVisualiser_v1\
 C:\Users\Tan Lee\Downloads\Documents\LTTQ\Project\SortProject\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.exe
 C:\Users\Tan Lee\Downloads\Documents\LTTQ\Project\SortProject\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.pdb
 D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fManually.resources
+C:\Users\Tan Lee\Downloads\Documents\LTTQ\Project\SortProject\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fManually.resources
