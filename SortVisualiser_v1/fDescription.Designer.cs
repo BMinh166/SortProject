@@ -82,11 +82,20 @@
             // 
             // rtbAlgorithm
             // 
+<<<<<<< HEAD
             this.rtbAlgorithm.Location = new System.Drawing.Point(0, 0);
             this.rtbAlgorithm.Name = "rtbAlgorithm";
             this.rtbAlgorithm.Size = new System.Drawing.Size(576, 294);
             this.rtbAlgorithm.TabIndex = 0;
             this.rtbAlgorithm.Text = "";
+=======
+            rtbAlgorithm.Location = new System.Drawing.Point(0, 0);
+            rtbAlgorithm.Name = "rtbAlgorithm";
+            rtbAlgorithm.ReadOnly = true;
+            rtbAlgorithm.Size = new System.Drawing.Size(576, 294);
+            rtbAlgorithm.TabIndex = 0;
+            rtbAlgorithm.Text = "";
+>>>>>>> 3f73371a523ff72a4ac7717f5a94c05ec0858a78
             // 
             // fDescription
             // 
