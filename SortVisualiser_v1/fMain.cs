@@ -23,6 +23,7 @@ namespace SortVisualiser_v1
         {
             fdes.Visible = false;
             fmenu.Visible = false;
+            EventRegister();
             InitializeComponent();
             BUBClickAction();
         }
@@ -63,6 +64,12 @@ namespace SortVisualiser_v1
         //thread điều khiển quá trình sắp xếp
         private Thread sapxepThread;
         private Dictionary<string, Label> bienArr;
+
+        //Hàm đăng kí sự kiện
+        void EventRegister()
+        {
+            fmenu.LanguageChange += fmenu_LanguageChange;//Đăng kí sự kiện LanguageChange của fmenu
+        }
 
 
 
@@ -165,7 +172,7 @@ namespace SortVisualiser_v1
         }
         #endregion
 
-        /// Chỉnh các label button về mặc định 
+        #region Chỉnh các label button về mặc định 
         void lblButtonDefault()
         {
             //Các label button chuyển về text mặc định
@@ -218,8 +225,9 @@ namespace SortVisualiser_v1
             pnlMER.Location = new Point(43, 0);
             pnlQUI.Location = new Point(48, 0);
         }
+        #endregion
 
-        //Đẩy các label button khác sang phải khi size của 1 label button tăng
+        #region Đẩy các label button khác sang phải khi size của 1 label button tăng
         private void lblBUB_SizeChanged(object sender, EventArgs e)
         {
             if (lblBUB.Text == "BUB")
@@ -273,7 +281,9 @@ namespace SortVisualiser_v1
         {
 
         }
+        #endregion
 
+        #region Thực hiện hành động khi mở fChild
         //Thực hiện hành động bấm nút Menu
         private void button1_Click(object sender, EventArgs e)
         {
@@ -312,13 +322,15 @@ namespace SortVisualiser_v1
                 fdes.Visible=false;
             }
         }
+        #endregion
 
+        #region Thiết lập các nút nhấn Pause, Resume, Stop
         /// <summary>
         /// Điều chỉnh các picture box Resume, Stop, Arrow dưới dạng button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
+
         //Picture box sẽ sáng lên khi trỏ chuột vào
         private void picStop_MouseEnter(object sender, EventArgs e)
         {
@@ -355,6 +367,7 @@ namespace SortVisualiser_v1
                 isPause = true;
             }
         }
+        #endregion
 
 
         ///Khởi tạo các biến lưu trữ giá trị cho các form con
@@ -385,6 +398,12 @@ namespace SortVisualiser_v1
             fmenu.SpeedShowChange();
         }
 
+        //sự kiện kích hoạt khi button ngôn ngữ của fmenu thay đổi
+        private void fmenu_LanguageChange(object sender, EventArgs e)
+        {
+            fdes.DescriptionTextChange();
+        }
+
 
         // Cac thong so mac dinh khi form duoc tao ra
         private void fMain_Load(object sender, EventArgs e)
@@ -396,9 +415,9 @@ namespace SortVisualiser_v1
 
             culture = CultureInfo.CurrentCulture;
             picStop.Enabled = false;
-            fmenu.trbSpeed.Maximum = ThamSo.ThoiGianDoi * 2;
+            fmenu.trbSpeed.Maximum = ThamSo.ThoiGianDoi * 2 / 5;
             fmenu.trbSpeed.Minimum = 0;
-            fmenu.trbSpeed.Value = ThamSo.ThoiGianDoi;
+            fmenu.trbSpeed.Value = ThamSo.ThoiGianDoi / 5;
             fmenu.trbSpeed.LargeChange = 1;
         }
 
@@ -466,7 +485,7 @@ namespace SortVisualiser_v1
             {
                 Label tam = new Label() { Text = i.ToString() };
                 tam.Size = new Size(ThamSo.KichCoNode / 2, ThamSo.KichCoNode / 2);
-                tam.ForeColor = Color.White;
+                tam.ForeColor = Color.Black;
                 //tam.Enabled = false;
                 ucNode btn = new ucNode(i);
                 int Value = rank.Next(2, 100);
@@ -518,7 +537,7 @@ namespace SortVisualiser_v1
         private void Mangchuasapxep()
         {
             chuasapxepPanel.Controls.Clear();
-            lbMangChuaSapXep.Location = new Point(chuasapxepPanel.Location.X, 10);
+            lbMangChuaSapXep.Location = new Point(chuasapxepPanel.Location.X + 12, 12);
             chuasapxepPanel.Controls.Add(lbMangChuaSapXep);
 
             string _string = "";
@@ -527,9 +546,10 @@ namespace SortVisualiser_v1
                 _string += item + "    ";
             }
             Label lbtext = new Label() { Text = _string };
-            lbtext.ForeColor = Color.White;
+            lbtext.ForeColor = Color.Black;
             lbtext.Size = new Size(600, 20);
-            lbtext.Location = new Point(lbMangChuaSapXep.Location.X + lbMangChuaSapXep.Width + 10, 12);
+            lbtext.Font = new Font("Minecrosoft Sans", 10f);
+            lbtext.Location = new Point(lbMangChuaSapXep.Location.X + lbMangChuaSapXep.Width + 8, 13);
             chuasapxepPanel.Controls.Add(lbtext);
 
 

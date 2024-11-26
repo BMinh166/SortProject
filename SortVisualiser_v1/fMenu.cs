@@ -21,6 +21,7 @@ namespace SortVisualiser_v1
             InitializeComponent();
         }
 
+        public event EventHandler<EventArgs> LanguageChange;
        
 
         /// <summary>
@@ -48,11 +49,13 @@ namespace SortVisualiser_v1
             {
                 btnLanguage.Text = "English";
                 fMain.isEnglish = true;
+                LanguageChange?.Invoke(this, new EventArgs());
             }
             else
             {
                 btnLanguage.Text = "Tiếng Việt";
                 fMain.isEnglish = false;
+                LanguageChange?.Invoke(this, new EventArgs());
             }
         }
 
