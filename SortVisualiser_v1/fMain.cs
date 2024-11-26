@@ -65,9 +65,10 @@ namespace SortVisualiser_v1
         private Thread sapxepThread;
         private Dictionary<string, Label> bienArr;
 
+        //Hàm đăng kí sự kiện
         void EventRegister()
         {
-            fmenu.LanguageChange += fmenu_LanguageChange;
+            fmenu.LanguageChange += fmenu_LanguageChange;//Đăng kí sự kiện LanguageChange của fmenu
         }
 
 
@@ -397,7 +398,7 @@ namespace SortVisualiser_v1
             fmenu.SpeedShowChange();
         }
 
-
+        //sự kiện kích hoạt khi button ngôn ngữ của fmenu thay đổi
         private void fmenu_LanguageChange(object sender, EventArgs e)
         {
             fdes.DescriptionTextChange();
