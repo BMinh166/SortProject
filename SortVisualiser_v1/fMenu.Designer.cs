@@ -88,6 +88,7 @@
             this.btnRandom.TabIndex = 0;
             this.btnRandom.Text = "Ngẫu nhiên";
             this.btnRandom.UseVisualStyleBackColor = false;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
             // panel1
             // 
@@ -210,6 +211,7 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Xóa mảng";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // tpSetting
             // 

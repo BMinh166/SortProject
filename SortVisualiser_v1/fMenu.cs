@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,11 +20,15 @@ namespace SortVisualiser_v1
         public fMenu()
         {
             InitializeComponent();
+            
         }
 
 
         public event EventHandler<EventArgs> LanguageChange;
-       
+        public event EventHandler DataCleared;
+        public event EventHandler Venut;
+
+
 
         /// <summary>
         /// Thực thi chức năng của cái button ở tabpage Cài Đặt
@@ -264,6 +269,17 @@ namespace SortVisualiser_v1
 
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DataCleared?.Invoke(this, EventArgs.Empty);
+            btnStart.Enabled = false;
+        }
 
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            fMain.SoLuongNode = fMain.rank.Next(2, ThamSo.SoluongNodeLonNhat);
+            Venut?.Invoke(this, EventArgs.Empty);
+            nudN.Value = fMain.SoLuongNode;
+        }
     }
 }

@@ -24,6 +24,8 @@ namespace SortVisualiser_v1
             fdes.Visible = false;
             fmenu.Visible = false;
             EventRegister();
+            fmenu.DataCleared += fmenu_DataCleared; 
+            fmenu.Venut += fmenu_Venut;
             InitializeComponent();
             BUBClickAction();
         }
@@ -37,15 +39,15 @@ namespace SortVisualiser_v1
         public int loaiThuatToan;
         HienThiThuatToan HienThuattoan = new HienThiThuatToan();
         private bool isRunning;
-        //private bool isTang;
+        private bool isTang;
         public static bool isDebug = false;
-        private int SoLuongNode;
+        public static int SoLuongNode; //Đã chuyển từ private sang static
         public List<int> DanhSachThamSo;
         public List<ucNode> DanhSachNode;
         public List<Label> danhSachLabel;
 
         public List<int> MangChuaSapXep;
-        Random rank = new Random();
+        public static Random rank = new Random(); //Đã chuyển từ private sang static
 
 
         private int Phut = 0;
@@ -71,6 +73,19 @@ namespace SortVisualiser_v1
             fmenu.LanguageChange += fmenu_LanguageChange;//Đăng kí sự kiện LanguageChange của fmenu
         }
 
+        public void fmenu_DataCleared(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
+        {
+            chuasapxepPanel.Controls.Clear();
+            pnlMain.Controls.Clear();
+            DanhSachNode.Clear();
+            DanhSachThamSo.Clear();
+           
+        }
+
+        public void fmenu_Venut(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
+        {
+            VeNut();
+        }
 
 
         #endregion
@@ -555,6 +570,37 @@ namespace SortVisualiser_v1
 
         }
         #endregion
+
+
+        /*private void DieuChinhControls(bool isRunning)
+        {
+            //  batdaubtn.Focus();
+            if (isRunning == true)
+            {
+                foreach (ucNode item in DanhSachNode)
+                {
+                    item.Enabled = false;
+                }
+                fmenu.btnStart.Enabled = false;
+                xoamangbtn.Enabled = false;
+                picResPau.Enabled = picStop.Enabled = true;
+                daydangxepListbox.Items.Clear();
+                daydangxepListbox.BringToFront();
+                tabctlytuong.SelectedIndex = 1;
+                thuattoanpanel.Enabled = khoitaopanel.Enabled = ngonngupanel.Enabled = Loaisapxeppanel.Enabled = false;
+            }
+            else
+            {
+                foreach (ucNode item in DanhSachNode)
+                {
+                    item.Enabled = true;
+                }
+                fmenu.btnDelete.Enabled = true;
+                picResPau.Enabled = picStop.Enabled = false;
+                thuattoanpanel.Enabled = khoitaopanel.Enabled = ngonngupanel.Enabled = fmenu.btnStart.Enabled = Loaisapxeppanel.Enabled = true;
+
+            }
+        }*/
 
         private void Btn_Capnhat(object sender, EventArgs e)
         {
