@@ -254,7 +254,48 @@ namespace SortVisualiser_v1
             }
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int kichCoNode, khoanCachGiuaCacNode;
+            //soLuongPhanTuMacDinh;
+            bool rs = int.TryParse(btnNodeSizeChange.Text , out kichCoNode);
+            if (rs = false || (kichCoNode < 30 || kichCoNode > 50))
+            {
+                MessageBox.Show("Kích cỡ Node phải là số nguyên và thuộc khoản từ 30 đến 50!", "Giá trị công hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            rs = int.TryParse(btnNodeSpace.Text, out khoanCachGiuaCacNode);
+            if (rs = false || (khoanCachGiuaCacNode < 1 || khoanCachGiuaCacNode > 100))
+            {
+                MessageBox.Show("Khoảng cách giữa các Node phải là số nguyên và thuộc khoản từ 1 đến 100!", "Giá trị công hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            /*rs = int.TryParse(txbSoLuongPhanTuMacDinh.Text, out soLuongPhanTuMacDinh);
+            if (rs = false || (soLuongPhanTuMacDinh < 1 || soLuongPhanTuMacDinh > ThamSo.SoluongNodeLonNhat))
+            {
+                MessageBox.Show("Số lượng phần tử mặc định phải là số nguyên và thuộc khoản từ 1 đến " + ThamSo.SoluongNodeLonNhat + " !", "Giá trị công hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }*/
+
+
+            Properties.Settings.Default.kichCoNode = ThamSo.KichCoNode = kichCoNode;
+            Properties.Settings.Default.khoangCachGiuaCacNode = ThamSo.KhoangCachCacNode = khoanCachGiuaCacNode;
+
+            Properties.Settings.Default.mauNenNode = ThamSo.mauNen = btnNodeBackColor.BackColor;
+            Properties.Settings.Default.mauNodeHoanTatSapXep = ThamSo.mauNodeHTSX = btnNodeSortedColor.BackColor;
+            Properties.Settings.Default.mauNodeDangSapXep = ThamSo.mauNodeDangSX = btnNodeChoosingColor.BackColor;
+
+            //  Properties.Settings.Default.labelFont = txbLabelFont.Font = labelFontDialog.Font;
+            // Properties.Settings.Default.chuFont = txbChuFont.Font = chuFontDialog.Font;
+
+            //Properties.Settings.Default.soLuongPhanTuMacDinh = soLuongPhanTuMacDinh;
+
+
+            Properties.Settings.Default.Save();
+            this.Close();
+        }
 
 
         #endregion
@@ -281,5 +322,7 @@ namespace SortVisualiser_v1
             Venut?.Invoke(this, EventArgs.Empty);
             nudN.Value = fMain.SoLuongNode;
         }
+
+        
     }
 }
