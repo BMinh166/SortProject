@@ -27,7 +27,7 @@ namespace SortVisualiser_v1
         public event EventHandler<EventArgs> LanguageChange;
         public event EventHandler DataCleared;
         public event EventHandler Venut;
-
+        public event EventHandler MangChuaSapXep;
 
 
         /// <summary>
@@ -53,6 +53,21 @@ namespace SortVisualiser_v1
         {
                 fman = new fManually();
                 fman.ShowDialog();
+                if (fman.isNhap == true)
+                {
+                    string temp = "";
+                    fMain.SoLuongNode = fman.DayInput.Count();
+                    nudN.Value = fMain.SoLuongNode;
+                    Venut?.Invoke(this, EventArgs.Empty);
+                for (int i = 0; i < fMain.SoLuongNode; i++)
+                    {
+                        // DanhSachNode[i].Value = input.DayInput[i];
+                        fMain.DanhSachNode[i].Text = fman.DayInput[i].ToString();
+                        fMain.DanhSachThamSo[i] = fman.DayInput[i];
+
+                    }
+                MangChuaSapXep?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         private void btnLanguage_Click(object sender, EventArgs e)

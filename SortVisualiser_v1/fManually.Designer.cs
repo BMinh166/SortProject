@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxdayso = new System.Windows.Forms.TextBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnEsc = new System.Windows.Forms.Button();
@@ -37,14 +37,15 @@
             this.lblWrong = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbxdayso
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(75, 152);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(441, 28);
-            this.textBox1.TabIndex = 0;
+            this.tbxdayso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbxdayso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxdayso.Location = new System.Drawing.Point(75, 152);
+            this.tbxdayso.Name = "tbxdayso";
+            this.tbxdayso.Size = new System.Drawing.Size(441, 28);
+            this.tbxdayso.TabIndex = 0;
+            this.tbxdayso.TextChanged += new System.EventHandler(this.tbxdayso_TextChanged);
             // 
             // btnOk
             // 
@@ -55,6 +56,7 @@
             this.btnOk.TabIndex = 1;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // lblTitle
             // 
@@ -125,11 +127,12 @@
             this.Controls.Add(this.btnEsc);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxdayso);
             this.MaximizeBox = false;
             this.Name = "fManually";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Input";
+            this.Load += new System.EventHandler(this.fManually_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,7 +140,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxdayso;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnEsc;

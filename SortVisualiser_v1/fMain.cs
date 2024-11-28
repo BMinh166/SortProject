@@ -26,6 +26,7 @@ namespace SortVisualiser_v1
             EventRegister();
             fmenu.DataCleared += fmenu_DataCleared; 
             fmenu.Venut += fmenu_Venut;
+            fmenu.MangChuaSapXep += fmenu_MangChuaSapXep;
             InitializeComponent();
             BUBClickAction();
         }
@@ -42,8 +43,8 @@ namespace SortVisualiser_v1
         private bool isTang;
         public static bool isDebug = false;
         public static int SoLuongNode; //Đã chuyển từ private sang static
-        public List<int> DanhSachThamSo;
-        public List<ucNode> DanhSachNode;
+        public static List<int> DanhSachThamSo; //Đã chuyển từ private sang static
+        public static List<ucNode> DanhSachNode;    //Đã chuyển từ private sang static
         public List<Label> danhSachLabel;
 
         public List<int> MangChuaSapXep;
@@ -87,6 +88,10 @@ namespace SortVisualiser_v1
             VeNut();
         }
 
+        public void fmenu_MangChuaSapXep(object sender, EventArgs e) //Đăng ký sự kiện của fmenu
+        {
+            Mangchuasapxep();
+        }
 
         #endregion
 
