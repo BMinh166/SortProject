@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.pnlINT = new System.Windows.Forms.Panel();
             this.pnlBIN = new System.Windows.Forms.Panel();
@@ -49,6 +50,8 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnDescription = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.picStop = new System.Windows.Forms.PictureBox();
             this.picArrow = new System.Windows.Forms.PictureBox();
             this.picResPau = new System.Windows.Forms.PictureBox();
@@ -58,6 +61,7 @@
             this.chuasapxepPanel = new System.Windows.Forms.Panel();
             this.lbMangChuaSapXep = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlTitle.SuspendLayout();
             this.pnlINT.SuspendLayout();
             this.pnlBIN.SuspendLayout();
@@ -266,6 +270,7 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1250, 376);
             this.pnlMain.TabIndex = 3;
+            this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
             // 
             // label1
             // 
@@ -308,6 +313,8 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel10.Controls.Add(this.button1);
+            this.panel10.Controls.Add(this.label11);
             this.panel10.Controls.Add(this.picStop);
             this.panel10.Controls.Add(this.picArrow);
             this.panel10.Controls.Add(this.picResPau);
@@ -316,6 +323,28 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1250, 50);
             this.panel10.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(97, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Silver;
+            this.label11.Location = new System.Drawing.Point(13, 20);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 21);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "00:00";
             // 
             // picStop
             // 
@@ -413,6 +442,10 @@
             this.panel8.Size = new System.Drawing.Size(46, 331);
             this.panel8.TabIndex = 9;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,6 +479,7 @@
             this.pnlQUI.ResumeLayout(false);
             this.pnlQUI.PerformLayout();
             this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picStop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArrow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResPau)).EndInit();
@@ -496,6 +530,9 @@
         private System.Windows.Forms.PictureBox picStop;
         private System.Windows.Forms.PictureBox picArrow;
         private System.Windows.Forms.PictureBox picResPau;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

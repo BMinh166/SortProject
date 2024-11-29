@@ -331,6 +331,7 @@ namespace SortVisualiser_v1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            DataCleared?.Invoke(this, EventArgs.Empty);
             int kichCoNode, khoanCachGiuaCacNode;
             //soLuongPhanTuMacDinh;
             bool rs = int.TryParse(btnNodeSizeChange.Text , out kichCoNode);

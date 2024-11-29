@@ -29,7 +29,7 @@ namespace SortVisualiser_v1
         #region Hàm add Ý Tưởng
         private static void addYTuong()
         {
-            yTuongThuatToan.Clear();
+            //yTuongThuatToan.Clear();
             if (fMain.isEnglish == true)
             {
                 yTuongThuatToan.Text = yTuongEn;                
@@ -170,7 +170,7 @@ Xem dãy hiện hành chỉ còn N-1 phần tử của dãy hiện hành ban đ�
 Bắt đầu từ vị trí thứ 2;
 Lặp lại quá trình trên cho dãy hiện hành... đến khi dãy hiện hành chỉ còn 1 phần tử.";
             //English
-            yTuongEn = @"• find the smallest element
+            yTuongEn = @"• find the smallest element 
 • put it in the first position
 • find the next smallest element in the remaining elements
 • put it in the second position

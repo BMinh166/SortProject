@@ -66,8 +66,10 @@
             this.tbDescription.Location = new System.Drawing.Point(0, 0);
             this.tbDescription.Multiline = true;
             this.tbDescription.Name = "tbDescription";
+            this.tbDescription.ReadOnly = true;
             this.tbDescription.Size = new System.Drawing.Size(576, 297);
             this.tbDescription.TabIndex = 0;
+            this.tbDescription.TextChanged += new System.EventHandler(this.tbDescription_TextChanged);
             // 
             // tpAlgorithm
             // 

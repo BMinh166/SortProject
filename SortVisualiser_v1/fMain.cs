@@ -102,6 +102,7 @@ namespace SortVisualiser_v1
         #region Event nhấn nút của các hàm sắp xếp ở hàng trên
         void BUBClickAction()
         {
+            ThuatToanSapXep = ThuatToanSapXep = BubbleSort;
             lblButtonDefault();
             lblBUB.Text = "BUBLE SORT";
             lblBUB.ForeColor = SystemColors.HighlightText;
@@ -374,7 +375,7 @@ namespace SortVisualiser_v1
         }
 
         //Thay đổi qua lại giữa Resume và Pause khi nhấn
-        bool isPause = true;
+        bool isPause = true;    
         private void picResPau_Click(object sender, EventArgs e)
         {
             if(isPause)
@@ -449,7 +450,7 @@ namespace SortVisualiser_v1
             Mangchuasapxep();
 
             culture = CultureInfo.CurrentCulture;
-            //picStop.Enabled = false;
+            picStop.Enabled = false;
             fmenu.trbSpeed.Maximum = ThamSo.ThoiGianDoi * 2 / 5;
             fmenu.trbSpeed.Minimum = 0;
             fmenu.trbSpeed.Value = ThamSo.ThoiGianDoi / 5;
@@ -496,7 +497,7 @@ namespace SortVisualiser_v1
             SoLuongNode = 5;
             //dungbtn.Enabled = huybnt.Enabled = false;
             VeNut();
-            //DieuChinhControls(isRunning);
+            DieuChinhControls(isRunning);
 
             // setMauAllControl();
         }
@@ -592,7 +593,7 @@ namespace SortVisualiser_v1
         #endregion
 
 
-        /*private void DieuChinhControls(bool isRunning)
+        private void DieuChinhControls(bool isRunning)
         {
             //  batdaubtn.Focus();
             if (isRunning == true)
@@ -602,12 +603,12 @@ namespace SortVisualiser_v1
                     item.Enabled = false;
                 }
                 fmenu.btnStart.Enabled = false;
-                xoamangbtn.Enabled = false;
+                fmenu.btnDelete.Enabled = false;
                 picResPau.Enabled = picStop.Enabled = true;
-                daydangxepListbox.Items.Clear();
-                daydangxepListbox.BringToFront();
-                tabctlytuong.SelectedIndex = 1;
-                thuattoanpanel.Enabled = khoitaopanel.Enabled = ngonngupanel.Enabled = Loaisapxeppanel.Enabled = false;
+                //daydangxepListbox.Items.Clear();
+                //daydangxepListbox.BringToFront();
+                //tabctlytuong.SelectedIndex = 1;
+                //thuattoanpanel.Enabled = khoitaopanel.Enabled = ngonngupanel.Enabled = Loaisapxeppanel.Enabled = false;
             }
             else
             {
@@ -617,10 +618,14 @@ namespace SortVisualiser_v1
                 }
                 fmenu.btnDelete.Enabled = true;
                 picResPau.Enabled = picStop.Enabled = false;
-                thuattoanpanel.Enabled = khoitaopanel.Enabled = ngonngupanel.Enabled = fmenu.btnStart.Enabled = Loaisapxeppanel.Enabled = true;
+                //thuattoanpanel.Enabled = khoitaopanel.Enabled = ngonngupanel.Enabled = fmenu.btnStart.Enabled = Loaisapxeppanel.Enabled = true;
 
             }
-        }*/
+        }
+
+
+
+
 
         private void Btn_Capnhat(object sender, EventArgs e)
         {
@@ -631,13 +636,228 @@ namespace SortVisualiser_v1
             Mangchuasapxep();
         }
 
+
+
         private void picStop_Click(object sender, EventArgs e)
         {
+            sapxepThread.Abort();
+            VeNut();
+            isRunning = false;
+            for (int i = 0; i < SoLuongNode; i++)
+            {
+                DanhSachNode[i].Text = MangChuaSapXep[i].ToString();
+                DanhSachThamSo[i] = MangChuaSapXep[i];
+            }
+            DieuChinhControls(isRunning);
+            Mangchuasapxep();
+            Reset_CountTime();
+            timer1.Stop();
+            picStop.Enabled = false;
+        }
+
+
+        #region thu dung thread va tack , thread co the abort bất kỳ lúc nào, task có thể callback
+
+        public void DiChuyenNodeDen(object oNode, object oVitriMoi)
+        {
+            int vitriMoi = (int)oVitriMoi;
+            ucNode node = oNode as ucNode;
+            if (vitriMoi > node.vitriHienTai)
+            {
+                node.ChuyenLen();
+                node.ChuyenNgang(vitriMoi);
+                node.ChuyenXuong();
+            }
+            else if (vitriMoi < node.vitriHienTai)
+            {
+                node.ChuyenXuong();
+                node.ChuyenNgang(vitriMoi);
+                node.ChuyenLen();
+            }
+
+            // set lai vi tri moi
+            node.vitriHienTai = vitriMoi;
+        }
+
+        // Hoán vị chổ của 2 node
+        Task hoanVi1Task;
+        Task hoanVi2Task;
+        private void DichuyenCacNode(int vitriNodeA, int vitriNodeB)
+        {
+            DanhSachNode[vitriNodeA].BackColor = DanhSachNode[vitriNodeB].BackColor = ThamSo.mauNodeDangSX;
+            // Cách dùng task
+            hoanVi1Task = Task.Factory.StartNew(() => { DiChuyenNodeDen(DanhSachNode[vitriNodeA], vitriNodeB); });
+            hoanVi2Task = Task.Factory.StartNew(() => { DiChuyenNodeDen(DanhSachNode[vitriNodeB], vitriNodeA); });
+            // note: Task.Factory.StartNew = THÊM task vào cuối hàng đợi và CHẠY ngay khi có thể
+
+            Task.WaitAll(hoanVi1Task, hoanVi1Task);
+
+            // Thay đổi vị trí của node trong mảng nodeArray
+            if (DanhSachNode.Count != 0)                   //check xem nếu mảng còn tồn tại --> trong trường hợp mảng đã bị hủy
+            {
+                CapNhatDanhSachNode(vitriNodeA, vitriNodeB);
+            }
+
+            // Đổi màu 2 node sau khi sắp xếp
+            DanhSachNode[vitriNodeA].BackColor = DanhSachNode[vitriNodeB].BackColor = ThamSo.mauNodeHTSX;
+        }
+
+
+
+        #endregion
+
+
+        #region Cac Ham cap nhat lai mang va Node
+        private void CapNhatThamSo(int vt1, int vt2)
+        {
+            int temp = DanhSachThamSo[vt1];
+            DanhSachThamSo[vt1] = DanhSachThamSo[vt2];
+            DanhSachThamSo[vt2] = temp;
+            DanhSachNode[vt1].BackColor = DanhSachNode[vt2].BackColor = ThamSo.mauNodeDangSX;
+
+
+
+        }
+        private void CapNhatDanhSachNode(int vt1, int vt2)
+        {
+
+            ucNode temp = DanhSachNode[vt1];
+            DanhSachNode[vt1] = DanhSachNode[vt2];
+            DanhSachNode[vt2] = temp;
+            DanhSachNode[vt1].BackColor = DanhSachNode[vt2].BackColor = ThamSo.mauNodeDangSX;
+        }
+        #endregion
+
+        private void Reset_CountTime()
+        {
+
+            Phut = Giay = 0;
+            label11.Text = "00:00";
+        }
+        private void hoanTatSapXep()
+        {
+
+            //   HienThiThuatToan.ChayCodeC(1);
+            foreach (ucNode item in DanhSachNode)
+            {
+                item.BackColor = ThamSo.mauNodeHTSX;
+            }
+            isRunning = false;
+            DieuChinhControls(isRunning);
+            /*if (isEnglish == true)
+            {
+                setLang("en-US");
+            }
+            else
+                setLang("vi-VN");
+            */
+            MessageBox.Show(hoanTat);
+            timer1.Stop();
+            Reset_CountTime();
+            foreach (Label label in bienArr.Values)
+            {
+                label.Visible = false;
+            }
+            picStop.Enabled = false;
 
         }
 
+        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            ThamSo.ThoiGianDoi = fmenu.trbSpeed.Value;
+            label1.Text = fmenu.trbSpeed.Value.ToString();
+        }
+
+
         ///
 
+        #region Phần thuật toán
+        #region BubbleSort
+        private void BubbleSort()
+        {
 
+            bool flag = false;
+            HienThiThuatToan.ChayCodeC(2);
+            HienThiThuatToan.ChayCodeC(3);
+            int i = 0, j = 0;
+            //DanhSachNode[i].BackColor = ThamSo.mauNodeHTSX;
+            bienArr["i"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 20);
+            bienArr["i"].Text = "i = " + i;
+            pnlMain.Controls.Add(bienArr["i"]);
+            bienArr["i"].Visible = true;
+            for (i = 0; i < SoLuongNode - 1; i++)
+            {
+                HienThiThuatToan.ChayCodeC(4);
+                j = SoLuongNode - 1;
+                bienArr["j"].Location = new Point(danhSachLabel[j].Location.X, danhSachLabel[j].Location.Y - 40);
+                bienArr["j"].Text = "j = " + j;
+                pnlMain.Controls.Add(bienArr["j"]);
+                bienArr["j"].Visible = true;
+                for (j = SoLuongNode - 1; j > i; j--)
+                {
+                    //DanhSachNode[j].BackColor = ThamSo.Nodeketiep;
+                    flag = false;
+                    if (isIncrease == true)
+                    {
+                        HienThiThuatToan.ChayCodeC(5);
+                        if (DanhSachThamSo[j] < DanhSachThamSo[j - 1]) flag = true;
+
+                    }
+                    else
+                    {
+                        HienThiThuatToan.ChayCodeC(5);
+                        if (DanhSachThamSo[j] > DanhSachThamSo[j - 1]) flag = true;
+                        //bienArr["j"].Location = new Point(danhSachLabel[j].Location.X, danhSachLabel[j].Location.Y - 40);
+                        //bienArr["j"].Text = "j = " + j;
+                        //sapxepPanel.Controls.Add(bienArr["j"]);
+                        //bienArr["j"].Visible = true;
+                    }
+                    if (flag == true)
+                    {
+                        HienThiThuatToan.ChayCodeC(6);
+                        Thread.Sleep(ThamSo.ThoiGianDoi);
+                        //DanhSachNode[j].BackColor = DanhSachNode[j - 1].BackColor = ThamSo.mauNodeDangSX;
+                        CapNhatThamSo(j, j - 1);
+                        DichuyenCacNode(j, j - 1);
+                        //Hienthimangdangsapxep(i, j, "i", "j");
+                    }
+                    else
+                    {
+                        //DanhSachNode[j].BackColor = ThamSo.mauNen;
+                    }
+
+                }
+            }
+            DanhSachNode[0].BackColor = ThamSo.mauNodeHTSX;
+            DanhSachNode[DanhSachNode.Count - 1].BackColor = ThamSo.mauNodeHTSX;
+            hoanTatSapXep();
+
+        } //xong
+        #endregion
+
+        #endregion
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (sapxepThread != null)
+            {
+                sapxepThread.Abort();
+            }
+            //daydangxepListbox.Visible = true;
+            picStop.Enabled = true;
+            isRunning = true;
+            DieuChinhControls(isRunning);
+            Reset_CountTime();
+            timer1.Start();
+            //ChonThuatToan();
+            sapxepThread = new Thread(new ThreadStart(ThuatToanSapXep));
+            sapxepThread.Start();
+        }
+
+        private void pnlMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

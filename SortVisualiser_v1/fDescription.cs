@@ -40,6 +40,9 @@ namespace SortVisualiser_v1
             }
         }
 
-        
+        private void tbDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
