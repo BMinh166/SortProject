@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,11 +20,15 @@ namespace SortVisualiser_v1
         public fMenu()
         {
             InitializeComponent();
+            
         }
 
 
         public event EventHandler<EventArgs> LanguageChange;
-       
+        public event EventHandler DataCleared;
+        public event EventHandler Venut;
+        public event EventHandler MangChuaSapXep;
+
 
         /// <summary>
         /// Thực thi chức năng của cái button ở tabpage Cài Đặt
@@ -48,6 +53,21 @@ namespace SortVisualiser_v1
         {
                 fman = new fManually();
                 fman.ShowDialog();
+                if (fman.isNhap == true)
+                {
+                    string temp = "";
+                    fMain.SoLuongNode = fman.DayInput.Count();
+                    nudN.Value = fMain.SoLuongNode;
+                    Venut?.Invoke(this, EventArgs.Empty);
+                for (int i = 0; i < fMain.SoLuongNode; i++)
+                    {
+                        // DanhSachNode[i].Value = input.DayInput[i];
+                        fMain.DanhSachNode[i].Text = fman.DayInput[i].ToString();
+                        fMain.DanhSachThamSo[i] = fman.DayInput[i];
+
+                    }
+                MangChuaSapXep?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         private void btnLanguage_Click(object sender, EventArgs e)
@@ -249,7 +269,48 @@ namespace SortVisualiser_v1
             }
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int kichCoNode, khoanCachGiuaCacNode;
+            //soLuongPhanTuMacDinh;
+            bool rs = int.TryParse(btnNodeSizeChange.Text , out kichCoNode);
+            if (rs = false || (kichCoNode < 30 || kichCoNode > 50))
+            {
+                MessageBox.Show("Kích cỡ Node phải là số nguyên và thuộc khoản từ 30 đến 50!", "Giá trị công hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            rs = int.TryParse(btnNodeSpace.Text, out khoanCachGiuaCacNode);
+            if (rs = false || (khoanCachGiuaCacNode < 1 || khoanCachGiuaCacNode > 100))
+            {
+                MessageBox.Show("Khoảng cách giữa các Node phải là số nguyên và thuộc khoản từ 1 đến 100!", "Giá trị công hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            /*rs = int.TryParse(txbSoLuongPhanTuMacDinh.Text, out soLuongPhanTuMacDinh);
+            if (rs = false || (soLuongPhanTuMacDinh < 1 || soLuongPhanTuMacDinh > ThamSo.SoluongNodeLonNhat))
+            {
+                MessageBox.Show("Số lượng phần tử mặc định phải là số nguyên và thuộc khoản từ 1 đến " + ThamSo.SoluongNodeLonNhat + " !", "Giá trị công hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }*/
+
+
+            Properties.Settings.Default.kichCoNode = ThamSo.KichCoNode = kichCoNode;
+            Properties.Settings.Default.khoangCachGiuaCacNode = ThamSo.KhoangCachCacNode = khoanCachGiuaCacNode;
+
+            Properties.Settings.Default.mauNenNode = ThamSo.mauNen = btnNodeBackColor.BackColor;
+            Properties.Settings.Default.mauNodeHoanTatSapXep = ThamSo.mauNodeHTSX = btnNodeSortedColor.BackColor;
+            Properties.Settings.Default.mauNodeDangSapXep = ThamSo.mauNodeDangSX = btnNodeChoosingColor.BackColor;
+
+            //  Properties.Settings.Default.labelFont = txbLabelFont.Font = labelFontDialog.Font;
+            // Properties.Settings.Default.chuFont = txbChuFont.Font = chuFontDialog.Font;
+
+            //Properties.Settings.Default.soLuongPhanTuMacDinh = soLuongPhanTuMacDinh;
+
+
+            Properties.Settings.Default.Save();
+            this.Close();
+        }
 
 
         #endregion
@@ -264,6 +325,19 @@ namespace SortVisualiser_v1
 
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DataCleared?.Invoke(this, EventArgs.Empty);
+            btnStart.Enabled = false;
+        }
 
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            fMain.SoLuongNode = fMain.rank.Next(2, ThamSo.SoluongNodeLonNhat);
+            Venut?.Invoke(this, EventArgs.Empty);
+            nudN.Value = fMain.SoLuongNode;
+        }
+
+        
     }
 }
