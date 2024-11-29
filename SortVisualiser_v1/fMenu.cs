@@ -77,12 +77,72 @@ namespace SortVisualiser_v1
                 btnLanguage.Text = "English";
                 fMain.isEnglish = true;
                 LanguageChange?.Invoke(this, new EventArgs());
+                MenuLanguageChange();
             }
             else
             {
                 btnLanguage.Text = "Tiếng Việt";
                 fMain.isEnglish = false;
                 LanguageChange?.Invoke(this, new EventArgs());
+                MenuLanguageChange();
+            }
+        }
+
+        void MenuLanguageChange()
+        {
+            if(!fMain.isEnglish)
+            {
+                tpCreate.Text = LanguageChanged.IniVN;
+                tpSetting.Text = LanguageChanged.SettVN;
+                tbCustomize.Text = LanguageChanged.CustomVN;
+                btnRandom.Text = LanguageChanged.RandVN;
+                btnHand.Text = LanguageChanged.ManuaVN;
+                btnDelete.Text = LanguageChanged.DeleteArrVN;
+                btnStart.Text = LanguageChanged.StartVN;
+                //button1.Text = LanguageChanged.NULL;
+                lblSortHow.Text = LanguageChanged.SortVN;
+                if(fMain.isIncrease)
+                {
+                    btnIncOrDes.Text = LanguageChanged.IncVN;
+                }
+                else
+                    btnIncOrDes.Text = LanguageChanged.DesVN;
+                lblLanguage.Text = LanguageChanged.LangVN;
+                lblSpeed.Text = LanguageChanged.SpeedVN;
+                lbNodeSize.Text = LanguageChanged.NodeSizeVN;
+                lbNodeSpace.Text = LanguageChanged.NodeSpaceVN;
+                lbNodeBackColor.Text = LanguageChanged.BackGrdColorVN;
+                lbNodeChoosingColor.Text = LanguageChanged.ChoosingNodeColorVN;
+                lbNodeSortedColor.Text = LanguageChanged.SortedNodeColorVN;
+                btnUpdate.Text = LanguageChanged.UpdateVN;
+                btnDefault.Text = LanguageChanged.DefaultVN;
+            }
+            else
+            {
+                tpCreate.Text = LanguageChanged.IniEN;
+                tpSetting.Text = LanguageChanged.SettEN;
+                tbCustomize.Text = LanguageChanged.CustomEN;
+                btnRandom.Text = LanguageChanged.RandEN;
+                btnHand.Text = LanguageChanged.ManuaEN;
+                btnDelete.Text = LanguageChanged.DeleteArrEN;
+                btnStart.Text = LanguageChanged.StartEN;
+                //button1.Text = LanguageChanged.NULL;
+                lblSortHow.Text = LanguageChanged.SortEN;
+                if (fMain.isIncrease)
+                {
+                    btnIncOrDes.Text = LanguageChanged.IncEN;
+                }
+                else
+                    btnIncOrDes.Text = LanguageChanged.DesEN;
+                lblLanguage.Text = LanguageChanged.LangEN;
+                lblSpeed.Text = LanguageChanged.SpeedEN;
+                lbNodeSize.Text = LanguageChanged.NodeSizeEN;
+                lbNodeSpace.Text = LanguageChanged.NodeSpaceEN;
+                lbNodeBackColor.Text = LanguageChanged.BackGrdColorEN;
+                lbNodeChoosingColor.Text = LanguageChanged.ChoosingNodeColorEN;
+                lbNodeSortedColor.Text = LanguageChanged.SortedNodeColorEN;
+                btnUpdate.Text = LanguageChanged.UpdateEN;
+                btnDefault.Text = LanguageChanged.DefaultEN;
             }
         }
 
@@ -135,7 +195,7 @@ namespace SortVisualiser_v1
         private void btnNodeSizeDes_Click(object sender, EventArgs e)
         {
             int term = Int32.Parse(btnNodeSizeChange.Text);
-            if (term > 1)
+            if (term > 30)
                 term--;
             btnNodeSizeChange.Text = term.ToString();
         }
@@ -153,7 +213,7 @@ namespace SortVisualiser_v1
         private void btnNodeSpaceDes_Click(object sender, EventArgs e)
         {
             int term = Int32.Parse(btnNodeSpace.Text);
-            if (term > 1)
+            if (term > 10)
                 term--;
             btnNodeSpace.Text = term.ToString();
         }
@@ -161,7 +221,7 @@ namespace SortVisualiser_v1
         private void btnNodeSpaceInc_Click(object sender, EventArgs e)
         {
             int term = Int32.Parse(btnNodeSpace.Text);
-            if (term < 50)
+            if (term < 30)
                 term++;
             btnNodeSpace.Text = term.ToString();
         }
@@ -213,8 +273,8 @@ namespace SortVisualiser_v1
                 {
                     if (number > 50)
                         tbNodeSize.Text = "50";
-                    else if (number < 1)
-                        tbNodeSize.Text = "1";
+                    else if (number < 30)
+                        tbNodeSize.Text = "30";
                     btnNodeSizeChange.Text = tbNodeSize.Text;
                 }
                 
@@ -250,10 +310,10 @@ namespace SortVisualiser_v1
                 int number;
                 if(Int32.TryParse(tbNodeSpace.Text, out number))
                 {
-                    if (number > 50)
-                        tbNodeSpace.Text = "50";
-                    else if (number < 1)
-                        tbNodeSpace.Text = "1";
+                    if (number > 30)
+                        tbNodeSpace.Text = "30";
+                    else if (number < 10)
+                        tbNodeSpace.Text = "10";
                     btnNodeSpace.Text = tbNodeSpace.Text;
                 }    
                 tbNodeSpace.Text = "";
@@ -309,7 +369,8 @@ namespace SortVisualiser_v1
 
 
             Properties.Settings.Default.Save();
-            this.Close();
+            
+            //this.Close();
         }
 
 
@@ -317,7 +378,7 @@ namespace SortVisualiser_v1
 
         private void nudN_ValueChanged(object sender, EventArgs e)
         {
-            
+            fMain.SoLuongNode = (int)nudN.Value;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -333,7 +394,7 @@ namespace SortVisualiser_v1
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
-            fMain.SoLuongNode = fMain.rank.Next(2, ThamSo.SoluongNodeLonNhat);
+            //fMain.SoLuongNode = fMain.rank.Next(2, ThamSo.SoluongNodeLonNhat);
             Venut?.Invoke(this, EventArgs.Empty);
             nudN.Value = fMain.SoLuongNode;
         }

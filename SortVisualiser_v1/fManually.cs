@@ -56,7 +56,7 @@ namespace SortVisualiser_v1
                 MessageBox.Show("Dãy vừa nhập vượt quá " + ThamSo.SoluongNodeLonNhat);
                 return;
             }
-            if (DayInput == null)
+            if (DayInput.Count == 0)
             {
                 MessageBox.Show("Dãy nhập rỗng");
                 return;
@@ -76,27 +76,12 @@ namespace SortVisualiser_v1
 
         }
 
-        private void tbxdayso_KeyPress(object sender, KeyPressEventArgs e)
+        private void tbxdayso_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-
-
-            // chặn người dùng nhập chữ nhưng cho phép nhập backspace để xóa
             if (e.KeyChar != '\b' && !char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = !char.IsNumber(e.KeyChar);
             }
-            //if (char.IsWhiteSpace(e.KeyChar))
-            //{
-
-            //    if (countspace > 1)
-            //    {
-            //        e.Handled = true;
-            //        countspace = 0;
-            //    }
-            //    countspace++;
-            //}
-
-
         }
     }
 }

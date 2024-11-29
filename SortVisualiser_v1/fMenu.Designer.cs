@@ -380,7 +380,7 @@
             // 
             // btnNodeSortedColor
             // 
-            this.btnNodeSortedColor.BackColor = System.Drawing.Color.White;
+            this.btnNodeSortedColor.BackColor = System.Drawing.Color.Gray;
             this.btnNodeSortedColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNodeSortedColor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNodeSortedColor.Location = new System.Drawing.Point(224, 246);
@@ -392,7 +392,7 @@
             // 
             // btnNodeChoosingColor
             // 
-            this.btnNodeChoosingColor.BackColor = System.Drawing.Color.White;
+            this.btnNodeChoosingColor.BackColor = System.Drawing.Color.AliceBlue;
             this.btnNodeChoosingColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNodeChoosingColor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNodeChoosingColor.Location = new System.Drawing.Point(226, 187);
@@ -458,7 +458,7 @@
             this.btnNodeSpace.Name = "btnNodeSpace";
             this.btnNodeSpace.Size = new System.Drawing.Size(374, 46);
             this.btnNodeSpace.TabIndex = 19;
-            this.btnNodeSpace.Text = "30";
+            this.btnNodeSpace.Text = "15";
             this.btnNodeSpace.UseVisualStyleBackColor = false;
             this.btnNodeSpace.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnNodeSpace_MouseDown);
             // 
@@ -506,7 +506,7 @@
             this.btnNodeSizeChange.Name = "btnNodeSizeChange";
             this.btnNodeSizeChange.Size = new System.Drawing.Size(374, 46);
             this.btnNodeSizeChange.TabIndex = 15;
-            this.btnNodeSizeChange.Text = "30";
+            this.btnNodeSizeChange.Text = "45";
             this.btnNodeSizeChange.UseVisualStyleBackColor = false;
             this.btnNodeSizeChange.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnNodeSizeChange_MouseDown);
             // 

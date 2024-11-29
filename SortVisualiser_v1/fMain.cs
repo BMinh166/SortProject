@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -422,6 +423,20 @@ namespace SortVisualiser_v1
         private void fmenu_LanguageChange(object sender, EventArgs e)
         {
             fdes.DescriptionTextChange();
+            fdes.DescriptionLanguageChange();
+            MainLanguageChange();
+        }
+
+        void MainLanguageChange()
+        {
+            if (!isEnglish)
+            {
+                lbMangChuaSapXep.Text = LanguageChanged.OriginArrVN;
+            }
+            else
+            {
+                lbMangChuaSapXep.Text = LanguageChanged.OriginArrEN;
+            }
         }
 
 
@@ -618,10 +633,11 @@ namespace SortVisualiser_v1
 
         private void picStop_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         ///
+
 
     }
 }
