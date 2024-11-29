@@ -97,7 +97,7 @@ namespace SortVisualiser_v1
             if (e.Clicks == 2)
             {
                 btn1.Visible = false;
-                tbx1.Text = btn1.Text;
+                //tbx1.Text = btn1.Text;
                 tbx1.SelectionStart = tbx1.Text.Length;// dat con tro chuot "cusor" qua ben phai neu so da co
                 tbx1.BringToFront();
                 tbx1.Focus();
@@ -119,6 +119,7 @@ namespace SortVisualiser_v1
             if (tbx1.Text != null)
             {
                 btn1.Text = tbx1.Text;
+                tbx1.Text = "";
             }
         }
 

@@ -26,6 +26,20 @@ namespace SortVisualiser_v1
             rtbAlgorithm.Text = HienThiThuatToan.algorithm;
         }
 
+        public void DescriptionLanguageChange()
+        {
+            if(!fMain.isEnglish)
+            {
+                tpDescription.Text = LanguageChanged.DescriptVN;
+                tpAlgorithm.Text = LanguageChanged.AlgorithmVN;
+            }
+            else
+            {
+                tpDescription.Text = LanguageChanged.DescriptEN;
+                tpAlgorithm.Text = LanguageChanged.AlgorithmEN;
+            }
+        }
+
         
     }
 }

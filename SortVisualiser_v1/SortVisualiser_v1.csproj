@@ -71,6 +71,7 @@
       <DependentUpon>fMain.cs</DependentUpon>
     </Compile>
     <Compile Include="HienThiThuatToan.cs" />
+    <Compile Include="LanguageChanged.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThamSo.cs" />

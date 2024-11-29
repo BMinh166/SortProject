@@ -46,6 +46,7 @@
             this.tbxdayso.Size = new System.Drawing.Size(441, 28);
             this.tbxdayso.TabIndex = 0;
             this.tbxdayso.TextChanged += new System.EventHandler(this.tbxdayso_TextChanged);
+            this.tbxdayso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxdayso_KeyPress_1);
             // 
             // btnOk
             // 
