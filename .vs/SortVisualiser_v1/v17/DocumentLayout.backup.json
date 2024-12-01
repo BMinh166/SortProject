@@ -58,8 +58,8 @@
               "Title": "fMain.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMain.cs",
               "RelativeDocumentMoniker": "SortVisualiser_v1\\fMain.cs",
-              "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMain.cs [Design]*",
-              "RelativeToolTip": "SortVisualiser_v1\\fMain.cs [Design]*",
+              "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMain.cs [Design]",
+              "RelativeToolTip": "SortVisualiser_v1\\fMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-29T14:00:15.943Z",
               "EditorCaption": " [Design]"
@@ -74,8 +74,7 @@
               "RelativeToolTip": "SortVisualiser_v1\\fDescription.Designer.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T10:11:06.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T10:11:06.728Z"
             },
             {
               "$type": "Document",
@@ -83,9 +82,9 @@
               "Title": "fMain.cs",
               "DocumentMoniker": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMain.cs",
               "RelativeDocumentMoniker": "SortVisualiser_v1\\fMain.cs",
-              "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMain.cs*",
-              "RelativeToolTip": "SortVisualiser_v1\\fMain.cs*",
-              "ViewState": "AgIAANACAAAAAAAAAAAwwOACAAAkAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMain.cs",
+              "RelativeToolTip": "SortVisualiser_v1\\fMain.cs",
+              "ViewState": "AgIAAMkCAAAAAAAAAAAUwEMDAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T05:25:13.355Z",
               "EditorCaption": ""
@@ -99,8 +98,7 @@
               "ToolTip": "C:\\Users\\Tan Lee\\Downloads\\Documents\\LTTQ\\Project\\SortProject\\SortVisualiser_v1\\fMenu.cs [Design]",
               "RelativeToolTip": "SortVisualiser_v1\\fMenu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T13:58:36.066Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-29T13:58:36.066Z"
             },
             {
               "$type": "Document",
@@ -112,8 +110,7 @@
               "RelativeToolTip": "SortVisualiser_v1\\fMenu.cs",
               "ViewState": "AgIAAH8BAAAAAAAAAAAewIIBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T13:53:41.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-29T13:53:41.999Z"
             },
             {
               "$type": "Document",
