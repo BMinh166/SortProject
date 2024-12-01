@@ -775,7 +775,7 @@ namespace SortVisualiser_v1
         #region BubbleSort
         private void BubbleSort()
         {
-
+            
             bool flag = false;
             HienThiThuatToan.ChayCodeC(2);
             HienThiThuatToan.ChayCodeC(3);

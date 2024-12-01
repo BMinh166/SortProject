@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Deployment.Application;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,29 @@ namespace SortVisualiser_v1
         public List<int> DayInput;
         public bool isNhap;
 
+        public void ManualLanguageChange()
+        {
+            if(!fMain.isEnglish)
+            {
+                lblTitle.Text = LanguageChanged.EnterNumbersVN;
+                lblTitle.Location = new Point(134, 20);
+                lblTotal.Text = LanguageChanged.If1_VN;
+                lblTotal.Location = new Point(70, 80);
+                lblValue.Text = LanguageChanged.If2_VN;
+                lblValue.Location = new Point(75, 100);
+                btnEsc.Text = LanguageChanged.CancelVN;
+            }
+            else
+            {
+                lblTitle.Text = LanguageChanged.EnterNumbersEN;
+                lblTitle.Location = new Point(90, 20);
+                lblTotal.Text = LanguageChanged.If1_EN;
+                lblTotal.Location = new Point(20, 80);
+                lblValue.Text = LanguageChanged.If2_EN;
+                lblValue.Location = new Point(92, 100);
+                btnEsc.Text = LanguageChanged.CancelEN;
+            }
+        }
         private void btnEsc_Click(object sender, EventArgs e)
         {
             this.Close();

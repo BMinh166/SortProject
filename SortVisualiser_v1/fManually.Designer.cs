@@ -43,7 +43,7 @@
             this.tbxdayso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxdayso.Location = new System.Drawing.Point(75, 152);
             this.tbxdayso.Name = "tbxdayso";
-            this.tbxdayso.Size = new System.Drawing.Size(441, 28);
+            this.tbxdayso.Size = new System.Drawing.Size(453, 28);
             this.tbxdayso.TabIndex = 0;
             this.tbxdayso.TextChanged += new System.EventHandler(this.tbxdayso_TextChanged);
             this.tbxdayso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxdayso_KeyPress_1);
@@ -74,7 +74,7 @@
             // btnEsc
             // 
             this.btnEsc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEsc.Location = new System.Drawing.Point(369, 233);
+            this.btnEsc.Location = new System.Drawing.Point(404, 233);
             this.btnEsc.Name = "btnEsc";
             this.btnEsc.Size = new System.Drawing.Size(92, 40);
             this.btnEsc.TabIndex = 4;
@@ -88,7 +88,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.Red;
-            this.lblTotal.Location = new System.Drawing.Point(107, 93);
+            this.lblTotal.Location = new System.Drawing.Point(92, 93);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(377, 16);
             this.lblTotal.TabIndex = 5;
@@ -100,7 +100,7 @@
             this.lblValue.AutoSize = true;
             this.lblValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValue.ForeColor = System.Drawing.Color.Red;
-            this.lblValue.Location = new System.Drawing.Point(113, 118);
+            this.lblValue.Location = new System.Drawing.Point(100, 118);
             this.lblValue.Name = "lblValue";
             this.lblValue.Size = new System.Drawing.Size(365, 16);
             this.lblValue.TabIndex = 6;
