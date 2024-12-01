@@ -39,12 +39,18 @@ namespace SortVisualiser_v1
         {
             if(fMain.isIncrease)
             {
-                btnIncOrDes.Text = "Giảm";
+                if (!fMain.isEnglish)
+                    btnIncOrDes.Text = LanguageChanged.IncVN;
+                else
+                    btnIncOrDes.Text = LanguageChanged.IncEN;
                 fMain.isIncrease = false;
             }
             else
             {
-                btnIncOrDes.Text = "Tăng";
+                if(!fMain.isEnglish)
+                    btnIncOrDes.Text = LanguageChanged.DesVN;
+                else
+                    btnIncOrDes.Text = LanguageChanged.DesEN;
                 fMain.isIncrease = true;
             }
         }
@@ -52,6 +58,7 @@ namespace SortVisualiser_v1
         private void btnHand_Click(object sender, EventArgs e)
         {
                 fman = new fManually();
+                fman.ManualLanguageChange();
                 fman.ShowDialog();
                 if (fman.isNhap == true)
                 {
