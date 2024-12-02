@@ -103,7 +103,7 @@ namespace SortVisualiser_v1
         #region Event nhấn nút của các hàm sắp xếp ở hàng trên
         void BUBClickAction()
         {
-            ThuatToanSapXep = ThuatToanSapXep = BubbleSort;
+            ThuatToanSapXep = BubbleSort;
             lblButtonDefault();
             lblBUB.Text = "BUBLE SORT";
             lblBUB.ForeColor = SystemColors.HighlightText;
@@ -119,6 +119,7 @@ namespace SortVisualiser_v1
 
         private void lblINT_Click(object sender, EventArgs e)
         {
+            ThuatToanSapXep = InterchangeSort;
             lblButtonDefault();
             lblINT.Text = "INTERCHANGE SORT";
             lblINT.ForeColor = SystemColors.HighlightText;
@@ -130,6 +131,7 @@ namespace SortVisualiser_v1
 
         private void lblBIN_Click(object sender, EventArgs e)
         {
+            ThuatToanSapXep = BinaryInsertionSort;
             lblButtonDefault();
             lblBIN.Text = "BINARY INSERTION SORT";
             lblBIN.ForeColor = SystemColors.HighlightText;
@@ -141,6 +143,7 @@ namespace SortVisualiser_v1
 
         private void lblINS_Click(object sender, EventArgs e)
         {
+            ThuatToanSapXep = InsertionSort;
             lblButtonDefault();
             lblINS.Text = "INSERTION SORT";
             lblINS.ForeColor = SystemColors.HighlightText;
@@ -152,6 +155,7 @@ namespace SortVisualiser_v1
 
         private void lblSEL_Click(object sender, EventArgs e)
         {
+            ThuatToanSapXep = SelectionSort;
             lblButtonDefault();
             lblSEL.Text = "SELECTION SORT";
             lblSEL.ForeColor = SystemColors.HighlightText;
@@ -163,6 +167,7 @@ namespace SortVisualiser_v1
 
         private void lblHEA_Click(object sender, EventArgs e)
         {
+            ThuatToanSapXep = HeapSort;
             lblButtonDefault();
             lblHEA.Text = "HEAP SORT";
             lblHEA.ForeColor = SystemColors.HighlightText;
@@ -174,6 +179,7 @@ namespace SortVisualiser_v1
 
         private void lblMER_Click(object sender, EventArgs e)
         {
+            ThuatToanSapXep = MergeSort;
             lblButtonDefault();
             lblMER.Text = "MERGE SORT";
             lblMER.ForeColor = SystemColors.HighlightText;
@@ -185,6 +191,7 @@ namespace SortVisualiser_v1
 
         private void lblQUI_Click(object sender, EventArgs e)
         {
+            ThuatToanSapXep = QuickSort;
             lblButtonDefault();
             lblQUI.Text = "QUICK SORT";
             lblQUI.ForeColor = SystemColors.HighlightText;
@@ -847,6 +854,968 @@ namespace SortVisualiser_v1
 
         } //xong
         #endregion
+        #region InterchangeSort
+        private void InterchangeSort()
+        {
+
+            int i = 0, j = 0;
+            bool flag;
+
+            HienThiThuatToan.ChayCodeC(2);
+            for (i = 0; i < SoLuongNode - 1; i++)
+            {
+                bienArr["i"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 20);
+                bienArr["i"].Text = "i = " + i;
+                pnlMain.Controls.Add(bienArr["i"]);
+                bienArr["i"].Visible = true;
+                HienThiThuatToan.ChayCodeC(3);
+                for (j = i + 1; j < SoLuongNode; j++)
+                {
+                    DanhSachNode[j].BackColor = ThamSo.Nodeketiep;
+                    bienArr["j"].Location = new Point(danhSachLabel[j].Location.X, danhSachLabel[j].Location.Y - 40);
+                    bienArr["j"].Text = "j = " + j;
+                    pnlMain.Controls.Add(bienArr["j"]);
+                    bienArr["j"].Visible = true;
+                    HienThiThuatToan.ChayCodeC(4);
+
+                    flag = false;
+                    if (isIncrease == true)
+                    {
+                        HienThiThuatToan.ChayCodeC(5);
+                        if (DanhSachThamSo[j] < DanhSachThamSo[i]) flag = true;
+                    }
+                    else
+                    {
+                        HienThiThuatToan.ChayCodeC(5);
+                        if (DanhSachThamSo[j] > DanhSachThamSo[i]) flag = true;
+                    }
+                    if (flag)
+                    {
+                        HienThiThuatToan.ChayCodeC(6);
+                        Thread.Sleep(ThamSo.ThoiGianDoi);
+
+                        CapNhatThamSo(i, j);
+                        DichuyenCacNode(j, i);
+
+                        //Hienthimangdangsapxep(i, j, "i", "j");
+                    }
+                    else
+                    {
+                        DanhSachNode[j].BackColor = ThamSo.mauNen;
+                    }
+
+
+                }
+
+            }
+            DanhSachNode[0].BackColor = ThamSo.mauNodeHTSX;
+            DanhSachNode[DanhSachNode.Count - 1].BackColor = ThamSo.mauNodeHTSX;
+            hoanTatSapXep();
+
+        }
+
+
+        #endregion
+        #region BinaryInsectionSort
+        public void BinaryInsertionSort()
+        {
+            //  yTuongTextBox.Clear();
+            int left, right, m, i, pos;
+            int x;
+            ucNode nodeTam, nodeTam2;
+            for (i = 1; i < DanhSachNode.Count; i++)
+            {
+                pos = i - 1;
+                HienThiThuatToan.ChayCodeC(4);
+                DanhSachNode[0].BackColor = ThamSo.mauNodeHTSX;
+                bienArr["i"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 20);
+                bienArr["i"].Text = "i = " + i;
+                pnlMain.Controls.Add(bienArr["i"]);
+                bienArr["i"].Visible = true;
+                nodeTam = DanhSachNode[i];
+                x = DanhSachThamSo[i];
+                HienThiThuatToan.ChayCodeC(6);
+                DanhSachNode[i].ChuyenLen();
+                DanhSachNode[i].BackColor = ThamSo.mauNodeDangSX;
+                left = 0;
+                right = i - 1;
+                bienArr["left"].Location = new Point(danhSachLabel[left].Location.X, danhSachLabel[left].Location.Y - 280);
+                bienArr["left"].Text = "left = " + left;
+                pnlMain.Controls.Add(bienArr["left"]);
+                //bienArr["left"].Visible = true;
+
+                bienArr["pos"].Location = new Point(danhSachLabel[pos].Location.X, danhSachLabel[pos].Location.Y - 240);
+                bienArr["pos"].Text = "pos = " + pos;
+                pnlMain.Controls.Add(bienArr["pos"]);
+                //bienArr["pos"].Visible = false;
+
+                bienArr["right"].Location = new Point(danhSachLabel[right].Location.X, danhSachLabel[right].Location.Y - 260);
+                bienArr["right"].Text = "right = " + right;
+                pnlMain.Controls.Add(bienArr["right"]);
+                //bienArr["right"].Visible = true;
+                HienThiThuatToan.ChayCodeC(7);
+                while (left <= right)
+                {
+                    m = (left + right) / 2;
+
+                    if (isIncrease == true)
+                    {
+
+                        if (x < DanhSachThamSo[m])
+                        {
+                            HienThiThuatToan.ChayCodeC(10);
+                            bienArr["m"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 60);
+                            bienArr["m"].Text = "m = " + i;
+                            pnlMain.Controls.Add(bienArr["m"]);
+                            //bienArr["m"].Visible = true;
+                            //bienArr["right"].Location = new Point(danhSachLabel[right].Location.X, danhSachLabel[right].Location.Y - 260);
+                            bienArr["right"].Text = "right = " + right;
+                            pnlMain.Controls.Add(bienArr["right"]);
+                            // bienArr["right"].Visible = true;
+
+                            right = m - 1;
+                            //bienArr["right"].Location = new Point(danhSachLabel[right].Location.X, danhSachLabel[right].Location.Y - 260);
+                            bienArr["right"].Text = "right = " + right;
+                            pnlMain.Controls.Add(bienArr["right"]);
+                            // bienArr["right"].Visible = true;
+                        }
+                        else
+                        {
+                            HienThiThuatToan.ChayCodeC(11);
+                            //bienArr["m"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 60);
+                            bienArr["m"].Text = "m = " + i;
+                            pnlMain.Controls.Add(bienArr["m"]);
+                            // bienArr["m"].Visible = true;
+                            left = m + 1;
+
+
+                        }
+                    }
+                    else
+                    {
+                        if (x > DanhSachThamSo[m])
+                        {
+                            HienThiThuatToan.ChayCodeC(10);
+                            bienArr["m"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 60);
+                            bienArr["m"].Text = "m = " + i;
+                            pnlMain.Controls.Add(bienArr["m"]);
+                            //bienArr["m"].Visible = true;
+                            //bienArr["right"].Location = new Point(danhSachLabel[right].Location.X, danhSachLabel[right].Location.Y - 260);
+                            bienArr["right"].Text = "right = " + right;
+                            pnlMain.Controls.Add(bienArr["right"]);
+                            //bienArr["right"].Visible = true;
+
+                            right = m - 1;
+                            //bienArr["right"].Location = new Point(danhSachLabel[right].Location.X, danhSachLabel[right].Location.Y - 260);
+                            bienArr["right"].Text = "right = " + right;
+                            pnlMain.Controls.Add(bienArr["right"]);
+                            // bienArr["right"].Visible = true;
+                        }
+                        else
+                        {
+                            HienThiThuatToan.ChayCodeC(11);
+                            //bienArr["m"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 60);
+                            bienArr["m"].Text = "m = " + i;
+                            pnlMain.Controls.Add(bienArr["m"]);
+                            //bienArr["m"].Visible = true;
+
+                            left = m + 1;
+
+
+                        }
+                    }
+                    HienThiThuatToan.ChayCodeC(7);
+                    bienArr["left"].Location = new Point(danhSachLabel[left].Location.X, danhSachLabel[left].Location.Y - 280);
+                    bienArr["left"].Text = "left = " + left;
+                    pnlMain.Controls.Add(bienArr["left"]);
+                    //bienArr["left"].Visible = true;
+                }
+                HienThiThuatToan.ChayCodeC(13);
+                //bienArr["right"].Location = new Point(danhSachLabel[right].Location.X, danhSachLabel[right].Location.Y - 260);
+                bienArr["right"].Text = "right = " + right;
+                pnlMain.Controls.Add(bienArr["right"]);
+                // bienArr["right"].Visible = true;
+                pos = i - 1;
+                //bienArr["pos"].Location = new Point(danhSachLabel[pos].Location.X, danhSachLabel[pos].Location.Y - 240);
+                bienArr["pos"].Text = "pos = " + pos;
+                pnlMain.Controls.Add(bienArr["pos"]);
+                //bienArr["pos"].Visible = true;
+                for (pos = i - 1; pos >= left; pos--)
+                {
+                    //bienArr["pos"].Location = new Point(danhSachLabel[pos].Location.X, danhSachLabel[pos].Location.Y - 240);
+                    bienArr["pos"].Text = "pos = " + pos;
+                    pnlMain.Controls.Add(bienArr["pos"]);
+                    bienArr["pos"].Visible = true;
+                    HienThiThuatToan.ChayCodeC(14);
+                    DanhSachNode[pos].ChuyenNgang(pos + 1);
+                    DanhSachNode[pos].vitriHienTai = pos + 1;
+                    nodeTam2 = DanhSachNode[pos + 1];
+                    DanhSachNode[pos + 1] = DanhSachNode[pos];
+                    DanhSachThamSo[pos + 1] = DanhSachThamSo[pos];
+                    DanhSachNode[pos] = nodeTam2;
+                }
+                //bienArr["pos"].Location = new Point(danhSachLabel[pos].Location.X, danhSachLabel[pos].Location.Y - 240);
+                bienArr["pos"].Text = "pos = " + pos;
+                pnlMain.Controls.Add(bienArr["pos"]);
+                bienArr["pos"].Visible = true;
+                HienThiThuatToan.ChayCodeC(15);
+
+                nodeTam.ChuyenNgang(pos + 1);
+                nodeTam.ChuyenXuong();
+                DanhSachNode[pos + 1] = nodeTam;
+                nodeTam.vitriHienTai = pos + 1;
+                DanhSachNode[pos + 1].BackColor = ThamSo.mauNodeHTSX;
+
+                DanhSachThamSo[left] = x;
+
+                //Cập nhật ý tưởng Text Box
+                //Hienthimangdangsapxep(pos, i, "pos", "i");
+
+
+            }
+            DanhSachNode[0].BackColor = ThamSo.mauNodeHTSX;
+            DanhSachNode[DanhSachNode.Count - 1].BackColor = ThamSo.mauNodeHTSX;
+            hoanTatSapXep();
+        }
+
+        #endregion
+        #region InsertionSort
+        private void InsertionSort()
+        {
+            int pos, key;
+
+            ucNode Nodetam;
+            DanhSachNode[0].BackColor = ThamSo.mauNodeDangSX;
+            for (int i = 1; i < SoLuongNode; i++)
+            {
+                HienThiThuatToan.ChayCodeC(5);
+
+                DanhSachNode[i].BackColor = ThamSo.mauNodeDangSX;
+
+                key = DanhSachThamSo[i];
+                HienThiThuatToan.ChayCodeC(7);
+                Nodetam = DanhSachNode[i];
+                pos = i - 1;
+
+                bienArr["i"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 40);
+                bienArr["i"].Text = "i = " + i;
+                pnlMain.Controls.Add(bienArr["i"]);
+                bienArr["i"].Visible = true;
+
+                DanhSachNode[i].ChuyenLen();
+
+                DanhSachNode[0].BackColor = ThamSo.mauNodeHTSX;
+
+                HienThiThuatToan.ChayCodeC(8);
+
+                bienArr["pos"].Location = new Point(danhSachLabel[pos].Location.X, danhSachLabel[pos].Location.Y - 240);
+                bienArr["pos"].Text = "pos = " + pos;
+                pnlMain.Controls.Add(bienArr["pos"]);
+                bienArr["pos"].Visible = true;
+
+                if (isIncrease == true)
+                {
+                    while ((pos >= 0) && (DanhSachThamSo[pos] > key))
+                    {
+                        DanhSachNode[pos].ChuyenNgang(pos + 1);
+                        DanhSachNode[pos].vitriHienTai = pos + 1;
+                        DanhSachNode[pos + 1] = DanhSachNode[pos];
+                        DanhSachThamSo[pos + 1] = DanhSachThamSo[pos];
+
+                        //Hienthimangdangsapxep(pos, pos + 1, "pos", "i");
+
+                        HienThiThuatToan.ChayCodeC(10);
+
+                        pos--;
+                    }
+
+                }
+                else
+                {
+                    while ((pos >= 0) && (DanhSachThamSo[pos] < key))
+                    {
+                        DanhSachNode[pos].ChuyenNgang(pos + 1);
+                        DanhSachNode[pos].vitriHienTai = pos + 1;
+                        DanhSachNode[pos + 1] = DanhSachNode[pos];
+                        DanhSachThamSo[pos + 1] = DanhSachThamSo[pos];
+                        //Hienthimangdangsapxep(pos, pos + 1, "pos", "i");
+                        HienThiThuatToan.ChayCodeC(10);
+                        pos--;
+                    }
+                }
+                Nodetam.ChuyenNgang(pos + 1);
+                Nodetam.ChuyenXuong();
+
+                DanhSachThamSo[pos + 1] = key;
+                DanhSachNode[pos + 1] = Nodetam;
+                Nodetam.vitriHienTai = pos + 1;
+
+                DanhSachNode[pos + 1].BackColor = ThamSo.mauNodeHTSX;
+
+            }
+            DanhSachNode[0].BackColor = ThamSo.mauNodeHTSX;
+            DanhSachNode[DanhSachNode.Count - 1].BackColor = ThamSo.mauNodeHTSX;
+            hoanTatSapXep();
+        }
+        #endregion
+        #region SelectionSort
+        private void SelectionSort()
+        {
+
+            int min, i = 0, j = 0;
+            bool flag = false;
+
+
+            HienThiThuatToan.ChayCodeC(2);
+            for (i = 0; i < SoLuongNode - 1; i++)
+            {
+
+                HienThiThuatToan.ChayCodeC(3);
+                HienThiThuatToan.ChayCodeC(5);
+                bienArr["i"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 20);
+                bienArr["i"].Text = "i = " + i;
+                pnlMain.Controls.Add(bienArr["i"]);
+                bienArr["i"].Visible = true;
+                for (j = i + 1; j < SoLuongNode; j++)
+                {
+                    DanhSachNode[j].BackColor = ThamSo.Nodeketiep;
+                    HienThiThuatToan.ChayCodeC(6);
+                    flag = false;
+                    min = i;
+                    bienArr["min"].Location = new Point(danhSachLabel[min].Location.X, danhSachLabel[min].Location.Y - ThamSo.KichCoNode - 180);
+                    bienArr["min"].Text = "min = " + min;
+                    bienArr["min"].SendToBack();
+                    pnlMain.Controls.Add(bienArr["min"]);
+                    bienArr["min"].Visible = true;
+                    if (isIncrease == true)
+                    {
+
+                        HienThiThuatToan.ChayCodeC(7);
+                        bienArr["j"].Location = new Point(danhSachLabel[j].Location.X, danhSachLabel[j].Location.Y - 40);
+                        bienArr["j"].Text = "j = " + j;
+                        pnlMain.Controls.Add(bienArr["j"]);
+                        bienArr["j"].Visible = true;
+                        if (DanhSachThamSo[j] < DanhSachThamSo[min])
+                        {
+
+                            min = j;
+
+                            flag = true;
+                            bienArr["min"].Location = new Point(danhSachLabel[min].Location.X, danhSachLabel[min].Location.Y - ThamSo.KichCoNode - 180);
+                            bienArr["min"].Text = "min = " + min;
+                            bienArr["min"].SendToBack();
+                        }
+                    }
+                    else
+                    {
+
+                        HienThiThuatToan.ChayCodeC(7);
+                        bienArr["j"].Location = new Point(danhSachLabel[j].Location.X, danhSachLabel[j].Location.Y - 40);
+                        bienArr["j"].Text = "j = " + j;
+                        pnlMain.Controls.Add(bienArr["j"]);
+                        if (DanhSachThamSo[j] > DanhSachThamSo[min])
+                        {
+
+                            min = j;
+
+                            flag = true;
+                            bienArr["min"].Location = new Point(danhSachLabel[min].Location.X, danhSachLabel[min].Location.Y - 180);
+                            bienArr["min"].Text = "min = " + min;
+                            bienArr["min"].SendToBack();
+
+                        }
+                    }
+                    if (flag == true)
+                    {
+                        HienThiThuatToan.ChayCodeC(8);
+                        HienThiThuatToan.ChayCodeC(9);
+                        Thread.Sleep(ThamSo.ThoiGianDoi);
+                        DanhSachNode[i].BackColor = DanhSachNode[min].BackColor = ThamSo.mauNodeDangSX;
+                        CapNhatThamSo(min, i);
+                        DichuyenCacNode(min, i);
+                        //Hienthimangdangsapxep(i, j, "i", "j");
+                    }
+                    else
+                    {
+                        DanhSachNode[j].BackColor = ThamSo.mauNen;
+                    }
+                }
+            }
+            DanhSachNode[0].BackColor = ThamSo.mauNodeHTSX;
+            DanhSachNode[DanhSachNode.Count - 1].BackColor = ThamSo.mauNodeHTSX;
+            hoanTatSapXep();
+        }
+        #endregion
+        #region HeapSort
+        private void HeapSort()
+        {
+            HienThiThuatToan.ChayCodeC(1);
+            HienThiThuatToan.ChayCodeC(2);
+            CreateHeap(DanhSachThamSo.Count);
+
+            HienThiThuatToan.ChayCodeC(3);
+            HienThiThuatToan.ChayCodeC(4);
+            int r = DanhSachThamSo.Count - 1;
+
+            HienThiThuatToan.ChayCodeC(5);
+            while (r > 0)
+            {
+                HienThiThuatToan.ChayCodeC(6);
+                HienThiThuatToan.ChayCodeC(7);
+                CapNhatThamSo(0, r);
+                DichuyenCacNode(r, 0);
+                HienThiThuatToan.ChayCodeC(8);
+                bienArr["right"].Location = new Point(danhSachLabel[r].Location.X, danhSachLabel[r].Location.Y - 240);
+                bienArr["right"].Text = "right = " + r;
+                pnlMain.Controls.Add(bienArr["right"]);
+                bienArr["right"].Visible = true;
+                bienArr["right"].SendToBack();
+                r--;
+
+
+                HienThiThuatToan.ChayCodeC(9);
+                if (r > 0)
+                {
+                    HienThiThuatToan.ChayCodeC(10);
+                    Shift(0, r);
+                }
+
+                HienThiThuatToan.ChayCodeC(11);
+                HienThiThuatToan.ChayCodeC(5);
+            }
+            HienThiThuatToan.ChayCodeC(12);
+            DanhSachNode[0].BackColor = ThamSo.mauNodeHTSX;
+            DanhSachNode[DanhSachNode.Count - 1].BackColor = ThamSo.mauNodeHTSX;
+            if (DanhSachNode.Count != 0)
+            {
+                hoanTatSapXep();
+            }
+
+        }
+        private void CreateHeap(int N)
+        {
+            HienThiThuatToan.ChayCodeC(14);
+            HienThiThuatToan.ChayCodeC(15);
+            HienThiThuatToan.ChayCodeC(16);
+            HienThiThuatToan.ChayCodeC(17);
+            int l = N / 2 - 1;
+
+            HienThiThuatToan.ChayCodeC(18);
+            while (l >= 0)
+            {
+                HienThiThuatToan.ChayCodeC(19);
+                HienThiThuatToan.ChayCodeC(20);
+                Shift(l, N - 1);
+
+                HienThiThuatToan.ChayCodeC(21);
+                bienArr["left"].Location = new Point(danhSachLabel[l].Location.X, danhSachLabel[l].Location.Y - 260);
+                bienArr["left"].Text = "left = " + l;
+                pnlMain.Controls.Add(bienArr["left"]);
+                bienArr["left"].Visible = true;
+                bienArr["left"].SendToBack();
+                l--;
+
+                HienThiThuatToan.ChayCodeC(22);
+                HienThiThuatToan.ChayCodeC(18);
+            }
+
+            HienThiThuatToan.ChayCodeC(23);
+        }
+
+        private void Shift(int l, int r)
+        {
+            HienThiThuatToan.ChayCodeC(25);
+            HienThiThuatToan.ChayCodeC(26);
+            HienThiThuatToan.ChayCodeC(27);
+            HienThiThuatToan.ChayCodeC(28);
+            int i = l;
+            int j = 2 * i + 1;
+
+            HienThiThuatToan.ChayCodeC(29);
+            while (j <= r)
+            {
+                HienThiThuatToan.ChayCodeC(30);
+                HienThiThuatToan.ChayCodeC(31);
+                if (isIncrease == true)
+                {
+                    if (j < r && DanhSachThamSo[j] < DanhSachThamSo[j + 1])
+                    {
+                        HienThiThuatToan.ChayCodeC(32);
+                        j++;
+                    }
+                }
+                else
+                {
+                    if (j < r && DanhSachThamSo[j] > DanhSachThamSo[j + 1])
+                    {
+                        HienThiThuatToan.ChayCodeC(32);
+                        j++;
+                    }
+                }
+
+                HienThiThuatToan.ChayCodeC(33);
+                if (isIncrease == true)
+                {
+                    if (DanhSachThamSo[i] < DanhSachThamSo[j])
+                    {
+                        HienThiThuatToan.ChayCodeC(34);
+                        HienThiThuatToan.ChayCodeC(35);
+
+                        DichuyenCacNode(j, i);
+                        CapNhatThamSo(i, j);
+                        //Hienthimangdangsapxep(i, j, "i", "j");
+
+
+                        HienThiThuatToan.ChayCodeC(36);
+                        i = j;
+
+                        HienThiThuatToan.ChayCodeC(37);
+                        j = 2 * i + 1;
+
+                        HienThiThuatToan.ChayCodeC(38);
+                    }
+                    else
+                    {
+                        HienThiThuatToan.ChayCodeC(39);
+                        return;
+                    }
+                }
+                else
+                {
+                    if (DanhSachThamSo[i] > DanhSachThamSo[j])
+                    {
+                        HienThiThuatToan.ChayCodeC(34);
+                        HienThiThuatToan.ChayCodeC(35);
+                        CapNhatThamSo(i, j);
+                        DichuyenCacNode(i, j);
+                        //Hienthimangdangsapxep(i, j, "i", "j");
+
+
+
+                        HienThiThuatToan.ChayCodeC(36);
+                        i = j;
+
+                        HienThiThuatToan.ChayCodeC(37);
+                        j = 2 * i + 1;
+
+                        HienThiThuatToan.ChayCodeC(38);
+                    }
+                    else
+                    {
+                        HienThiThuatToan.ChayCodeC(39);
+                        return;
+                    }
+                }
+
+                HienThiThuatToan.ChayCodeC(40);
+                HienThiThuatToan.ChayCodeC(29);
+            }
+            HienThiThuatToan.ChayCodeC(41);
+
+        }
+
+        #endregion // cần ktra lại   //cần ktra lại 
+        #region MergeSoft
+        List<ucNode> b = new List<ucNode>();
+        List<ucNode> c = new List<ucNode>();
+        int nb, nc;
+
+        int Min(int a, int b)
+        {
+            if (a > b) return b;
+            else return a;
+        }
+        void Distribute(List<ucNode> a, int N, ref int nb, ref int nc, int k)
+        {
+            int i, pa, pb, pc;
+            pa = pb = pc = 0;
+            HienThiThuatToan.ChayCodeC(10);
+
+            while (pa < N)
+            {
+                HienThiThuatToan.ChayCodeC(12);
+                for (i = 0; (pa < N) && (i < k); i++, pa++, pb++)
+                {
+
+                    //b[pb] = a[pa];
+                    HienThiThuatToan.ChayCodeC(13);
+                    a[pa].BackColor = ThamSo.mauNodeDangSX;
+                    a[pa].ChuyenLen();
+                    a[pa].ChuyenNgang(pb);
+                    a[pa].vitriHienTai = pb;
+
+                    b[pb] = a[pa];
+                    HienThiThuatToan.ChayCodeC(12);
+                }
+                HienThiThuatToan.ChayCodeC(12);
+                HienThiThuatToan.ChayCodeC(14);
+                for (i = 0; (pa < N) && (i < k); i++, pa++, pc++)
+                {
+                    HienThiThuatToan.ChayCodeC(15);
+                    //c[pc] = a[pa];
+                    a[pa].BackColor = ThamSo.mauNodeDangSX;
+                    a[pa].ChuyenXuong();
+                    a[pa].ChuyenNgang(pc);
+                    a[pa].vitriHienTai = pc;
+
+                    c[pc] = a[pa];
+
+                    HienThiThuatToan.ChayCodeC(14);
+                }
+                HienThiThuatToan.ChayCodeC(14);
+                HienThiThuatToan.ChayCodeC(10);
+            }
+            HienThiThuatToan.ChayCodeC(10);
+            nb = pb; nc = pc;
+        }
+        void Merge(List<ucNode> a, int nb, int nc, int k)
+        {
+            int p, pb, pc, ib, ic, kb, kc;
+            p = pb = pc = 0; ib = ic = 0;
+            HienThiThuatToan.ChayCodeC(23);
+
+            while ((nb > 0) && (nc > 0))
+            {
+                kb = Min(k, nb);
+                kc = Min(k, nc);
+                HienThiThuatToan.ChayCodeC(26);
+
+                bool thucHien = false; // dùng để xét tăng/giảm , nếu bằng true thì code sẽ chạy
+                if (isIncrease == true)
+                {
+                    if (c[pc + ic].Value >= b[pb + ib].Value)
+                        thucHien = true;
+                }
+                else
+                {
+                    if (c[pc + ic].Value <= b[pb + ib].Value)
+                        thucHien = true;
+                }
+                if (thucHien)
+                {
+
+                    //a[p++] = b[pb + ib];
+                    HienThiThuatToan.ChayCodeC(28);
+                    b[pb + ib].BackColor = ThamSo.mauNen;
+                    b[pb + ib].ChuyenXuong();
+                    b[pb + ib].ChuyenNgang(p);
+                    b[pb + ib].vitriHienTai = p;
+
+                    a[p] = b[pb + ib];
+                    p = p + 1;
+
+                    ib++;
+
+                    HienThiThuatToan.ChayCodeC(29);
+                    if (ib == kb)
+                    {
+                        HienThiThuatToan.ChayCodeC(31);
+                        for (; ic < kc; ic++)
+                        {
+                            HienThiThuatToan.ChayCodeC(32);
+                            //a[p++] = c[pc + ic];
+                            c[pc + ic].BackColor = ThamSo.mauNen;
+                            c[pc + ic].ChuyenLen();
+                            c[pc + ic].ChuyenNgang(p);
+                            c[pc + ic].vitriHienTai = p;
+
+                            a[p] = c[pc + ic];
+                            p = p + 1;
+                            HienThiThuatToan.ChayCodeC(32);
+                        }
+
+                        pb += kb; pc += kc; ib = ic = 0;
+                        nb -= kb; nc -= kc;
+                    }
+                }
+                else
+                {
+                    HienThiThuatToan.ChayCodeC(39);
+                    //a[p++] = c[pc + ic];
+                    c[pc + ic].BackColor = ThamSo.mauNen;
+                    c[pc + ic].ChuyenLen();
+                    c[pc + ic].ChuyenNgang(p);
+                    c[pc + ic].vitriHienTai = p;
+
+                    a[p] = c[pc + ic];
+                    p = p + 1;
+
+                    ic++;
+                    HienThiThuatToan.ChayCodeC(40);
+                    if (ic == kc)
+                    {
+                        HienThiThuatToan.ChayCodeC(42);
+                        for (; ib < kb; ib++)
+                        {
+                            HienThiThuatToan.ChayCodeC(43);
+                            //a[p++] = b[pb + ib];
+                            b[pb + ib].BackColor = ThamSo.mauNen;
+                            b[pb + ib].ChuyenXuong();
+                            b[pb + ib].ChuyenNgang(p);
+                            b[pb + ib].vitriHienTai = p;
+
+
+                            a[p] = b[pb + ib];
+                            p = p + 1;
+                            HienThiThuatToan.ChayCodeC(43);
+                        }
+                        HienThiThuatToan.ChayCodeC(42);
+                        pb += kb; pc += kc; ib = ic = 0;
+                        nb -= kb; nc -= kc;
+                    }
+                }
+
+                HienThiThuatToan.ChayCodeC(23);
+            }  // while
+            HienThiThuatToan.ChayCodeC(23);
+            if (a.Count % 2 == 1 && (k != (a.Count - 1)))
+            {
+                if (nb > nc)
+                {
+                    HienThiThuatToan.ChayCodeC(43);
+                    b[pb].BackColor = ThamSo.mauNen;
+                    b[pb].ChuyenXuong();
+                    b[pb].ChuyenNgang(a.Count - 1);
+                    b[pb].vitriHienTai = a.Count - 1;
+
+                }
+
+            }
+            if (a.Count % 2 == 0 && Math.Abs(nb - nc) == 2)
+            {
+
+                HienThiThuatToan.ChayCodeC(43);
+                b[pb].BackColor = ThamSo.mauNen;
+                b[pb].ChuyenXuong();
+                b[pb].ChuyenNgang(a.Count - 2);
+                b[pb].vitriHienTai = a.Count - 2;
+                HienThiThuatToan.ChayCodeC(43);
+                b[pb + 1].BackColor = ThamSo.mauNen;
+                b[pb + 1].ChuyenXuong();
+                b[pb + 1].ChuyenNgang(a.Count - 1);
+                b[pb + 1].vitriHienTai = a.Count - 1;
+
+
+            }
+
+            ;
+        }
+        void ThucHienMergeSort(List<ucNode> a, int N)
+        {
+            for (int i = 0; i < SoLuongNode; i++)
+            {
+                b.Add(new ucNode(i));
+                c.Add(new ucNode(i));
+            }
+            int k;
+            HienThiThuatToan.ChayCodeC(53);
+            for (k = 1; k < N; k *= 2)
+            {
+                bienArr["k"].Location = new Point(danhSachLabel[k].Location.X, danhSachLabel[k].Location.Y - 260);
+                bienArr["k"].Text = "k = " + k;
+                pnlMain.Controls.Add(bienArr["k"]);
+                bienArr["k"].Visible = true;
+                HienThiThuatToan.ChayCodeC(55);
+                Distribute(a, N, ref nb, ref nc, k);
+                HienThiThuatToan.ChayCodeC(56);
+                Merge(a, nb, nc, k);
+                HienThiThuatToan.ChayCodeC(53);
+            }
+            HienThiThuatToan.ChayCodeC(53);
+        }
+
+        private void sapxepPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        void MergeSort()
+        {
+            //  yTuongTextBox.Clear();
+            bienArr["a:"].Location = new Point(0, 110 + DanhSachNode[0].Height / 2);
+            bienArr["a:"].Text = "a:";
+            pnlMain.Controls.Add(bienArr["a:"]);
+            bienArr["c:"].Location = new Point(0, 160 + DanhSachNode[0].Height / 2);
+            bienArr["c:"].Text = "c:";
+            pnlMain.Controls.Add(bienArr["c:"]);
+            bienArr["b:"].Location = new Point(0, 60 + DanhSachNode[0].Height / 2);
+            bienArr["b:"].Text = "b:";
+            pnlMain.Controls.Add(bienArr["b:"]);
+            bienArr["a:"].Visible = bienArr["b:"].Visible = bienArr["c:"].Visible = true;
+            HienThiThuatToan.ChayCodeC(51);
+            ThucHienMergeSort(DanhSachNode, DanhSachNode.Count);
+            foreach (ucNode node in DanhSachNode)
+            {
+                node.BackColor = ThamSo.mauNodeHTSX;
+            }
+            DanhSachNode[0].BackColor = ThamSo.mauNodeHTSX;
+            DanhSachNode[DanhSachNode.Count - 1].BackColor = ThamSo.mauNodeHTSX;
+            hoanTatSapXep();
+
+        }
+
+
+        #endregion
+        #region QuickSort
+        public void QuickSort()
+        {
+            ThucHienQuickSort(0, DanhSachThamSo.Count - 1);
+            DanhSachNode[0].BackColor = ThamSo.mauNodeHTSX;
+            DanhSachNode[DanhSachNode.Count - 1].BackColor = ThamSo.mauNodeHTSX;
+            hoanTatSapXep();
+        }
+        private void ThucHienQuickSort(int left, int right)
+        {
+            HienThiThuatToan.ChayCodeC(1);
+            int i, j, x, vt_x;
+            bienArr["left"].Text = "left = " + left;
+            bienArr["left"].Location = new Point(danhSachLabel[left].Location.X, danhSachLabel[left].Location.Y - 260);
+            pnlMain.Controls.Add(bienArr["left"]);
+            bienArr["left"].Visible = true;
+            bienArr["left"].SendToBack();
+
+            bienArr["right"].Text = "right = " + right;
+            bienArr["right"].Location = new Point(danhSachLabel[right].Location.X, danhSachLabel[right].Location.Y - 240);
+            pnlMain.Controls.Add(bienArr["right"]);
+            bienArr["right"].Visible = true;
+            bienArr["right"].SendToBack();
+            x = DanhSachThamSo[(left + right) / 2];
+            HienThiThuatToan.ChayCodeC(3);
+            vt_x = (left + right) / 2;
+            i = left; j = right;
+            do
+            {
+                int z_vt_x = vt_x;
+                if (isIncrease == true)
+                {
+                    HienThiThuatToan.ChayCodeC(7);
+                    bienArr["vt_x"].Location = new Point(danhSachLabel[vt_x].Location.X, danhSachLabel[vt_x].Location.Y - 40);
+                    bienArr["vt_x"].Text = "x = a[" + vt_x + "]";
+                    pnlMain.Controls.Add(bienArr["vt_x"]);
+                    bienArr["vt_x"].Visible = true;
+                    bienArr["vt_x"].SendToBack();
+
+                    bienArr["i"].Text = "i = " + i;
+                    bienArr["i"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 20);
+                    pnlMain.Controls.Add(bienArr["i"]);
+                    bienArr["i"].Visible = true;
+                    bienArr["i"].SendToBack();
+
+                    bienArr["j"].Text = "j = " + j;
+                    bienArr["j"].Location = new Point(danhSachLabel[j].Location.X, danhSachLabel[j].Location.Y - 60);
+                    pnlMain.Controls.Add(bienArr["j"]);
+                    bienArr["j"].Visible = true;
+                    bienArr["j"].SendToBack();
+                    while (DanhSachThamSo[i] < x)
+                    {
+                        HienThiThuatToan.ChayCodeC(8);
+                        int f_i = i;
+                        i++;
+                        bienArr["i"].Text = "i = " + i;
+                        bienArr["i"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 20);
+                        pnlMain.Controls.Add(bienArr["i"]);
+                        bienArr["i"].Visible = true;
+                        bienArr["i"].SendToBack();
+                    }
+                    HienThiThuatToan.ChayCodeC(9);
+                    while (DanhSachThamSo[j] > x)
+                    {
+                        HienThiThuatToan.ChayCodeC(10);
+                        int f_j = j;
+                        j--;
+                        bienArr["j"].Text = "j = " + j;
+                        bienArr["j"].Location = new Point(danhSachLabel[j].Location.X, danhSachLabel[j].Location.Y - 60);
+                        pnlMain.Controls.Add(bienArr["j"]);
+                        bienArr["j"].Visible = true;
+                        bienArr["j"].SendToBack();
+                    }
+                }
+                else
+                {
+                    HienThiThuatToan.ChayCodeC(7);
+                    bienArr["vt_x"].Location = new Point(danhSachLabel[vt_x].Location.X, danhSachLabel[vt_x].Location.Y - 40);
+                    bienArr["vt_x"].Text = "x = a[" + vt_x + "]";
+                    pnlMain.Controls.Add(bienArr["vt_x"]);
+                    bienArr["vt_x"].Visible = true;
+                    bienArr["vt_x"].SendToBack();
+
+                    bienArr["i"].Text = "i = " + i;
+                    bienArr["i"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 20);
+                    pnlMain.Controls.Add(bienArr["i"]);
+                    bienArr["i"].Visible = true;
+                    bienArr["i"].SendToBack();
+
+                    bienArr["j"].Text = "j = " + j;
+                    bienArr["j"].Location = new Point(danhSachLabel[j].Location.X, danhSachLabel[j].Location.Y - 60);
+                    pnlMain.Controls.Add(bienArr["j"]);
+                    bienArr["j"].Visible = true;
+                    bienArr["j"].SendToBack();
+                    while (DanhSachThamSo[i] > x)
+                    {
+                        HienThiThuatToan.ChayCodeC(8);
+                        int f_i = i;
+                        i++;
+                        bienArr["i"].Text = "i = " + i;
+                        bienArr["i"].Location = new Point(danhSachLabel[i].Location.X, danhSachLabel[i].Location.Y - 20);
+                        pnlMain.Controls.Add(bienArr["i"]);
+                        bienArr["i"].Visible = true;
+                        bienArr["i"].SendToBack();
+                    }
+                    HienThiThuatToan.ChayCodeC(9);
+                    while (DanhSachThamSo[j] < x)
+                    {
+                        HienThiThuatToan.ChayCodeC(10);
+                        int f_j = j;
+                        j--;
+                        bienArr["j"].Text = "j = " + j;
+                        bienArr["j"].Location = new Point(danhSachLabel[j].Location.X, danhSachLabel[j].Location.Y - 60);
+                        pnlMain.Controls.Add(bienArr["j"]);
+                        bienArr["j"].Visible = true;
+                        bienArr["j"].SendToBack();
+                    }
+                }
+                HienThiThuatToan.ChayCodeC(11);
+                if (i <= j)
+                {
+                    int f_vt_x = vt_x;
+                    if (i == vt_x)
+                    {
+                        vt_x = j;
+                    }
+                    else if (j == vt_x)
+                    {
+                        vt_x = i;
+                    }
+                    HienThiThuatToan.ChayCodeC(13);
+                    CapNhatThamSo(i, j);
+                    DichuyenCacNode(j, i);
+                    //Hienthimangdangsapxep(i, j, "i", "j");
+                    bienArr["vt_x"].Location = new Point(danhSachLabel[vt_x].Location.X, danhSachLabel[vt_x].Location.Y - 40);
+                    bienArr["vt_x"].Text = "x = a[" + vt_x + "]";
+                    pnlMain.Controls.Add(bienArr["vt_x"]);
+                    bienArr["vt_x"].Visible = true;
+                    bienArr["vt_x"].SendToBack();
+                    i++; j--;
+                }
+
+                HienThiThuatToan.ChayCodeC(16);
+            } while (i <= j);
+            HienThiThuatToan.ChayCodeC(17);
+            if (left < j)
+            {
+                HienThiThuatToan.ChayCodeC(18);
+                ThucHienQuickSort(left, j);
+            }
+            HienThiThuatToan.ChayCodeC(19);
+            if (i < right)
+            {
+                HienThiThuatToan.ChayCodeC(20);
+                ThucHienQuickSort(i, right);
+            }
+
+        }
+        #endregion//xong      
+
 
         #endregion
 
