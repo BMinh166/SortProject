@@ -50,7 +50,6 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnDescription = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.picStop = new System.Windows.Forms.PictureBox();
             this.picArrow = new System.Windows.Forms.PictureBox();
@@ -270,7 +269,7 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1250, 376);
             this.pnlMain.TabIndex = 3;
-            this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
+            this.pnlMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlMain_MouseClick);
             // 
             // label1
             // 
@@ -313,7 +312,6 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel10.Controls.Add(this.button1);
             this.panel10.Controls.Add(this.label11);
             this.panel10.Controls.Add(this.picStop);
             this.panel10.Controls.Add(this.picArrow);
@@ -323,16 +321,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1250, 50);
             this.panel10.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(97, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label11
             // 
@@ -445,6 +433,7 @@
             // timer1
             // 
             this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // fMain
             // 
@@ -461,6 +450,8 @@
             this.Name = "fMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fMain_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.fMain_FormClosed);
             this.Load += new System.EventHandler(this.fMain_Load);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
@@ -532,7 +523,6 @@
         private System.Windows.Forms.PictureBox picResPau;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
     }
 }
 

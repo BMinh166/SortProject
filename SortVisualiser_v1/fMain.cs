@@ -17,13 +17,14 @@ namespace SortVisualiser_v1
 {
     public partial class fMain : Form
     {
-        fMenu fmenu = new fMenu();
+        private fMenu fmenu;
         fDescription fdes = new fDescription();
         
         public fMain()
         {
             Control.CheckForIllegalCrossThreadCalls = false;
-            
+            fmenu = new fMenu(this);
+            fmenu.Show();
             EventRegister();
             fmenu.DataCleared += fmenu_DataCleared; 
             fmenu.Venut += fmenu_Venut;
@@ -398,16 +399,24 @@ namespace SortVisualiser_v1
         bool isPause = true;    
         private void picResPau_Click(object sender, EventArgs e)
         {
-            if(isPause)
+            if(ucNode.IsPause)
             {
-                picResPau.Image = new Bitmap(Application.StartupPath + "\\Resources\\Resume.png");
-                isPause = false;
+                picResPau.Image = new Bitmap(Application.StartupPath + "\\Resources\\Pause.png");
+                ucNode.pauseStatus.Set();     // hàm để resume
+                ucNode.IsPause = false;
+                //dungbtn.Text = "Tạm dừng";
+                timer1.Start();
             }
             else
             {
-                picResPau.Image = new Bitmap(Application.StartupPath + "\\Resources\\Pause.png");
-                isPause = true;
+                picResPau.Image = new Bitmap(Application.StartupPath + "\\Resources\\Resume.png");
+                ucNode.pauseStatus.Reset();    // hàm để pause
+                ucNode.IsPause = true;
+                //dungbtn.Text = "Tiếp tục";
+                timer1.Stop();
             }
+
+
         }
         #endregion
 
@@ -515,7 +524,7 @@ namespace SortVisualiser_v1
             isRunning = false;
             fmenu.nudN.Value = 5;
             SoLuongNode = 5;
-            //dungbtn.Enabled = huybnt.Enabled = false;
+            picResPau.Enabled = picStop.Enabled = false;
             VeNut();
             DieuChinhControls(isRunning);
 
@@ -747,6 +756,49 @@ namespace SortVisualiser_v1
             DanhSachNode[vt1].BackColor = DanhSachNode[vt2].BackColor = ThamSo.mauNodeDangSX;
         }
         #endregion
+
+        #region Count Time
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DemThoiGian();
+        }
+        private void DemThoiGian()
+        {
+            Giay++;
+            if (Giay > 59)
+            {
+                Giay = 0;
+                Phut++;
+            }
+
+            if (Giay < 10)
+            {
+                label11.Text = Phut + ":0" + Giay;
+            }
+            else
+            {
+                label11.Text = Phut + ":" + Giay;
+            }
+
+        }
+        #endregion
+
+        public void startButton() //Hàm thực hiện thao tác cho btnStart của fMenu
+        {
+            if (sapxepThread != null)
+            {
+                sapxepThread.Abort();
+            }
+            //daydangxepListbox.Visible = true;
+            picStop.Enabled = true;
+            isRunning = true;
+            DieuChinhControls(isRunning);
+            Reset_CountTime();
+            timer1.Start();
+            //ChonThuatToan();
+            sapxepThread = new Thread(new ThreadStart(ThuatToanSapXep));
+            sapxepThread.Start();
+        }
 
         private void Reset_CountTime()
         {
@@ -1624,11 +1676,6 @@ namespace SortVisualiser_v1
             HienThiThuatToan.ChayCodeC(53);
         }
 
-        private void sapxepPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         void MergeSort()
         {
             //  yTuongTextBox.Clear();
@@ -1820,7 +1867,7 @@ namespace SortVisualiser_v1
         #endregion
 
 
-        private void button1_Click_1(object sender, EventArgs e)
+        /*private void button1_Click_1(object sender, EventArgs e)
         {
             if (sapxepThread != null)
             {
@@ -1835,11 +1882,30 @@ namespace SortVisualiser_v1
             //ChonThuatToan();
             sapxepThread = new Thread(new ThreadStart(ThuatToanSapXep));
             sapxepThread.Start();
+        }*/
+
+
+        private void fMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (sapxepThread != null)
+            {
+                sapxepThread.Abort();
+            }
         }
 
-        private void pnlMain_Paint(object sender, PaintEventArgs e)
+        private void pnlMain_MouseClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+
+
+        private void fMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (sapxepThread != null)
+            {
+                sapxepThread.Abort();
+            }
         }
     }
 }

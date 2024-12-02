@@ -4,11 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SortVisualiser_v1
 {
@@ -16,11 +18,11 @@ namespace SortVisualiser_v1
     {
 
         fManually fman;
-
-        public fMenu()
+        private fMain fmain;
+        public fMenu(fMain fmain)
         {
             InitializeComponent();
-            
+            this.fmain = fmain;
         }
 
 
@@ -391,7 +393,7 @@ namespace SortVisualiser_v1
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-
+            fmain.startButton();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -407,6 +409,9 @@ namespace SortVisualiser_v1
             nudN.Value = fMain.SoLuongNode;
         }
 
-        
+        private void btnDefault_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

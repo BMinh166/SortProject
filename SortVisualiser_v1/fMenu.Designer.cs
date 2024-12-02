@@ -355,6 +355,7 @@
             this.btnDefault.TabIndex = 29;
             this.btnDefault.Text = "Mặc định";
             this.btnDefault.UseVisualStyleBackColor = false;
+            this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
             // 
             // btnUpdate
             // 
