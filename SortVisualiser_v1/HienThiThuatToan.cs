@@ -93,9 +93,7 @@ namespace SortVisualiser_v1
 
         static void UpdateTextbox(int num)
         {
-            fDescription.rtbAlgorithm.BackColor = Color.White;
-            fDescription.rtbAlgorithm.ForeColor = Color.Black;
-            fDescription.rtbAlgorithm.SelectionBackColor = Color.White;
+            fDescription.rtbAlgorithm.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             fDescription.rtbAlgorithm.SelectionFont = new Font(fDescription.rtbAlgorithm.Font, FontStyle.Regular);
             fDescription.rtbAlgorithm.SelectionColor = Color.Black;
             int lineIndex = num;
@@ -103,7 +101,7 @@ namespace SortVisualiser_v1
             int length = fDescription.rtbAlgorithm.Lines[num].Length;
             fDescription.rtbAlgorithm.Select(start, length);
             fDescription.rtbAlgorithm.SelectionFont = new Font(fDescription.rtbAlgorithm.Font, FontStyle.Bold);
-            fDescription.rtbAlgorithm.SelectionBackColor = Color.Black;
+            fDescription.rtbAlgorithm.SelectionBackColor = Color.Navy;
             fDescription.rtbAlgorithm.SelectionColor = Color.White;
         }
 
