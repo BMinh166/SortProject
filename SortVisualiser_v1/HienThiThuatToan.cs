@@ -95,6 +95,9 @@ namespace SortVisualiser_v1
         {
             fDescription.rtbAlgorithm.BackColor = Color.White;
             fDescription.rtbAlgorithm.ForeColor = Color.Black;
+            fDescription.rtbAlgorithm.SelectionBackColor = Color.White;
+            fDescription.rtbAlgorithm.SelectionFont = new Font(fDescription.rtbAlgorithm.Font, FontStyle.Regular);
+            fDescription.rtbAlgorithm.SelectionColor = Color.Black;
             int lineIndex = num;
             int start = fDescription.rtbAlgorithm.GetFirstCharIndexFromLine(lineIndex);
             int length = fDescription.rtbAlgorithm.Lines[num].Length;

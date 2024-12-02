@@ -23,14 +23,14 @@ namespace SortVisualiser_v1
         public fMain()
         {
             Control.CheckForIllegalCrossThreadCalls = false;
-            fdes.Visible = false;
-            fmenu.Visible = false;
+            
             EventRegister();
             fmenu.DataCleared += fmenu_DataCleared; 
             fmenu.Venut += fmenu_Venut;
             fmenu.MangChuaSapXep += fmenu_MangChuaSapXep;
             InitializeComponent();
             BUBClickAction();
+            fChildStart();
         }
 
         #region Các biến toàn cục
@@ -314,10 +314,10 @@ namespace SortVisualiser_v1
             {
                 btnMenu.Text = "<";
                 fmenu.Visible = true;
-                fmenu.TopLevel = false;
-                fmenu.Dock = DockStyle.Fill;
-                pnlMenu.Controls.Add(fmenu);
-                fmenu.Show();
+                //fmenu.TopLevel = false;
+                //fmenu.Dock = DockStyle.Fill;
+                //pnlMenu.Controls.Add(fmenu);
+                //fmenu.Show();
             }
             else
             {
@@ -327,6 +327,18 @@ namespace SortVisualiser_v1
             
         }
 
+        void fChildStart()
+        {
+            fmenu.TopLevel = false;
+            fmenu.Dock = DockStyle.Fill;
+            pnlMenu.Controls.Add(fmenu);
+            fmenu.Show();
+            fdes.TopLevel = false;
+            fdes.Dock = DockStyle.Fill;
+            pnlDescription.Controls.Add(fdes);
+            fdes.Show();
+        }
+
         //Hành động khi bấm nút Description
         private void btnDescription_Click(object sender, EventArgs e)
         {
@@ -334,10 +346,10 @@ namespace SortVisualiser_v1
             {
                 btnDescription.Text = ">";
                 fdes.Visible = true;
-                fdes.TopLevel = false;
-                fdes.Dock = DockStyle.Fill;
-                pnlDescription.Controls.Add(fdes);
-                fdes.Show();
+                //fdes.TopLevel = false;
+                //fdes.Dock = DockStyle.Fill;
+                //pnlDescription.Controls.Add(fdes);
+                //fdes.Show();
             }
             else
             {
