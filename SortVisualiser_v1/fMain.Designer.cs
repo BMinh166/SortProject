@@ -293,7 +293,7 @@
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(44, 331);
             this.btnMenu.TabIndex = 7;
-            this.btnMenu.Text = ">";
+            this.btnMenu.Text = "<";
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -306,7 +306,7 @@
             this.btnDescription.Name = "btnDescription";
             this.btnDescription.Size = new System.Drawing.Size(38, 331);
             this.btnDescription.TabIndex = 8;
-            this.btnDescription.Text = "<";
+            this.btnDescription.Text = ">";
             this.btnDescription.UseVisualStyleBackColor = false;
             this.btnDescription.Click += new System.EventHandler(this.btnDescription_Click);
             // 
