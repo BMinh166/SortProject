@@ -22,6 +22,7 @@ namespace SortVisualiser_v1
         
         public fMain()
         {
+            Control.CheckForIllegalCrossThreadCalls = false;
             fdes.Visible = false;
             fmenu.Visible = false;
             EventRegister();
