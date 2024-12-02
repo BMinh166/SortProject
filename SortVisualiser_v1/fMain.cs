@@ -497,7 +497,7 @@ namespace SortVisualiser_v1
             bienArr["gap"].Size = new Size(60, 20);
             bienArr["a:"].Size = bienArr["b:"].Size = bienArr["c:"].Size = new Size(40, 15);
             bienArr["i"].ForeColor = bienArr["j"].ForeColor = bienArr["left"].ForeColor = bienArr["right"].ForeColor = bienArr["m"].ForeColor =
-            bienArr["pos"].ForeColor = bienArr["vt_x"].ForeColor = bienArr["gap"].ForeColor = bienArr["a:"].ForeColor = bienArr["b:"].ForeColor = bienArr["c:"].ForeColor = bienArr["k"].ForeColor = Color.White;
+            bienArr["pos"].ForeColor = bienArr["vt_x"].ForeColor = bienArr["gap"].ForeColor = bienArr["a:"].ForeColor = bienArr["b:"].ForeColor = bienArr["c:"].ForeColor = bienArr["k"].ForeColor = Color.Black;
 
             bienArr["i"].BorderStyle = bienArr["left"].BorderStyle = bienArr["j"].BorderStyle = bienArr["min"].BorderStyle =
             bienArr["m"].BorderStyle = bienArr["right"].BorderStyle = bienArr["pos"].BorderStyle = bienArr["vt_x"].BorderStyle =
@@ -764,7 +764,7 @@ namespace SortVisualiser_v1
             else
                 setLang("vi-VN");
             */
-            MessageBox.Show(hoanTat);
+            MessageBox.Show("Mảng sắp xếp thành công");
             timer1.Stop();
             Reset_CountTime();
             foreach (Label label in bienArr.Values)

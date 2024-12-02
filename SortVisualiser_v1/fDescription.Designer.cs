@@ -88,6 +88,7 @@
             rtbAlgorithm.Name = "rtbAlgorithm";
             rtbAlgorithm.ReadOnly = true;
             rtbAlgorithm.Size = new System.Drawing.Size(576, 294);
+            rtbAlgorithm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             rtbAlgorithm.TabIndex = 0;
             rtbAlgorithm.Text = "";
             // 
