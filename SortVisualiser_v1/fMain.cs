@@ -900,13 +900,14 @@ namespace SortVisualiser_v1
             else
                 setLang("vi-VN");
             */
-            if(!isEnglish)
-                MessageBox.Show(LanguageChanged.ArrFinishedVN,LanguageChanged.AnnounVN,MessageBoxButtons.OK,MessageBoxIcon.Information);
-            else
-                MessageBox.Show(LanguageChanged.ArrFinishedEN,LanguageChanged.AnnounEN, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             fmenu.SortFinished();
             SortLabelOn();
             timer1.Stop();
+            if (!isEnglish)
+                MessageBox.Show(LanguageChanged.ArrFinishedVN, LanguageChanged.AnnounVN, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show(LanguageChanged.ArrFinishedEN, LanguageChanged.AnnounEN, MessageBoxButtons.OK, MessageBoxIcon.Information);
             Reset_CountTime();
             foreach (Label label in bienArr.Values)
             {
