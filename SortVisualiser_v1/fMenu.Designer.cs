@@ -471,6 +471,7 @@
             this.tbNodeSpace.TabIndex = 18;
             this.tbNodeSpace.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbNodeSpace_KeyDown);
             this.tbNodeSpace.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNodeSpace_KeyPress);
+            this.tbNodeSpace.Leave += new System.EventHandler(this.tbNodeSpace_Leave);
             // 
             // btnNodeSizeInc
             // 
@@ -519,6 +520,7 @@
             this.tbNodeSize.TabIndex = 3;
             this.tbNodeSize.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbNodeSize_KeyDown);
             this.tbNodeSize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbNodeSize_KeyPress);
+            this.tbNodeSize.Leave += new System.EventHandler(this.tbNodeSize_Leave);
             // 
             // lbNodeBackColor
             // 
