@@ -44,5 +44,10 @@ namespace SortVisualiser_v1
         {
 
         }
+
+        public void SortStarted()
+        {
+            tabControl1.SelectedIndex = 1;
+        }
     }
 }

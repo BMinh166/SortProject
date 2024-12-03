@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -31,6 +32,8 @@ namespace SortVisualiser_v1
         public event EventHandler DataCleared;
         public event EventHandler Venut;
         public event EventHandler MangChuaSapXep;
+        public event EventHandler TrackBarValueChange;
+        public event EventHandler StopNow;
 
 
         /// <summary>
@@ -161,6 +164,7 @@ namespace SortVisualiser_v1
         private void trbSpeed_Scroll(object sender, EventArgs e)
         {
             SpeedShowChange();
+            TrackBarValueChange?.Invoke(this, EventArgs.Empty);
         }
         public void SpeedShowChange()
         {
@@ -407,6 +411,10 @@ namespace SortVisualiser_v1
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
+            if(fMain.isRunning)
+            {
+                StopNow?.Invoke(this, EventArgs.Empty);
+            }
             //fMain.SoLuongNode = fMain.rank.Next(2, ThamSo.SoluongNodeLonNhat);
             Venut?.Invoke(this, EventArgs.Empty);
             nudN.Value = fMain.SoLuongNode;
@@ -415,6 +423,24 @@ namespace SortVisualiser_v1
         private void btnDefault_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void SortStarted()
+        {
+            nudN.Enabled = false;
+            btnHand.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDefault.Enabled = false;
+            btnIncOrDes.Enabled = false;
+        }
+
+        public void SortFinished()
+        {
+            nudN.Enabled = true;
+            btnHand.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnDefault.Enabled = true;
+            btnIncOrDes.Enabled = true;
         }
     }
 }

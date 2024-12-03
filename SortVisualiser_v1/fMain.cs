@@ -30,6 +30,8 @@ namespace SortVisualiser_v1
             fmenu.Venut += fmenu_Venut;
             fmenu.MangChuaSapXep += fmenu_MangChuaSapXep;
             fmenu.IncDesSwap += fmenu_IncDesSwap;
+            fmenu.TrackBarValueChange += fmenu_trackBarValueChanged;
+            fmenu.StopNow += picStop_Click;
             InitializeComponent();
             BUBClickAction();
             fChildStart();
@@ -39,12 +41,11 @@ namespace SortVisualiser_v1
         public static bool isEnglish = false;
         public static int typeSort = 0;
         public static bool isIncrease = true;
+        public static bool isRunning;
         CultureInfo culture;
 
         public int loaiThuatToan;
         HienThiThuatToan HienThuattoan = new HienThiThuatToan();
-        private bool isRunning;
-        private bool isTang;
         public static bool isDebug = false;
         public static int SoLuongNode; //Đã chuyển từ private sang static
         public static List<int> DanhSachThamSo; //Đã chuyển từ private sang static
@@ -690,6 +691,7 @@ namespace SortVisualiser_v1
             }
             DieuChinhControls(isRunning);
             Mangchuasapxep();
+            fmenu.SortFinished();
             Reset_CountTime();
             timer1.Stop();
             picStop.Enabled = false;
@@ -805,6 +807,8 @@ namespace SortVisualiser_v1
             isRunning = true;
             DieuChinhControls(isRunning);
             Reset_CountTime();
+            fdes.SortStarted();
+            fmenu.SortStarted();
             timer1.Start();
             //ChonThuatToan();
             sapxepThread = new Thread(new ThreadStart(ThuatToanSapXep));
@@ -835,6 +839,7 @@ namespace SortVisualiser_v1
                 setLang("vi-VN");
             */
             MessageBox.Show("Mảng sắp xếp thành công");
+            fmenu.SortFinished();
             timer1.Stop();
             Reset_CountTime();
             foreach (Label label in bienArr.Values)
@@ -845,10 +850,13 @@ namespace SortVisualiser_v1
 
         }
 
-        private void trackBar1_ValueChanged(object sender, EventArgs e)
+        private void fmenu_trackBarValueChanged(object sender, EventArgs e)
         {
-            ThamSo.ThoiGianDoi = fmenu.trbSpeed.Value;
-            label1.Text = fmenu.trbSpeed.Value.ToString();
+            if(fmenu.trbSpeed.Value >= 4)
+            ThamSo.ThoiGianDoi = (8 - fmenu.trbSpeed.Value) * 3;
+            else
+                ThamSo.ThoiGianDoi = (8 - fmenu.trbSpeed.Value) * 5;
+            //label1.Text = fmenu.trbSpeed.Value.ToString();
         }
 
 
