@@ -115,7 +115,7 @@ namespace SortVisualiser_v1
                 btnHand.Text = LanguageChanged.ManuaVN;
                 btnDelete.Text = LanguageChanged.DeleteArrVN;
                 btnStart.Text = LanguageChanged.StartVN;
-                //button1.Text = LanguageChanged.NULL;
+                button1.Text = LanguageChanged.ExitVN;
                 lblSortHow.Text = LanguageChanged.SortVN;
                 if(fMain.isIncrease)
                 {
@@ -142,7 +142,7 @@ namespace SortVisualiser_v1
                 btnHand.Text = LanguageChanged.ManuaEN;
                 btnDelete.Text = LanguageChanged.DeleteArrEN;
                 btnStart.Text = LanguageChanged.StartEN;
-                //button1.Text = LanguageChanged.NULL;
+                button1.Text = LanguageChanged.ExitEN;
                 lblSortHow.Text = LanguageChanged.SortEN;
                 if (fMain.isIncrease)
                 {

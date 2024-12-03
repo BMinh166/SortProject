@@ -24,8 +24,6 @@ namespace SortVisualiser_v1
         public static string DeleteArrEN = "Delete";
         public static string StartVN = "Bắt đầu";
         public static string StartEN = "Start";
-        //public static string NULLVN = "";
-        //public static string NULLEN = "";
         public static string SortVN = "Sắp xếp";
         public static string SortEN = "Sort";
         public static string IncVN = "Tăng";
@@ -70,5 +68,7 @@ namespace SortVisualiser_v1
         public static string ArrFinishedEN = "The sorted array is complete";
         public static string AnnounVN = "Thông báo";
         public static string AnnounEN = "Announcement";
+        public static string ExitVN = "Thoát";
+        public static string ExitEN = "Exit";
     }
 }
