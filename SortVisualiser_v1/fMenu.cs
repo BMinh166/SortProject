@@ -27,6 +27,7 @@ namespace SortVisualiser_v1
 
 
         public event EventHandler<EventArgs> LanguageChange;
+        public event EventHandler IncDesSwap;
         public event EventHandler DataCleared;
         public event EventHandler Venut;
         public event EventHandler MangChuaSapXep;
@@ -42,18 +43,20 @@ namespace SortVisualiser_v1
             if(fMain.isIncrease)
             {
                 if (!fMain.isEnglish)
-                    btnIncOrDes.Text = LanguageChanged.IncVN;
+                    btnIncOrDes.Text = LanguageChanged.DesVN;
                 else
-                    btnIncOrDes.Text = LanguageChanged.IncEN;
+                    btnIncOrDes.Text = LanguageChanged.DesEN;
                 fMain.isIncrease = false;
+                IncDesSwap?.Invoke(this, EventArgs.Empty);
             }
             else
             {
                 if(!fMain.isEnglish)
-                    btnIncOrDes.Text = LanguageChanged.DesVN;
+                    btnIncOrDes.Text = LanguageChanged.IncVN;
                 else
-                    btnIncOrDes.Text = LanguageChanged.DesEN;
+                    btnIncOrDes.Text = LanguageChanged.IncEN;
                 fMain.isIncrease = true;
+                IncDesSwap?.Invoke(this, EventArgs.Empty);
             }
         }
 

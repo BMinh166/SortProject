@@ -29,6 +29,7 @@ namespace SortVisualiser_v1
             fmenu.DataCleared += fmenu_DataCleared; 
             fmenu.Venut += fmenu_Venut;
             fmenu.MangChuaSapXep += fmenu_MangChuaSapXep;
+            fmenu.IncDesSwap += fmenu_IncDesSwap;
             InitializeComponent();
             BUBClickAction();
             fChildStart();
@@ -96,6 +97,10 @@ namespace SortVisualiser_v1
             Mangchuasapxep();
         }
 
+        public void fmenu_IncDesSwap(object sender, EventArgs e)
+        {
+            IncDesSwap();
+        }
         #endregion
 
 
@@ -198,6 +203,12 @@ namespace SortVisualiser_v1
             lblQUI.ForeColor = SystemColors.HighlightText;
             lblQUI.Font = new Font(lblQUI.Font, FontStyle.Bold);
             typeSort = 7; 
+            HienThiThuatToan.Type_Sort();
+            fdes.DescriptionTextChange();
+        }
+
+        void IncDesSwap()
+        {
             HienThiThuatToan.Type_Sort();
             fdes.DescriptionTextChange();
         }
