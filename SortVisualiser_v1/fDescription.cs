@@ -49,5 +49,10 @@ namespace SortVisualiser_v1
         {
             tabControl1.SelectedIndex = 1;
         }
+
+        private void rtbAlgorithm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

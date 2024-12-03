@@ -849,6 +849,15 @@ namespace SortVisualiser_v1
         }
         #endregion
 
+        public void ExitButton()
+        {
+            if (sapxepThread != null)
+            {
+                sapxepThread.Abort();
+            }
+            this.Close();
+        }
+
         public void startButton() //Hàm thực hiện thao tác cho btnStart của fMenu
         {
             if(fmenu.NodeTotal != SoLuongNode)

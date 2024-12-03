@@ -91,6 +91,7 @@
             rtbAlgorithm.Size = new System.Drawing.Size(576, 294);
             rtbAlgorithm.TabIndex = 0;
             rtbAlgorithm.Text = "";
+            rtbAlgorithm.TextChanged += new System.EventHandler(this.rtbAlgorithm_TextChanged);
             // 
             // fDescription
             // 
