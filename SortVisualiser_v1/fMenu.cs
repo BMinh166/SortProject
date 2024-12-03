@@ -34,6 +34,7 @@ namespace SortVisualiser_v1
         public event EventHandler MangChuaSapXep;
         public event EventHandler TrackBarValueChange;
         public event EventHandler StopNow;
+        public int NodeTotal;
 
 
         /// <summary>
@@ -395,7 +396,7 @@ namespace SortVisualiser_v1
 
         private void nudN_ValueChanged(object sender, EventArgs e)
         {
-            fMain.SoLuongNode = (int)nudN.Value;
+            NodeTotal = (int)nudN.Value;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -416,8 +417,9 @@ namespace SortVisualiser_v1
                 StopNow?.Invoke(this, EventArgs.Empty);
             }
             //fMain.SoLuongNode = fMain.rank.Next(2, ThamSo.SoluongNodeLonNhat);
+            nudN.Value = fMain.SoLuongNode = NodeTotal;
             Venut?.Invoke(this, EventArgs.Empty);
-            nudN.Value = fMain.SoLuongNode;
+            
         }
 
         private void btnDefault_Click(object sender, EventArgs e)

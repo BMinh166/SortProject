@@ -62,5 +62,13 @@ namespace SortVisualiser_v1
         public static string If2_EN = "The value of each element ranges form 2 to 99";
         public static string CancelVN = "Hủy";
         public static string CancelEN = "Cancel";
+        public static string WarnMessVN = "Giá trị N đang khác số lượng Node. Vui lòng chỉnh lại giá trị N hoặc nhấn nút \"Ngẫu nhiên\"";
+        public static string WarnMessEN = "N value is difference from Node number. Please correct the N value or press \"Random\" button";
+        public static string WarnVN = "Cảnh báo";
+        public static string WarnEN = "Warning";
+        public static string ArrFinishedVN = "Mảng đã sắp xếp hoàn tất!";
+        public static string ArrFinishedEN = "The sorted array is complete";
+        public static string AnnounVN = "Thông báo";
+        public static string AnnounEN = "Announcement";
     }
 }

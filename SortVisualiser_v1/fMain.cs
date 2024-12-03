@@ -106,18 +106,21 @@ namespace SortVisualiser_v1
 
 
 
-
+        #region Các thiết lập controls của Main form
         #region Event nhấn nút của các hàm sắp xếp ở hàng trên
         void BUBClickAction()
         {
-            ThuatToanSapXep = BubbleSort;
-            lblButtonDefault();
-            lblBUB.Text = "BUBLE SORT";
-            lblBUB.ForeColor = SystemColors.HighlightText;
-            lblBUB.Font = new Font(lblBUB.Font, FontStyle.Bold);
-            typeSort = 0;
-            HienThiThuatToan.Type_Sort();
-            fdes.DescriptionTextChange();
+            if(!isRunning)
+            {
+                ThuatToanSapXep = BubbleSort;
+                lblButtonDefault();
+                lblBUB.Text = "BUBLE SORT";
+                lblBUB.ForeColor = SystemColors.HighlightText;
+                lblBUB.Font = new Font(lblBUB.Font, FontStyle.Bold);
+                typeSort = 0;
+                HienThiThuatToan.Type_Sort();
+                fdes.DescriptionTextChange();
+            }
         }
         private void lblBUB_Click(object sender, EventArgs e)
         {
@@ -126,86 +129,108 @@ namespace SortVisualiser_v1
 
         private void lblINT_Click(object sender, EventArgs e)
         {
-            ThuatToanSapXep = InterchangeSort;
-            lblButtonDefault();
-            lblINT.Text = "INTERCHANGE SORT";
-            lblINT.ForeColor = SystemColors.HighlightText;
-            lblINT.Font = new Font(lblINT.Font, FontStyle.Bold);
-            typeSort = 1;
-            HienThiThuatToan.Type_Sort();
-            fdes.DescriptionTextChange();
+            if (!isRunning)
+            {
+                ThuatToanSapXep = InterchangeSort;
+                lblButtonDefault();
+                lblINT.Text = "INTERCHANGE SORT";
+                lblINT.ForeColor = SystemColors.HighlightText;
+                lblINT.Font = new Font(lblINT.Font, FontStyle.Bold);
+                typeSort = 1;
+                HienThiThuatToan.Type_Sort();
+                fdes.DescriptionTextChange();
+            }
         }
 
         private void lblBIN_Click(object sender, EventArgs e)
         {
-            ThuatToanSapXep = BinaryInsertionSort;
-            lblButtonDefault();
-            lblBIN.Text = "BINARY INSERTION SORT";
-            lblBIN.ForeColor = SystemColors.HighlightText;
-            lblBIN.Font = new Font(lblBIN.Font, FontStyle.Bold);
-            typeSort = 2;
-            HienThiThuatToan.Type_Sort();
-            fdes.DescriptionTextChange();
+            if(!isRunning)
+            {
+                ThuatToanSapXep = BinaryInsertionSort;
+                lblButtonDefault();
+                lblBIN.Text = "BINARY INSERTION SORT";
+                lblBIN.ForeColor = SystemColors.HighlightText;
+                lblBIN.Font = new Font(lblBIN.Font, FontStyle.Bold);
+                typeSort = 2;
+                HienThiThuatToan.Type_Sort();
+                fdes.DescriptionTextChange();
+            }
         }
 
         private void lblINS_Click(object sender, EventArgs e)
         {
-            ThuatToanSapXep = InsertionSort;
-            lblButtonDefault();
-            lblINS.Text = "INSERTION SORT";
-            lblINS.ForeColor = SystemColors.HighlightText;
-            lblINS.Font = new Font(lblINS.Font, FontStyle.Bold);
-            typeSort = 3;
-            HienThiThuatToan.Type_Sort();
-            fdes.DescriptionTextChange();
+            if(!isRunning)
+            {
+                ThuatToanSapXep = InsertionSort;
+                lblButtonDefault();
+                lblINS.Text = "INSERTION SORT";
+                lblINS.ForeColor = SystemColors.HighlightText;
+                lblINS.Font = new Font(lblINS.Font, FontStyle.Bold);
+                typeSort = 3;
+                HienThiThuatToan.Type_Sort();
+                fdes.DescriptionTextChange();
+            }
         }
 
         private void lblSEL_Click(object sender, EventArgs e)
         {
-            ThuatToanSapXep = SelectionSort;
-            lblButtonDefault();
-            lblSEL.Text = "SELECTION SORT";
-            lblSEL.ForeColor = SystemColors.HighlightText;
-            lblSEL.Font = new Font(lblSEL.Font, FontStyle.Bold);
-            typeSort = 4;
-            HienThiThuatToan.Type_Sort();
-            fdes.DescriptionTextChange();
+            if(!isRunning)
+            {
+                ThuatToanSapXep = SelectionSort;
+                lblButtonDefault();
+                lblSEL.Text = "SELECTION SORT";
+                lblSEL.ForeColor = SystemColors.HighlightText;
+                lblSEL.Font = new Font(lblSEL.Font, FontStyle.Bold);
+                typeSort = 4;
+                HienThiThuatToan.Type_Sort();
+                fdes.DescriptionTextChange();
+            }
         }
+
 
         private void lblHEA_Click(object sender, EventArgs e)
         {
-            ThuatToanSapXep = HeapSort;
-            lblButtonDefault();
-            lblHEA.Text = "HEAP SORT";
-            lblHEA.ForeColor = SystemColors.HighlightText;
-            lblHEA.Font = new Font(lblHEA.Font, FontStyle.Bold);
-            typeSort = 5;
-            HienThiThuatToan.Type_Sort();
-            fdes.DescriptionTextChange();
+            if(!isRunning)
+            {
+                ThuatToanSapXep = HeapSort;
+                lblButtonDefault();
+                lblHEA.Text = "HEAP SORT";
+                lblHEA.ForeColor = SystemColors.HighlightText;
+                lblHEA.Font = new Font(lblHEA.Font, FontStyle.Bold);
+                typeSort = 5;
+                HienThiThuatToan.Type_Sort();
+                fdes.DescriptionTextChange();
+            }
         }
 
         private void lblMER_Click(object sender, EventArgs e)
         {
-            ThuatToanSapXep = MergeSort;
-            lblButtonDefault();
-            lblMER.Text = "MERGE SORT";
-            lblMER.ForeColor = SystemColors.HighlightText;
-            lblMER.Font = new Font(lblMER.Font, FontStyle.Bold);
-            typeSort = 6;
-            HienThiThuatToan.Type_Sort();
-            fdes.DescriptionTextChange();
+            if(!isRunning)
+            {
+                ThuatToanSapXep = MergeSort;
+                lblButtonDefault();
+                lblMER.Text = "MERGE SORT";
+                lblMER.ForeColor = SystemColors.HighlightText;
+                lblMER.Font = new Font(lblMER.Font, FontStyle.Bold);
+                typeSort = 6;
+                HienThiThuatToan.Type_Sort();
+                fdes.DescriptionTextChange();
+            }
         }
 
         private void lblQUI_Click(object sender, EventArgs e)
         {
-            ThuatToanSapXep = QuickSort;
-            lblButtonDefault();
-            lblQUI.Text = "QUICK SORT";
-            lblQUI.ForeColor = SystemColors.HighlightText;
-            lblQUI.Font = new Font(lblQUI.Font, FontStyle.Bold);
-            typeSort = 7; 
-            HienThiThuatToan.Type_Sort();
-            fdes.DescriptionTextChange();
+            if(!isRunning)
+            {
+                ThuatToanSapXep = QuickSort;
+                lblButtonDefault();
+                lblQUI.Text = "QUICK SORT";
+                lblQUI.ForeColor = SystemColors.HighlightText;
+                lblQUI.Font = new Font(lblQUI.Font, FontStyle.Bold);
+                typeSort = 7;
+                HienThiThuatToan.Type_Sort();
+                fdes.DescriptionTextChange();
+            }
         }
 
         void IncDesSwap()
@@ -267,6 +292,33 @@ namespace SortVisualiser_v1
             pnlHEA.Location = new Point(41, 0);
             pnlMER.Location = new Point(43, 0);
             pnlQUI.Location = new Point(48, 0);
+        }
+        #endregion
+
+        #region Trạng thái chờ đợi khi trỏ con trỏ vào label
+        void SortLabelOff()
+        {
+            lblBUB.Cursor = Cursors.WaitCursor;
+            lblINT.Cursor = Cursors.WaitCursor;
+            lblBIN.Cursor = Cursors.WaitCursor;
+            lblINS.Cursor = Cursors.WaitCursor;
+            lblSEL.Cursor = Cursors.WaitCursor;
+            lblHEA.Cursor = Cursors.WaitCursor;
+            lblMER.Cursor = Cursors.WaitCursor;
+            lblQUI.Cursor = Cursors.WaitCursor;
+        }
+        
+
+        void SortLabelOn() 
+        {
+            lblBUB.Cursor = Cursors.Hand;
+            lblINT.Cursor = Cursors.Hand;
+            lblBIN.Cursor = Cursors.Hand;
+            lblINS.Cursor = Cursors.Hand;
+            lblSEL.Cursor = Cursors.Hand;
+            lblHEA.Cursor = Cursors.Hand;
+            lblMER.Cursor = Cursors.Hand;
+            lblQUI.Cursor = Cursors.Hand;
         }
         #endregion
 
@@ -431,7 +483,7 @@ namespace SortVisualiser_v1
 
         }
         #endregion
-
+        #endregion
 
         ///Khởi tạo các biến lưu trữ giá trị cho các form con
 
@@ -692,6 +744,7 @@ namespace SortVisualiser_v1
             DieuChinhControls(isRunning);
             Mangchuasapxep();
             fmenu.SortFinished();
+            SortLabelOn();
             Reset_CountTime();
             timer1.Stop();
             picStop.Enabled = false;
@@ -798,6 +851,14 @@ namespace SortVisualiser_v1
 
         public void startButton() //Hàm thực hiện thao tác cho btnStart của fMenu
         {
+            if(fmenu.NodeTotal != SoLuongNode)
+            {
+                if(!isEnglish)
+                    MessageBox.Show(LanguageChanged.WarnMessVN,LanguageChanged.WarnVN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    MessageBox.Show(LanguageChanged.WarnMessEN, LanguageChanged.WarnEN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (sapxepThread != null)
             {
                 sapxepThread.Abort();
@@ -809,6 +870,7 @@ namespace SortVisualiser_v1
             Reset_CountTime();
             fdes.SortStarted();
             fmenu.SortStarted();
+            SortLabelOff();
             timer1.Start();
             //ChonThuatToan();
             sapxepThread = new Thread(new ThreadStart(ThuatToanSapXep));
@@ -838,8 +900,12 @@ namespace SortVisualiser_v1
             else
                 setLang("vi-VN");
             */
-            MessageBox.Show("Mảng sắp xếp thành công");
+            if(!isEnglish)
+                MessageBox.Show(LanguageChanged.ArrFinishedVN,LanguageChanged.AnnounVN,MessageBoxButtons.OK,MessageBoxIcon.Information);
+            else
+                MessageBox.Show(LanguageChanged.ArrFinishedEN,LanguageChanged.AnnounEN, MessageBoxButtons.OK, MessageBoxIcon.Information);
             fmenu.SortFinished();
+            SortLabelOn();
             timer1.Stop();
             Reset_CountTime();
             foreach (Label label in bienArr.Values)
