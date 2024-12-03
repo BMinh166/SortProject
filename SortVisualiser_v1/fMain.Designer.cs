@@ -61,6 +61,7 @@
             this.lbMangChuaSapXep = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.cboxdebug = new System.Windows.Forms.CheckBox();
             this.pnlTitle.SuspendLayout();
             this.pnlINT.SuspendLayout();
             this.pnlBIN.SuspendLayout();
@@ -312,6 +313,7 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel10.Controls.Add(this.cboxdebug);
             this.panel10.Controls.Add(this.label11);
             this.panel10.Controls.Add(this.picStop);
             this.panel10.Controls.Add(this.picArrow);
@@ -358,6 +360,7 @@
             this.picArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picArrow.TabIndex = 1;
             this.picArrow.TabStop = false;
+            this.picArrow.Click += new System.EventHandler(this.picArrow_Click);
             this.picArrow.MouseEnter += new System.EventHandler(this.picArrow_MouseEnter);
             this.picArrow.MouseLeave += new System.EventHandler(this.picArrow_MouseLeave);
             // 
@@ -434,6 +437,17 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // cboxdebug
+            // 
+            this.cboxdebug.AutoSize = true;
+            this.cboxdebug.Location = new System.Drawing.Point(76, 20);
+            this.cboxdebug.Name = "cboxdebug";
+            this.cboxdebug.Size = new System.Drawing.Size(95, 20);
+            this.cboxdebug.TabIndex = 17;
+            this.cboxdebug.Text = "checkBox1";
+            this.cboxdebug.UseVisualStyleBackColor = true;
+            this.cboxdebug.CheckedChanged += new System.EventHandler(this.cboxdebug_CheckedChanged_1);
             // 
             // fMain
             // 
@@ -523,6 +537,7 @@
         private System.Windows.Forms.PictureBox picResPau;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.CheckBox cboxdebug;
     }
 }
 

@@ -1948,9 +1948,52 @@ namespace SortVisualiser_v1
         }
         #endregion//xong      
 
-
+        public static bool CodertbxIsPause = false;
         #endregion
+        #region Phần Debug dùng manualresetevent
+        public void XuLyDebug()
+        {
+            if (cboxdebug.Checked == true)
+            {
+                ThamSo.ThoiGianDoi = 1;
+                picResPau.Enabled = false;
+                ucNode.pauseStatus.Set();
+                ucNode.IsPause = false;
+                isDebug = true;
+                timer1.Stop();
+                Reset_CountTime();
+            }
+            else
+            {
+                picResPau.Enabled = true;
+                HienThiThuatToan.tamdung.Set();
+                ucNode.pauseStatus.Set();
+                ucNode.IsPause = false;
+                isDebug = false;
+            }
 
+
+
+        }
+
+       
+
+        private void picArrow_Click(object sender, EventArgs e)
+        {
+            if (isDebug == true)
+            {
+                // batdaubtn.Enabled = true;
+                //  Nếu đang ở chế độ thường thì chuyển thành Debug
+                if (!cboxdebug.Checked)
+                    cboxdebug.Checked = true;
+
+                // Chạy code
+                //đặt sign kích hoạt manualresetevent => tạm dừng đợi trong khoảng thời gian vô tận
+                HienThiThuatToan.tamdung.Set();
+                CodertbxIsPause = false;
+            }
+        }
+        #endregion
 
         /*private void button1_Click_1(object sender, EventArgs e)
         {
@@ -1983,7 +2026,10 @@ namespace SortVisualiser_v1
 
         }
 
-
+        private void cboxdebug_CheckedChanged_1(object sender, EventArgs e)
+        {
+            XuLyDebug();
+        }
 
         private void fMain_FormClosing(object sender, FormClosingEventArgs e)
         {
