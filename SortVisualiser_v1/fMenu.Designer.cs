@@ -197,8 +197,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 38);
             this.button1.TabIndex = 9;
-            this.button1.Text = "NULL";
+            this.button1.Text = "Thoát";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDelete
             // 

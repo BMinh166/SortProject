@@ -483,5 +483,10 @@ namespace SortVisualiser_v1
             tbNodeSpace.Text = "";
             tbNodeSpace.SendToBack();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fmain.ExitButton();
+        }
     }
 }
