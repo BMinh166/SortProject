@@ -386,7 +386,7 @@ namespace SortVisualiser_v1
 
 
             Properties.Settings.Default.Save();
-            
+
             //this.Close();
         }
 
@@ -422,7 +422,15 @@ namespace SortVisualiser_v1
 
         private void btnDefault_Click(object sender, EventArgs e)
         {
-
+            DataCleared?.Invoke(this, EventArgs.Empty);
+            btnNodeSizeChange.Text = "45";
+            Properties.Settings.Default.kichCoNode = ThamSo.KichCoNode = 45;
+            btnNodeSpace.Text = "15";
+            Properties.Settings.Default.khoangCachGiuaCacNode = ThamSo.KhoangCachCacNode = 15;
+            Properties.Settings.Default.mauNenNode = ThamSo.mauNen = btnNodeBackColor.BackColor = Color.White;
+            Properties.Settings.Default.mauNodeHoanTatSapXep = ThamSo.mauNodeHTSX = btnNodeSortedColor.BackColor = Color.Gray;
+            Properties.Settings.Default.mauNodeDangSapXep = ThamSo.mauNodeDangSX = btnNodeChoosingColor.BackColor = Color.AliceBlue;
+            Properties.Settings.Default.Save();
         }
 
         public void SortStarted()
@@ -441,6 +449,37 @@ namespace SortVisualiser_v1
             btnUpdate.Enabled = true;
             btnDefault.Enabled = true;
             btnIncOrDes.Enabled = true;
+        }
+
+        private void tbNodeSize_Leave(object sender, EventArgs e)
+        {
+            int number;
+            if (Int32.TryParse(tbNodeSize.Text, out number))
+            {
+                if (number > 50)
+                    tbNodeSize.Text = "50";
+                else if (number < 30)
+                    tbNodeSize.Text = "30";
+                btnNodeSizeChange.Text = tbNodeSize.Text;
+            }
+
+            tbNodeSize.Text = "";
+            tbNodeSize.SendToBack();
+        }
+
+        private void tbNodeSpace_Leave(object sender, EventArgs e)
+        {
+            int number;
+            if (Int32.TryParse(tbNodeSpace.Text, out number))
+            {
+                if (number > 30)
+                    tbNodeSpace.Text = "30";
+                else if (number < 10)
+                    tbNodeSpace.Text = "10";
+                btnNodeSpace.Text = tbNodeSpace.Text;
+            }
+            tbNodeSpace.Text = "";
+            tbNodeSpace.SendToBack();
         }
     }
 }
