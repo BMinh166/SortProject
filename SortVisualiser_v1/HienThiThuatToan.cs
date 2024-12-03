@@ -103,6 +103,7 @@ namespace SortVisualiser_v1
             fDescription.rtbAlgorithm.SelectionFont = new Font(fDescription.rtbAlgorithm.Font, FontStyle.Bold);
             fDescription.rtbAlgorithm.SelectionBackColor = Color.Navy;
             fDescription.rtbAlgorithm.SelectionColor = Color.White;
+            fDescription.rtbAlgorithm.ScrollToCaret();
         }
 
 
