@@ -26,12 +26,12 @@ namespace SortVisualiser_v1
             fmenu = new fMenu(this);
             fmenu.Show();
             EventRegister();
-            fmenu.DataCleared += fmenu_DataCleared; 
-            fmenu.Venut += fmenu_Venut;
-            fmenu.MangChuaSapXep += fmenu_MangChuaSapXep;
+            //fmenu.DataCleared += fmenu_DataCleared; 
+            //fmenu.Venut += fmenu_Venut;
+            //fmenu.MangChuaSapXep += fmenu_MangChuaSapXep;
             fmenu.IncDesSwap += fmenu_IncDesSwap;
             fmenu.TrackBarValueChange += fmenu_trackBarValueChanged;
-            fmenu.StopNow += picStop_Click;
+            //fmenu.StopNow += picStop_Click;
             InitializeComponent();
             BUBClickAction();
             fChildStart();
@@ -47,13 +47,13 @@ namespace SortVisualiser_v1
         public int loaiThuatToan;
         HienThiThuatToan HienThuattoan = new HienThiThuatToan();
         public static bool isDebug = false;
-        public static int SoLuongNode; //Đã chuyển từ private sang static
-        public static List<int> DanhSachThamSo; //Đã chuyển từ private sang static
-        public static List<ucNode> DanhSachNode;    //Đã chuyển từ private sang static
+        private int SoLuongNode; //Đã chuyển từ private sang static
+        private List<int> DanhSachThamSo; //Đã chuyển từ private sang static
+        private List<ucNode> DanhSachNode;    //Đã chuyển từ private sang static
         public List<Label> danhSachLabel;
 
         public List<int> MangChuaSapXep;
-        public static Random rank = new Random(); //Đã chuyển từ private sang static
+        private Random rank = new Random(); //Đã chuyển từ private sang static
 
 
         private int Phut = 0;
@@ -79,24 +79,24 @@ namespace SortVisualiser_v1
             fmenu.LanguageChange += fmenu_LanguageChange;//Đăng kí sự kiện LanguageChange của fmenu
         }
 
-        public void fmenu_DataCleared(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
+        /*public void fmenu_DataCleared(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
         {
             chuasapxepPanel.Controls.Clear();
             pnlMain.Controls.Clear();
             DanhSachNode.Clear();
             DanhSachThamSo.Clear();
            
-        }
+        }*/
 
-        public void fmenu_Venut(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
+        /*public void fmenu_Venut(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
         {
             VeNut();
-        }
+        }*/
 
-        public void fmenu_MangChuaSapXep(object sender, EventArgs e) //Đăng ký sự kiện của fmenu
+        /*public void fmenu_MangChuaSapXep(object sender, EventArgs e) //Đăng ký sự kiện của fmenu
         {
             Mangchuasapxep();
-        }
+        }*/
 
         public void fmenu_IncDesSwap(object sender, EventArgs e)
         {
@@ -733,21 +733,7 @@ namespace SortVisualiser_v1
 
         private void picStop_Click(object sender, EventArgs e)
         {
-            sapxepThread.Abort();
-            VeNut();
-            isRunning = false;
-            for (int i = 0; i < SoLuongNode; i++)
-            {
-                DanhSachNode[i].Text = MangChuaSapXep[i].ToString();
-                DanhSachThamSo[i] = MangChuaSapXep[i];
-            }
-            DieuChinhControls(isRunning);
-            Mangchuasapxep();
-            fmenu.SortFinished();
-            SortLabelOn();
-            Reset_CountTime();
-            timer1.Stop();
-            picStop.Enabled = false;
+            StopNow();
         }
 
 
@@ -849,6 +835,7 @@ namespace SortVisualiser_v1
         }
         #endregion
 
+        #region Các hàm thực hiện thao tác cho nhứng button ở fMenu
         public void ExitButton()
         {
             if (sapxepThread != null)
@@ -885,6 +872,68 @@ namespace SortVisualiser_v1
             sapxepThread = new Thread(new ThreadStart(ThuatToanSapXep));
             sapxepThread.Start();
         }
+
+        public void HandInput()
+        {
+            fManually fman = new fManually();
+            fman.ShowDialog();
+            if(fman.isNhap == true)
+            {
+                string temp = "";
+                SoLuongNode = fman.DayInput.Count();
+                fmenu.nudN.Value = SoLuongNode;
+                VeNut();
+                for (int i = 0; i < SoLuongNode; i++)
+                {
+                    // DanhSachNode[i].Value = input.DayInput[i];
+                    DanhSachNode[i].Text = fman.DayInput[i].ToString();
+                    DanhSachThamSo[i] = fman.DayInput[i];
+
+                }
+                Mangchuasapxep();
+            }
+        }
+
+        public void RandomInput()
+        {
+            if (fMain.isRunning)
+            {
+                StopNow();
+            }
+            //fMain.SoLuongNode = fMain.rank.Next(2, ThamSo.SoluongNodeLonNhat);
+            fmenu.nudN.Value = SoLuongNode = fmenu.NodeTotal;
+            VeNut();
+        }
+
+        public void StopNow()
+        {
+            sapxepThread.Abort();
+            VeNut();
+            isRunning = false;
+            for (int i = 0; i < SoLuongNode; i++)
+            {
+                DanhSachNode[i].Text = MangChuaSapXep[i].ToString();
+                DanhSachThamSo[i] = MangChuaSapXep[i];
+            }
+            DieuChinhControls(isRunning);
+            Mangchuasapxep();
+            fmenu.SortFinished();
+            SortLabelOn();
+            Reset_CountTime();
+            timer1.Stop();
+            picStop.Enabled = false;
+        }
+
+        public void DataCleared()
+        {
+            chuasapxepPanel.Controls.Clear();
+            pnlMain.Controls.Clear();
+            DanhSachNode.Clear();
+            DanhSachThamSo.Clear();
+        }
+
+
+        #endregion
 
         private void Reset_CountTime()
         {
@@ -2004,23 +2053,6 @@ namespace SortVisualiser_v1
             }
         }
         #endregion
-
-        /*private void button1_Click_1(object sender, EventArgs e)
-        {
-            if (sapxepThread != null)
-            {
-                sapxepThread.Abort();
-            }
-            //daydangxepListbox.Visible = true;
-            picStop.Enabled = true;
-            isRunning = true;
-            DieuChinhControls(isRunning);
-            Reset_CountTime();
-            timer1.Start();
-            //ChonThuatToan();
-            sapxepThread = new Thread(new ThreadStart(ThuatToanSapXep));
-            sapxepThread.Start();
-        }*/
 
 
         private void fMain_FormClosed(object sender, FormClosedEventArgs e)

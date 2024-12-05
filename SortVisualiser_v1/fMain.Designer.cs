@@ -50,6 +50,7 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnDescription = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.cboxdebug = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.picStop = new System.Windows.Forms.PictureBox();
             this.picArrow = new System.Windows.Forms.PictureBox();
@@ -61,7 +62,6 @@
             this.lbMangChuaSapXep = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cboxdebug = new System.Windows.Forms.CheckBox();
             this.pnlTitle.SuspendLayout();
             this.pnlINT.SuspendLayout();
             this.pnlBIN.SuspendLayout();
@@ -324,12 +324,25 @@
             this.panel10.Size = new System.Drawing.Size(1250, 50);
             this.panel10.TabIndex = 6;
             // 
+            // cboxdebug
+            // 
+            this.cboxdebug.AutoSize = true;
+            this.cboxdebug.Font = new System.Drawing.Font("Arial", 12F);
+            this.cboxdebug.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cboxdebug.Location = new System.Drawing.Point(1093, 11);
+            this.cboxdebug.Name = "cboxdebug";
+            this.cboxdebug.Size = new System.Drawing.Size(145, 27);
+            this.cboxdebug.TabIndex = 17;
+            this.cboxdebug.Text = "Debug Mode";
+            this.cboxdebug.UseVisualStyleBackColor = true;
+            this.cboxdebug.CheckedChanged += new System.EventHandler(this.cboxdebug_CheckedChanged_1);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Silver;
-            this.label11.Location = new System.Drawing.Point(13, 20);
+            this.label11.Location = new System.Drawing.Point(6, 15);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 21);
@@ -437,17 +450,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // cboxdebug
-            // 
-            this.cboxdebug.AutoSize = true;
-            this.cboxdebug.Location = new System.Drawing.Point(76, 20);
-            this.cboxdebug.Name = "cboxdebug";
-            this.cboxdebug.Size = new System.Drawing.Size(95, 20);
-            this.cboxdebug.TabIndex = 17;
-            this.cboxdebug.Text = "checkBox1";
-            this.cboxdebug.UseVisualStyleBackColor = true;
-            this.cboxdebug.CheckedChanged += new System.EventHandler(this.cboxdebug_CheckedChanged_1);
             // 
             // fMain
             // 
