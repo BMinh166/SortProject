@@ -34,8 +34,9 @@
             // 
             // btn1
             // 
+            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Location = new System.Drawing.Point(51, 84);
-            this.btn1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn1.Margin = new System.Windows.Forms.Padding(4);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(100, 28);
             this.btn1.TabIndex = 0;
@@ -47,7 +48,7 @@
             // tbx1
             // 
             this.tbx1.Location = new System.Drawing.Point(34, 41);
-            this.tbx1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbx1.Margin = new System.Windows.Forms.Padding(4);
             this.tbx1.Multiline = true;
             this.tbx1.Name = "tbx1";
             this.tbx1.Size = new System.Drawing.Size(132, 24);
@@ -57,19 +58,20 @@
             this.tbx1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbx1_KeyDown);
             this.tbx1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx1_KeyPress);
             // 
-            // Node
+            // ucNode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.tbx1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Node";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "ucNode";
             this.Size = new System.Drawing.Size(200, 185);
             this.Load += new System.EventHandler(this.TbxBtn_Load);
             this.BackColorChanged += new System.EventHandler(this.TbxBtn_BackColorChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

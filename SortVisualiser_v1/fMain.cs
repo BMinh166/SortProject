@@ -26,15 +26,18 @@ namespace SortVisualiser_v1
             fmenu = new fMenu(this);
             fmenu.Show();
             EventRegister();
-            fmenu.DataCleared += fmenu_DataCleared; 
-            fmenu.Venut += fmenu_Venut;
-            fmenu.MangChuaSapXep += fmenu_MangChuaSapXep;
+            //fmenu.DataCleared += fmenu_DataCleared; 
+            //fmenu.Venut += fmenu_Venut;
+            //fmenu.MangChuaSapXep += fmenu_MangChuaSapXep;
             fmenu.IncDesSwap += fmenu_IncDesSwap;
             fmenu.TrackBarValueChange += fmenu_trackBarValueChanged;
-            fmenu.StopNow += picStop_Click;
+            //fmenu.StopNow += picStop_Click;
             InitializeComponent();
             BUBClickAction();
             fChildStart();
+            ////
+            /////
+            ///
         }
 
         #region Các biến toàn cục
@@ -47,13 +50,13 @@ namespace SortVisualiser_v1
         public int loaiThuatToan;
         HienThiThuatToan HienThuattoan = new HienThiThuatToan();
         public static bool isDebug = false;
-        public static int SoLuongNode; //Đã chuyển từ private sang static
-        public static List<int> DanhSachThamSo; //Đã chuyển từ private sang static
-        public static List<ucNode> DanhSachNode;    //Đã chuyển từ private sang static
+        private int SoLuongNode; //Đã chuyển từ private sang static
+        private List<int> DanhSachThamSo; //Đã chuyển từ private sang static
+        private List<ucNode> DanhSachNode;    //Đã chuyển từ private sang static
         public List<Label> danhSachLabel;
 
         public List<int> MangChuaSapXep;
-        public static Random rank = new Random(); //Đã chuyển từ private sang static
+        private Random rank = new Random(); //Đã chuyển từ private sang static
 
 
         private int Phut = 0;
@@ -79,24 +82,24 @@ namespace SortVisualiser_v1
             fmenu.LanguageChange += fmenu_LanguageChange;//Đăng kí sự kiện LanguageChange của fmenu
         }
 
-        public void fmenu_DataCleared(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
+        /*public void fmenu_DataCleared(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
         {
             chuasapxepPanel.Controls.Clear();
             pnlMain.Controls.Clear();
             DanhSachNode.Clear();
             DanhSachThamSo.Clear();
            
-        }
+        }*/
 
-        public void fmenu_Venut(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
+        /*public void fmenu_Venut(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
         {
             VeNut();
-        }
+        }*/
 
-        public void fmenu_MangChuaSapXep(object sender, EventArgs e) //Đăng ký sự kiện của fmenu
+        /*public void fmenu_MangChuaSapXep(object sender, EventArgs e) //Đăng ký sự kiện của fmenu
         {
             Mangchuasapxep();
-        }
+        }*/
 
         public void fmenu_IncDesSwap(object sender, EventArgs e)
         {
@@ -115,8 +118,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = BubbleSort;
                 lblButtonDefault();
                 lblBUB.Text = "BUBLE SORT";
-                lblBUB.ForeColor = SystemColors.HighlightText;
-                lblBUB.Font = new Font(lblBUB.Font, FontStyle.Bold);
+                lblBUB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblBUB.Font = new Font(lblBUB.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 0;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -134,8 +137,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = InterchangeSort;
                 lblButtonDefault();
                 lblINT.Text = "INTERCHANGE SORT";
-                lblINT.ForeColor = SystemColors.HighlightText;
-                lblINT.Font = new Font(lblINT.Font, FontStyle.Bold);
+                lblINT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblINT.Font = new Font(lblINT.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 1;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -149,8 +152,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = BinaryInsertionSort;
                 lblButtonDefault();
                 lblBIN.Text = "BINARY INSERTION SORT";
-                lblBIN.ForeColor = SystemColors.HighlightText;
-                lblBIN.Font = new Font(lblBIN.Font, FontStyle.Bold);
+                lblBIN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblBIN.Font = new Font(lblBIN.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 2;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -164,8 +167,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = InsertionSort;
                 lblButtonDefault();
                 lblINS.Text = "INSERTION SORT";
-                lblINS.ForeColor = SystemColors.HighlightText;
-                lblINS.Font = new Font(lblINS.Font, FontStyle.Bold);
+                lblINS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblINS.Font = new Font(lblINS.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 3;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -179,8 +182,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = SelectionSort;
                 lblButtonDefault();
                 lblSEL.Text = "SELECTION SORT";
-                lblSEL.ForeColor = SystemColors.HighlightText;
-                lblSEL.Font = new Font(lblSEL.Font, FontStyle.Bold);
+                lblSEL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblSEL.Font = new Font(lblSEL.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 4;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -195,8 +198,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = HeapSort;
                 lblButtonDefault();
                 lblHEA.Text = "HEAP SORT";
-                lblHEA.ForeColor = SystemColors.HighlightText;
-                lblHEA.Font = new Font(lblHEA.Font, FontStyle.Bold);
+                lblHEA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblHEA.Font = new Font(lblHEA.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 5;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -210,8 +213,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = MergeSort;
                 lblButtonDefault();
                 lblMER.Text = "MERGE SORT";
-                lblMER.ForeColor = SystemColors.HighlightText;
-                lblMER.Font = new Font(lblMER.Font, FontStyle.Bold);
+                lblMER.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblMER.Font = new Font(lblMER.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 6;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -225,8 +228,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = QuickSort;
                 lblButtonDefault();
                 lblQUI.Text = "QUICK SORT";
-                lblQUI.ForeColor = SystemColors.HighlightText;
-                lblQUI.Font = new Font(lblQUI.Font, FontStyle.Bold);
+                lblQUI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblQUI.Font = new Font(lblQUI.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 7;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -252,27 +255,27 @@ namespace SortVisualiser_v1
             lblHEA.Text = "HEA";
             lblMER.Text = "MER";
             lblQUI.Text = "QUI";
-            
-            //Nền đen
-            lblBUB.BackColor = SystemColors.ActiveCaptionText;
-            lblINT.BackColor = SystemColors.ActiveCaptionText;
-            lblBIN.BackColor = SystemColors.ActiveCaptionText;
-            lblINS.BackColor = SystemColors.ActiveCaptionText;
-            lblSEL.BackColor = SystemColors.ActiveCaptionText;
-            lblHEA.BackColor = SystemColors.ActiveCaptionText;
-            lblMER.BackColor = SystemColors.ActiveCaptionText;
-            lblQUI.BackColor = SystemColors.ActiveCaptionText;
-            
-            //Chữ xám
-            lblBUB.ForeColor = SystemColors.ActiveBorder;
-            lblINT.ForeColor = SystemColors.ActiveBorder;
-            lblBIN.ForeColor = SystemColors.ActiveBorder;
-            lblINS.ForeColor = SystemColors.ActiveBorder;
-            lblSEL.ForeColor = SystemColors.ActiveBorder;
-            lblHEA.ForeColor = SystemColors.ActiveBorder;
-            lblMER.ForeColor = SystemColors.ActiveBorder;
-            lblQUI.ForeColor = SystemColors.ActiveBorder;
-            
+
+            //Nền 3, 4, 94
+            lblBUB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblINT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblBIN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblINS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblSEL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblHEA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblMER.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblQUI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+
+            //Chữ 
+            lblBUB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblINT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblBIN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblINS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblSEL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblHEA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblMER.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblQUI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+
             //Kiểu chữ thông thường
             lblBUB.Font = new Font(lblBUB.Font, FontStyle.Regular);
             lblINT.Font = new Font(lblINT.Font, FontStyle.Regular);
@@ -733,21 +736,7 @@ namespace SortVisualiser_v1
 
         private void picStop_Click(object sender, EventArgs e)
         {
-            sapxepThread.Abort();
-            VeNut();
-            isRunning = false;
-            for (int i = 0; i < SoLuongNode; i++)
-            {
-                DanhSachNode[i].Text = MangChuaSapXep[i].ToString();
-                DanhSachThamSo[i] = MangChuaSapXep[i];
-            }
-            DieuChinhControls(isRunning);
-            Mangchuasapxep();
-            fmenu.SortFinished();
-            SortLabelOn();
-            Reset_CountTime();
-            timer1.Stop();
-            picStop.Enabled = false;
+            StopNow();
         }
 
 
@@ -849,6 +838,7 @@ namespace SortVisualiser_v1
         }
         #endregion
 
+        #region Các hàm thực hiện thao tác cho nhứng button ở fMenu
         public void ExitButton()
         {
             if (sapxepThread != null)
@@ -885,6 +875,68 @@ namespace SortVisualiser_v1
             sapxepThread = new Thread(new ThreadStart(ThuatToanSapXep));
             sapxepThread.Start();
         }
+
+        public void HandInput()
+        {
+            fManually fman = new fManually();
+            fman.ShowDialog();
+            if(fman.isNhap == true)
+            {
+                string temp = "";
+                SoLuongNode = fman.DayInput.Count();
+                fmenu.nudN.Value = SoLuongNode;
+                VeNut();
+                for (int i = 0; i < SoLuongNode; i++)
+                {
+                    // DanhSachNode[i].Value = input.DayInput[i];
+                    DanhSachNode[i].Text = fman.DayInput[i].ToString();
+                    DanhSachThamSo[i] = fman.DayInput[i];
+
+                }
+                Mangchuasapxep();
+            }
+        }
+
+        public void RandomInput()
+        {
+            if (fMain.isRunning)
+            {
+                StopNow();
+            }
+            //fMain.SoLuongNode = fMain.rank.Next(2, ThamSo.SoluongNodeLonNhat);
+            fmenu.nudN.Value = SoLuongNode = fmenu.NodeTotal;
+            VeNut();
+        }
+
+        public void StopNow()
+        {
+            sapxepThread.Abort();
+            VeNut();
+            isRunning = false;
+            for (int i = 0; i < SoLuongNode; i++)
+            {
+                DanhSachNode[i].Text = MangChuaSapXep[i].ToString();
+                DanhSachThamSo[i] = MangChuaSapXep[i];
+            }
+            DieuChinhControls(isRunning);
+            Mangchuasapxep();
+            fmenu.SortFinished();
+            SortLabelOn();
+            Reset_CountTime();
+            timer1.Stop();
+            picStop.Enabled = false;
+        }
+
+        public void DataCleared()
+        {
+            chuasapxepPanel.Controls.Clear();
+            pnlMain.Controls.Clear();
+            DanhSachNode.Clear();
+            DanhSachThamSo.Clear();
+        }
+
+
+        #endregion
 
         private void Reset_CountTime()
         {
@@ -928,7 +980,7 @@ namespace SortVisualiser_v1
 
         private void fmenu_trackBarValueChanged(object sender, EventArgs e)
         {
-            if(fmenu.trbSpeed.Value >= 4)
+            if(fmenu.trbSpeed.Value > 4)
             ThamSo.ThoiGianDoi = (8 - fmenu.trbSpeed.Value) * 3;
             else
                 ThamSo.ThoiGianDoi = (8 - fmenu.trbSpeed.Value) * 5;
@@ -2004,23 +2056,6 @@ namespace SortVisualiser_v1
             }
         }
         #endregion
-
-        /*private void button1_Click_1(object sender, EventArgs e)
-        {
-            if (sapxepThread != null)
-            {
-                sapxepThread.Abort();
-            }
-            //daydangxepListbox.Visible = true;
-            picStop.Enabled = true;
-            isRunning = true;
-            DieuChinhControls(isRunning);
-            Reset_CountTime();
-            timer1.Start();
-            //ChonThuatToan();
-            sapxepThread = new Thread(new ThreadStart(ThuatToanSapXep));
-            sapxepThread.Start();
-        }*/
 
 
         private void fMain_FormClosed(object sender, FormClosedEventArgs e)
