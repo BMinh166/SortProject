@@ -14,8 +14,11 @@ namespace SortVisualiser_v1
     {
         public fDescription()
         {
+            HienThiThuatToan.RichTextBoxChange += rtbAlChange;
             InitializeComponent();
         }
+
+        
 
         public void DescriptionTextChange()
         {
@@ -38,6 +41,11 @@ namespace SortVisualiser_v1
                 tpDescription.Text = LanguageChanged.DescriptEN;
                 tpAlgorithm.Text = LanguageChanged.AlgorithmEN;
             }
+        }
+
+        void rtbAlChange(object sender, EventArgs e)
+        {
+            rtbAlgorithm = HienThiThuatToan.rtbAl;
         }
 
         private void tbDescription_TextChanged(object sender, EventArgs e)

@@ -32,7 +32,7 @@
             this.tpDescription = new System.Windows.Forms.TabPage();
             this.tbDescription = new System.Windows.Forms.TextBox();
             this.tpAlgorithm = new System.Windows.Forms.TabPage();
-            rtbAlgorithm = new System.Windows.Forms.RichTextBox();
+            this.rtbAlgorithm = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tpDescription.SuspendLayout();
             this.tpAlgorithm.SuspendLayout();
@@ -74,7 +74,7 @@
             // tpAlgorithm
             // 
             this.tpAlgorithm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.tpAlgorithm.Controls.Add(rtbAlgorithm);
+            this.tpAlgorithm.Controls.Add(this.rtbAlgorithm);
             this.tpAlgorithm.Location = new System.Drawing.Point(4, 28);
             this.tpAlgorithm.Name = "tpAlgorithm";
             this.tpAlgorithm.Padding = new System.Windows.Forms.Padding(3);
@@ -84,14 +84,14 @@
             // 
             // rtbAlgorithm
             // 
-            rtbAlgorithm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            rtbAlgorithm.Location = new System.Drawing.Point(0, 0);
-            rtbAlgorithm.Name = "rtbAlgorithm";
-            rtbAlgorithm.ReadOnly = true;
-            rtbAlgorithm.Size = new System.Drawing.Size(573, 296);
-            rtbAlgorithm.TabIndex = 0;
-            rtbAlgorithm.Text = "";
-            rtbAlgorithm.TextChanged += new System.EventHandler(this.rtbAlgorithm_TextChanged);
+            this.rtbAlgorithm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
+            this.rtbAlgorithm.Location = new System.Drawing.Point(0, 0);
+            this.rtbAlgorithm.Name = "rtbAlgorithm";
+            this.rtbAlgorithm.ReadOnly = true;
+            this.rtbAlgorithm.Size = new System.Drawing.Size(573, 296);
+            this.rtbAlgorithm.TabIndex = 0;
+            this.rtbAlgorithm.Text = "";
+            this.rtbAlgorithm.TextChanged += new System.EventHandler(this.rtbAlgorithm_TextChanged);
             // 
             // fDescription
             // 
@@ -117,6 +117,6 @@
         private System.Windows.Forms.TabPage tpDescription;
         private System.Windows.Forms.TabPage tpAlgorithm;
         private System.Windows.Forms.TextBox tbDescription;
-        public static  System.Windows.Forms.RichTextBox rtbAlgorithm;
+        public System.Windows.Forms.RichTextBox rtbAlgorithm;
     }
 }
