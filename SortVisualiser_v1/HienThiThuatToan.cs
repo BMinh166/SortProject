@@ -14,7 +14,7 @@ namespace SortVisualiser_v1
     {
         //Một số biến toàn cục
         //public static ListBox codeListBox;
-        public static RichTextBox rtbAl;
+        public static RichTextBox rtbAl =new RichTextBox();
         public static TextBox yTuongThuatToan;
         public static string yTuongVi;
         public static string yTuongEn;
