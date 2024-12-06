@@ -23,6 +23,7 @@ namespace SortVisualiser_v1
         public fMenu(fMain fmain)
         {
             InitializeComponent();
+            SetDefault();
             this.fmain = fmain;
         }
 
@@ -349,6 +350,7 @@ namespace SortVisualiser_v1
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             DataCleared?.Invoke(this, EventArgs.Empty);
+            btnStart.Enabled = false;
             int kichCoNode, khoanCachGiuaCacNode;
             //soLuongPhanTuMacDinh;
             bool rs = int.TryParse(btnNodeSizeChange.Text , out kichCoNode);
@@ -425,13 +427,19 @@ namespace SortVisualiser_v1
         private void btnDefault_Click(object sender, EventArgs e)
         {
             DataCleared?.Invoke(this, EventArgs.Empty);
+            btnStart.Enabled = false;
+            SetDefault();
+        }
+
+        void SetDefault()
+        {
             btnNodeSizeChange.Text = "45";
             Properties.Settings.Default.kichCoNode = ThamSo.KichCoNode = 45;
             btnNodeSpace.Text = "15";
             Properties.Settings.Default.khoangCachGiuaCacNode = ThamSo.KhoangCachCacNode = 15;
             Properties.Settings.Default.mauNenNode = ThamSo.mauNen = btnNodeBackColor.BackColor = Color.White;
-            Properties.Settings.Default.mauNodeHoanTatSapXep = ThamSo.mauNodeHTSX = btnNodeSortedColor.BackColor = Color.Gray;
-            Properties.Settings.Default.mauNodeDangSapXep = ThamSo.mauNodeDangSX = btnNodeChoosingColor.BackColor = Color.AliceBlue;
+            Properties.Settings.Default.mauNodeHoanTatSapXep = ThamSo.mauNodeHTSX = btnNodeSortedColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            Properties.Settings.Default.mauNodeDangSapXep = ThamSo.mauNodeDangSX = btnNodeChoosingColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(0))))); ;
             Properties.Settings.Default.Save();
         }
 

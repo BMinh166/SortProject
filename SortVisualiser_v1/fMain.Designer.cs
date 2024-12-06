@@ -50,6 +50,7 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnDescription = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.cboxdebug = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.picStop = new System.Windows.Forms.PictureBox();
             this.picArrow = new System.Windows.Forms.PictureBox();
@@ -61,7 +62,6 @@
             this.lbMangChuaSapXep = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cboxdebug = new System.Windows.Forms.CheckBox();
             this.pnlTitle.SuspendLayout();
             this.pnlINT.SuspendLayout();
             this.pnlBIN.SuspendLayout();
@@ -81,7 +81,7 @@
             // 
             // pnlTitle
             // 
-            this.pnlTitle.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94)))));
             this.pnlTitle.Controls.Add(this.pnlINT);
             this.pnlTitle.Controls.Add(this.lblBUB);
             this.pnlTitle.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -113,7 +113,7 @@
             this.lblBIN.AutoSize = true;
             this.lblBIN.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblBIN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBIN.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblBIN.ForeColor = System.Drawing.Color.White;
             this.lblBIN.Location = new System.Drawing.Point(3, 9);
             this.lblBIN.Name = "lblBIN";
             this.lblBIN.Size = new System.Drawing.Size(42, 23);
@@ -136,7 +136,7 @@
             this.lblINS.AutoSize = true;
             this.lblINS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblINS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblINS.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblINS.ForeColor = System.Drawing.Color.White;
             this.lblINS.Location = new System.Drawing.Point(3, 9);
             this.lblINS.Name = "lblINS";
             this.lblINS.Size = new System.Drawing.Size(42, 23);
@@ -159,7 +159,7 @@
             this.lblSEL.AutoSize = true;
             this.lblSEL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSEL.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSEL.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblSEL.ForeColor = System.Drawing.Color.White;
             this.lblSEL.Location = new System.Drawing.Point(3, 9);
             this.lblSEL.Name = "lblSEL";
             this.lblSEL.Size = new System.Drawing.Size(47, 23);
@@ -182,7 +182,7 @@
             this.lblHEA.AutoSize = true;
             this.lblHEA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblHEA.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHEA.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblHEA.ForeColor = System.Drawing.Color.White;
             this.lblHEA.Location = new System.Drawing.Point(3, 9);
             this.lblHEA.Name = "lblHEA";
             this.lblHEA.Size = new System.Drawing.Size(49, 23);
@@ -213,7 +213,7 @@
             this.lblQUI.AutoSize = true;
             this.lblQUI.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblQUI.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQUI.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblQUI.ForeColor = System.Drawing.Color.White;
             this.lblQUI.Location = new System.Drawing.Point(3, 9);
             this.lblQUI.Name = "lblQUI";
             this.lblQUI.Size = new System.Drawing.Size(45, 23);
@@ -227,7 +227,7 @@
             this.lblMER.AutoSize = true;
             this.lblMER.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblMER.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMER.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblMER.ForeColor = System.Drawing.Color.White;
             this.lblMER.Location = new System.Drawing.Point(3, 9);
             this.lblMER.Name = "lblMER";
             this.lblMER.Size = new System.Drawing.Size(54, 23);
@@ -241,7 +241,7 @@
             this.lblINT.AutoSize = true;
             this.lblINT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblINT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblINT.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblINT.ForeColor = System.Drawing.Color.White;
             this.lblINT.Location = new System.Drawing.Point(3, 9);
             this.lblINT.Name = "lblINT";
             this.lblINT.Size = new System.Drawing.Size(41, 23);
@@ -254,11 +254,11 @@
             // 
             this.lblBUB.AutoSize = true;
             this.lblBUB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblBUB.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBUB.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblBUB.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBUB.ForeColor = System.Drawing.Color.White;
             this.lblBUB.Location = new System.Drawing.Point(6, 9);
             this.lblBUB.Name = "lblBUB";
-            this.lblBUB.Size = new System.Drawing.Size(49, 23);
+            this.lblBUB.Size = new System.Drawing.Size(52, 24);
             this.lblBUB.TabIndex = 0;
             this.lblBUB.Text = "BUB";
             this.lblBUB.SizeChanged += new System.EventHandler(this.lblBUB_SizeChanged);
@@ -266,6 +266,7 @@
             // 
             // pnlMain
             // 
+            this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.pnlMain.Location = new System.Drawing.Point(0, 47);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1250, 376);
@@ -286,7 +287,7 @@
             // 
             // btnMenu
             // 
-            this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.Location = new System.Drawing.Point(0, 52);
@@ -299,7 +300,7 @@
             // 
             // btnDescription
             // 
-            this.btnDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(182)))));
             this.btnDescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDescription.Location = new System.Drawing.Point(0, 0);
@@ -323,6 +324,17 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(1250, 50);
             this.panel10.TabIndex = 6;
+            // 
+            // cboxdebug
+            // 
+            this.cboxdebug.AutoSize = true;
+            this.cboxdebug.Location = new System.Drawing.Point(76, 20);
+            this.cboxdebug.Name = "cboxdebug";
+            this.cboxdebug.Size = new System.Drawing.Size(95, 20);
+            this.cboxdebug.TabIndex = 17;
+            this.cboxdebug.Text = "checkBox1";
+            this.cboxdebug.UseVisualStyleBackColor = true;
+            this.cboxdebug.CheckedChanged += new System.EventHandler(this.cboxdebug_CheckedChanged_1);
             // 
             // label11
             // 
@@ -378,7 +390,7 @@
             // 
             // pnlMenu
             // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.pnlMenu.Location = new System.Drawing.Point(41, 52);
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(595, 331);
@@ -386,7 +398,7 @@
             // 
             // pnlDescription
             // 
-            this.pnlDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.pnlDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
             this.pnlDescription.Location = new System.Drawing.Point(636, 52);
             this.pnlDescription.Name = "pnlDescription";
             this.pnlDescription.Size = new System.Drawing.Size(582, 331);
@@ -407,7 +419,7 @@
             // 
             // chuasapxepPanel
             // 
-            this.chuasapxepPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.chuasapxepPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
             this.chuasapxepPanel.Controls.Add(this.lbMangChuaSapXep);
             this.chuasapxepPanel.Location = new System.Drawing.Point(0, 0);
             this.chuasapxepPanel.Name = "chuasapxepPanel";
@@ -438,22 +450,12 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // cboxdebug
-            // 
-            this.cboxdebug.AutoSize = true;
-            this.cboxdebug.Location = new System.Drawing.Point(76, 20);
-            this.cboxdebug.Name = "cboxdebug";
-            this.cboxdebug.Size = new System.Drawing.Size(95, 20);
-            this.cboxdebug.TabIndex = 17;
-            this.cboxdebug.Text = "checkBox1";
-            this.cboxdebug.UseVisualStyleBackColor = true;
-            this.cboxdebug.CheckedChanged += new System.EventHandler(this.cboxdebug_CheckedChanged_1);
-            // 
             // fMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(240)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1250, 853);
             this.Controls.Add(this.pnlMiddle);
             this.Controls.Add(this.panel10);

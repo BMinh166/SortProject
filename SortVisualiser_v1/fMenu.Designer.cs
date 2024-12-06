@@ -79,9 +79,10 @@
             // 
             // btnRandom
             // 
-            this.btnRandom.BackColor = System.Drawing.Color.White;
+            this.btnRandom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.btnRandom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRandom.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRandom.ForeColor = System.Drawing.Color.Black;
             this.btnRandom.Location = new System.Drawing.Point(154, 75);
             this.btnRandom.Name = "btnRandom";
             this.btnRandom.Size = new System.Drawing.Size(127, 38);
@@ -125,7 +126,7 @@
             // 
             // btnHand
             // 
-            this.btnHand.BackColor = System.Drawing.Color.White;
+            this.btnHand.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.btnHand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHand.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHand.Location = new System.Drawing.Point(287, 75);
@@ -168,12 +169,12 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(595, 330);
+            this.tabControl1.Size = new System.Drawing.Size(595, 332);
             this.tabControl1.TabIndex = 8;
             // 
             // tpCreate
             // 
-            this.tpCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tpCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.tpCreate.Controls.Add(this.button1);
             this.tpCreate.Controls.Add(this.btnDelete);
             this.tpCreate.Controls.Add(this.panel1);
@@ -184,7 +185,7 @@
             this.tpCreate.Location = new System.Drawing.Point(4, 28);
             this.tpCreate.Name = "tpCreate";
             this.tpCreate.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCreate.Size = new System.Drawing.Size(587, 298);
+            this.tpCreate.Size = new System.Drawing.Size(587, 300);
             this.tpCreate.TabIndex = 0;
             this.tpCreate.Text = "Khởi tạo";
             // 
@@ -203,7 +204,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.White;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(242)))), ((int)(((byte)(253)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(409, 75);
@@ -216,7 +217,7 @@
             // 
             // tpSetting
             // 
-            this.tpSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tpSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.tpSetting.Controls.Add(this.lblSpeedShow);
             this.tpSetting.Controls.Add(this.lblSpeed);
             this.tpSetting.Controls.Add(this.trbSpeed);
@@ -227,7 +228,7 @@
             this.tpSetting.Location = new System.Drawing.Point(4, 28);
             this.tpSetting.Name = "tpSetting";
             this.tpSetting.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSetting.Size = new System.Drawing.Size(587, 298);
+            this.tpSetting.Size = new System.Drawing.Size(587, 300);
             this.tpSetting.TabIndex = 1;
             this.tpSetting.Text = "Cài đặt";
             // 
@@ -252,7 +253,7 @@
             // 
             // trbSpeed
             // 
-            this.trbSpeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.trbSpeed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.trbSpeed.Location = new System.Drawing.Point(144, 221);
             this.trbSpeed.Maximum = 8;
             this.trbSpeed.Name = "trbSpeed";
@@ -310,17 +311,18 @@
             // 
             // tbCustomize
             // 
-            this.tbCustomize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tbCustomize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(247)))), ((int)(((byte)(230)))));
             this.tbCustomize.Controls.Add(this.panel2);
             this.tbCustomize.Location = new System.Drawing.Point(4, 28);
             this.tbCustomize.Name = "tbCustomize";
-            this.tbCustomize.Size = new System.Drawing.Size(587, 298);
+            this.tbCustomize.Size = new System.Drawing.Size(587, 300);
             this.tbCustomize.TabIndex = 2;
             this.tbCustomize.Text = "Tùy chỉnh";
             // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.panel2.Controls.Add(this.btnDefault);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Controls.Add(this.lbNodeSortedColor);
@@ -342,7 +344,7 @@
             this.panel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(578, 291);
+            this.panel2.Size = new System.Drawing.Size(587, 294);
             this.panel2.TabIndex = 0;
             // 
             // btnDefault
@@ -554,7 +556,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(595, 331);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

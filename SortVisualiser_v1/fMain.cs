@@ -115,8 +115,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = BubbleSort;
                 lblButtonDefault();
                 lblBUB.Text = "BUBLE SORT";
-                lblBUB.ForeColor = SystemColors.HighlightText;
-                lblBUB.Font = new Font(lblBUB.Font, FontStyle.Bold);
+                lblBUB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblBUB.Font = new Font(lblBUB.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 0;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -134,8 +134,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = InterchangeSort;
                 lblButtonDefault();
                 lblINT.Text = "INTERCHANGE SORT";
-                lblINT.ForeColor = SystemColors.HighlightText;
-                lblINT.Font = new Font(lblINT.Font, FontStyle.Bold);
+                lblINT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblINT.Font = new Font(lblINT.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 1;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -149,8 +149,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = BinaryInsertionSort;
                 lblButtonDefault();
                 lblBIN.Text = "BINARY INSERTION SORT";
-                lblBIN.ForeColor = SystemColors.HighlightText;
-                lblBIN.Font = new Font(lblBIN.Font, FontStyle.Bold);
+                lblBIN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblBIN.Font = new Font(lblBIN.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 2;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -164,8 +164,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = InsertionSort;
                 lblButtonDefault();
                 lblINS.Text = "INSERTION SORT";
-                lblINS.ForeColor = SystemColors.HighlightText;
-                lblINS.Font = new Font(lblINS.Font, FontStyle.Bold);
+                lblINS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblINS.Font = new Font(lblINS.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 3;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -179,8 +179,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = SelectionSort;
                 lblButtonDefault();
                 lblSEL.Text = "SELECTION SORT";
-                lblSEL.ForeColor = SystemColors.HighlightText;
-                lblSEL.Font = new Font(lblSEL.Font, FontStyle.Bold);
+                lblSEL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblSEL.Font = new Font(lblSEL.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 4;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -195,8 +195,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = HeapSort;
                 lblButtonDefault();
                 lblHEA.Text = "HEAP SORT";
-                lblHEA.ForeColor = SystemColors.HighlightText;
-                lblHEA.Font = new Font(lblHEA.Font, FontStyle.Bold);
+                lblHEA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblHEA.Font = new Font(lblHEA.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 5;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -210,8 +210,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = MergeSort;
                 lblButtonDefault();
                 lblMER.Text = "MERGE SORT";
-                lblMER.ForeColor = SystemColors.HighlightText;
-                lblMER.Font = new Font(lblMER.Font, FontStyle.Bold);
+                lblMER.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblMER.Font = new Font(lblMER.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 6;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -225,8 +225,8 @@ namespace SortVisualiser_v1
                 ThuatToanSapXep = QuickSort;
                 lblButtonDefault();
                 lblQUI.Text = "QUICK SORT";
-                lblQUI.ForeColor = SystemColors.HighlightText;
-                lblQUI.Font = new Font(lblQUI.Font, FontStyle.Bold);
+                lblQUI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+                lblQUI.Font = new Font(lblQUI.Font, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
                 typeSort = 7;
                 HienThiThuatToan.Type_Sort();
                 fdes.DescriptionTextChange();
@@ -252,27 +252,27 @@ namespace SortVisualiser_v1
             lblHEA.Text = "HEA";
             lblMER.Text = "MER";
             lblQUI.Text = "QUI";
-            
-            //Nền đen
-            lblBUB.BackColor = SystemColors.ActiveCaptionText;
-            lblINT.BackColor = SystemColors.ActiveCaptionText;
-            lblBIN.BackColor = SystemColors.ActiveCaptionText;
-            lblINS.BackColor = SystemColors.ActiveCaptionText;
-            lblSEL.BackColor = SystemColors.ActiveCaptionText;
-            lblHEA.BackColor = SystemColors.ActiveCaptionText;
-            lblMER.BackColor = SystemColors.ActiveCaptionText;
-            lblQUI.BackColor = SystemColors.ActiveCaptionText;
-            
-            //Chữ xám
-            lblBUB.ForeColor = SystemColors.ActiveBorder;
-            lblINT.ForeColor = SystemColors.ActiveBorder;
-            lblBIN.ForeColor = SystemColors.ActiveBorder;
-            lblINS.ForeColor = SystemColors.ActiveBorder;
-            lblSEL.ForeColor = SystemColors.ActiveBorder;
-            lblHEA.ForeColor = SystemColors.ActiveBorder;
-            lblMER.ForeColor = SystemColors.ActiveBorder;
-            lblQUI.ForeColor = SystemColors.ActiveBorder;
-            
+
+            //Nền 3, 4, 94
+            lblBUB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblINT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblBIN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblINS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblSEL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblHEA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblMER.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+            lblQUI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(4)))), ((int)(((byte)(94))))); ;
+
+            //Chữ 
+            lblBUB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblINT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblBIN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblINS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblSEL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblHEA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblMER.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+            lblQUI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255))))); ;
+
             //Kiểu chữ thông thường
             lblBUB.Font = new Font(lblBUB.Font, FontStyle.Regular);
             lblINT.Font = new Font(lblINT.Font, FontStyle.Regular);
@@ -928,7 +928,7 @@ namespace SortVisualiser_v1
 
         private void fmenu_trackBarValueChanged(object sender, EventArgs e)
         {
-            if(fmenu.trbSpeed.Value >= 4)
+            if(fmenu.trbSpeed.Value > 4)
             ThamSo.ThoiGianDoi = (8 - fmenu.trbSpeed.Value) * 3;
             else
                 ThamSo.ThoiGianDoi = (8 - fmenu.trbSpeed.Value) * 5;

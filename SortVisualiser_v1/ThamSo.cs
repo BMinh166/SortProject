@@ -18,8 +18,8 @@ namespace SortVisualiser_v1
         public static int GiaTriLonNhat = 100;
         public static int DoCaoDiChuyen = KichCoNode + 5;
         public static Color mauNen = Color.White;
-        public static Color mauNodeHTSX = Color.Gray;
-        public static Color mauNodeDangSX = Color.AliceBlue;
+        public static Color mauNodeHTSX = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+        public static Color mauNodeDangSX = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(165)))), ((int)(((byte)(0)))));
         public static Color Nodeketiep = Color.AntiqueWhite;
     }
 }
