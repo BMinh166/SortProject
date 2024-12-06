@@ -14,12 +14,13 @@ namespace SortVisualiser_v1
     {
         //Một số biến toàn cục
         //public static ListBox codeListBox;
-        public static RichTextBox rtbAl =new RichTextBox();
+        public static RichTextBox rtbAl = new RichTextBox();
         public static TextBox yTuongThuatToan;
         public static string yTuongVi;
         public static string yTuongEn;
         public static string algorithm;
         public static bool isEn = false;
+        public static int number;
         public static ManualResetEvent tamdung = new ManualResetEvent(true);
         public static event EventHandler RichTextBoxChange;
         
@@ -87,7 +88,8 @@ namespace SortVisualiser_v1
             tamdung.WaitOne(Timeout.Infinite);
 
             //codeListBox.SelectedIndex = line;
-            UpdateTextbox(line);
+            number = line;
+            UpdateTextbox(number);
             if (fMain.isDebug == true)
             {
                 tamdung.Reset();
@@ -96,31 +98,7 @@ namespace SortVisualiser_v1
 
         static void UpdateTextbox(int num)
         {
-            
-            rtbAl.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));
-            rtbAl.SelectionFont = new Font(rtbAl.Font, FontStyle.Regular);
-            rtbAl.SelectionColor = Color.Black;
-            int lineIndex = num;
-            int start = rtbAl.GetFirstCharIndexFromLine(lineIndex);
-            int length = rtbAl.Lines[num].Length;
-            rtbAl.Select(start, length);
-            rtbAl.SelectionFont = new Font(rtbAl.Font, FontStyle.Bold);
-            rtbAl.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
-            rtbAl.SelectionColor = Color.White;
-            rtbAl.ScrollToCaret();
-            RichTextBoxChange?.DynamicInvoke();
-
-            //fDescription.rtbAlgorithm.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));//144, 224, 239
-            //fDescription.rtbAlgorithm.SelectionFont = new Font(fDescription.rtbAlgorithm.Font, FontStyle.Regular);
-            //fDescription.rtbAlgorithm.SelectionColor = Color.Black;
-            //int lineIndex = num;
-            //int start = fDescription.rtbAlgorithm.GetFirstCharIndexFromLine(lineIndex);
-            //int length = fDescription.rtbAlgorithm.Lines[num].Length;
-            //fDescription.rtbAlgorithm.Select(start, length);
-            //fDescription.rtbAlgorithm.SelectionFont = new Font(fDescription.rtbAlgorithm.Font, FontStyle.Bold);
-            //fDescription.rtbAlgorithm.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
-            //fDescription.rtbAlgorithm.SelectionColor = Color.White;
-            //fDescription.rtbAlgorithm.ScrollToCaret();
+            RichTextBoxChange?.DynamicInvoke(num, EventArgs.Empty);
         }
 
 
