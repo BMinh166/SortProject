@@ -353,9 +353,7 @@ namespace SortVisualiser_v1
 
             
             btnStart.Enabled = false;
-
             fmain.DataCleared();
-
             int kichCoNode, khoanCachGiuaCacNode;
             //soLuongPhanTuMacDinh;
             bool rs = int.TryParse(btnNodeSizeChange.Text , out kichCoNode);
