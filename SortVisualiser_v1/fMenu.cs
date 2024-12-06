@@ -350,8 +350,6 @@ namespace SortVisualiser_v1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
-            
             btnStart.Enabled = false;
             fmain.DataCleared();
             int kichCoNode, khoanCachGiuaCacNode;
@@ -437,7 +435,6 @@ namespace SortVisualiser_v1
 
         void SetDefault()
         {
-
             btnNodeSizeChange.Text = "45";
             Properties.Settings.Default.kichCoNode = ThamSo.KichCoNode = 45;
             btnNodeSpace.Text = "15";
