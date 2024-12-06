@@ -35,6 +35,9 @@ namespace SortVisualiser_v1
             InitializeComponent();
             BUBClickAction();
             fChildStart();
+            ////
+            /////
+            ///
         }
 
         #region Các biến toàn cục

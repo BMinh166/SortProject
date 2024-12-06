@@ -26,22 +26,6 @@ C:\Users\Tan Lee\Downloads\Documents\LTTQ\Project\SortProject\SortVisualiser_v1\
 C:\Users\Tan Lee\Downloads\Documents\LTTQ\Project\SortProject\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.pdb
 D:\BM\Code\SortVisualiser_v1\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fManually.resources
 C:\Users\Tan Lee\Downloads\Documents\LTTQ\Project\SortProject\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fManually.resources
-<<<<<<< HEAD
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.exe.config
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.exe
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.pdb
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.csproj.AssemblyReference.cache
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fDescription.resources
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fManually.resources
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fMenu.resources
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fMain.resources
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.Properties.Resources.resources
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.ucNode.resources
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.csproj.GenerateResource.cache
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.csproj.CoreCompileInputs.cache
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.exe
-D:\BM\Code\Thử nghiệm\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.pdb
-=======
 D:\Hoc\C#\SortProject\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.csproj.AssemblyReference.cache
 D:\Hoc\C#\SortProject\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fDescription.resources
 D:\Hoc\C#\SortProject\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.fManually.resources
@@ -56,4 +40,3 @@ D:\Hoc\C#\SortProject\SortVisualiser_v1\obj\Debug\SortVisualiser_v1.pdb
 D:\Hoc\C#\SortProject\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.exe.config
 D:\Hoc\C#\SortProject\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.exe
 D:\Hoc\C#\SortProject\SortVisualiser_v1\bin\Debug\SortVisualiser_v1.pdb
->>>>>>> 4e8aeccf5b6895c6ff23fecdcfc6dbeeaabb75cc
