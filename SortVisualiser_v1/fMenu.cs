@@ -30,11 +30,11 @@ namespace SortVisualiser_v1
 
         public event EventHandler<EventArgs> LanguageChange;
         public event EventHandler IncDesSwap;
-        public event EventHandler DataCleared;
-        public event EventHandler Venut;
-        public event EventHandler MangChuaSapXep;
+        //public event EventHandler DataCleared;
+        //public event EventHandler Venut;
+        //public event EventHandler MangChuaSapXep;
         public event EventHandler TrackBarValueChange;
-        public event EventHandler StopNow;
+        //public event EventHandler StopNow;
         public int NodeTotal;
 
 
@@ -67,24 +67,25 @@ namespace SortVisualiser_v1
 
         private void btnHand_Click(object sender, EventArgs e)
         {
-                fman = new fManually();
-                fman.ManualLanguageChange();
-                fman.ShowDialog();
-                if (fman.isNhap == true)
+            /*fman = new fManually();
+            fman.ManualLanguageChange();
+            fman.ShowDialog();
+            if (fman.isNhap == true)
+            {
+                string temp = "";
+                fMain.SoLuongNode = fman.DayInput.Count();
+                nudN.Value = fMain.SoLuongNode;
+                Venut?.Invoke(this, EventArgs.Empty);
+            for (int i = 0; i < fMain.SoLuongNode; i++)
                 {
-                    string temp = "";
-                    fMain.SoLuongNode = fman.DayInput.Count();
-                    nudN.Value = fMain.SoLuongNode;
-                    Venut?.Invoke(this, EventArgs.Empty);
-                for (int i = 0; i < fMain.SoLuongNode; i++)
-                    {
-                        // DanhSachNode[i].Value = input.DayInput[i];
-                        fMain.DanhSachNode[i].Text = fman.DayInput[i].ToString();
-                        fMain.DanhSachThamSo[i] = fman.DayInput[i];
+                    // DanhSachNode[i].Value = input.DayInput[i];
+                    fMain.DanhSachNode[i].Text = fman.DayInput[i].ToString();
+                    fMain.DanhSachThamSo[i] = fman.DayInput[i];
 
-                    }
-                MangChuaSapXep?.Invoke(this, EventArgs.Empty);
-            }
+                }
+            MangChuaSapXep?.Invoke(this, EventArgs.Empty);
+        }*/
+            fmain.HandInput();
         }
 
         private void btnLanguage_Click(object sender, EventArgs e)
@@ -349,8 +350,12 @@ namespace SortVisualiser_v1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             DataCleared?.Invoke(this, EventArgs.Empty);
             btnStart.Enabled = false;
+=======
+            fmain.DataCleared();
+>>>>>>> 4e8aeccf5b6895c6ff23fecdcfc6dbeeaabb75cc
             int kichCoNode, khoanCachGiuaCacNode;
             //soLuongPhanTuMacDinh;
             bool rs = int.TryParse(btnNodeSizeChange.Text , out kichCoNode);
@@ -408,24 +413,26 @@ namespace SortVisualiser_v1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DataCleared?.Invoke(this, EventArgs.Empty);
+            fmain.DataCleared();
             btnStart.Enabled = false;
         }
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
-            if(fMain.isRunning)
+            /*if(fMain.isRunning)
             {
                 StopNow?.Invoke(this, EventArgs.Empty);
             }
             //fMain.SoLuongNode = fMain.rank.Next(2, ThamSo.SoluongNodeLonNhat);
             nudN.Value = fMain.SoLuongNode = NodeTotal;
             Venut?.Invoke(this, EventArgs.Empty);
-            
+            */
+            fmain.RandomInput();
         }
 
         private void btnDefault_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             DataCleared?.Invoke(this, EventArgs.Empty);
             btnStart.Enabled = false;
             SetDefault();
@@ -433,6 +440,9 @@ namespace SortVisualiser_v1
 
         void SetDefault()
         {
+=======
+            fmain.DataCleared();
+>>>>>>> 4e8aeccf5b6895c6ff23fecdcfc6dbeeaabb75cc
             btnNodeSizeChange.Text = "45";
             Properties.Settings.Default.kichCoNode = ThamSo.KichCoNode = 45;
             btnNodeSpace.Text = "15";

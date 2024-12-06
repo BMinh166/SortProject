@@ -328,11 +328,21 @@
             // cboxdebug
             // 
             this.cboxdebug.AutoSize = true;
+<<<<<<< HEAD
             this.cboxdebug.Location = new System.Drawing.Point(76, 20);
             this.cboxdebug.Name = "cboxdebug";
             this.cboxdebug.Size = new System.Drawing.Size(95, 20);
             this.cboxdebug.TabIndex = 17;
             this.cboxdebug.Text = "checkBox1";
+=======
+            this.cboxdebug.Font = new System.Drawing.Font("Arial", 12F);
+            this.cboxdebug.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cboxdebug.Location = new System.Drawing.Point(1093, 11);
+            this.cboxdebug.Name = "cboxdebug";
+            this.cboxdebug.Size = new System.Drawing.Size(145, 27);
+            this.cboxdebug.TabIndex = 17;
+            this.cboxdebug.Text = "Debug Mode";
+>>>>>>> 4e8aeccf5b6895c6ff23fecdcfc6dbeeaabb75cc
             this.cboxdebug.UseVisualStyleBackColor = true;
             this.cboxdebug.CheckedChanged += new System.EventHandler(this.cboxdebug_CheckedChanged_1);
             // 
@@ -341,7 +351,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Silver;
-            this.label11.Location = new System.Drawing.Point(13, 20);
+            this.label11.Location = new System.Drawing.Point(6, 15);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 21);
