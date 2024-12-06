@@ -351,7 +351,7 @@ namespace SortVisualiser_v1
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 <<<<<<< HEAD
-            DataCleared?.Invoke(this, EventArgs.Empty);
+            fmain.DataCleared();
             btnStart.Enabled = false;
 =======
             fmain.DataCleared();
@@ -433,7 +433,7 @@ namespace SortVisualiser_v1
         private void btnDefault_Click(object sender, EventArgs e)
         {
 <<<<<<< HEAD
-            DataCleared?.Invoke(this, EventArgs.Empty);
+            fmain.DataCleared();
             btnStart.Enabled = false;
             SetDefault();
         }
