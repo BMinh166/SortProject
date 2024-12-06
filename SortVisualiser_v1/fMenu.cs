@@ -350,12 +350,12 @@ namespace SortVisualiser_v1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            fmain.DataCleared();
+
+            
             btnStart.Enabled = false;
-=======
+
             fmain.DataCleared();
->>>>>>> 4e8aeccf5b6895c6ff23fecdcfc6dbeeaabb75cc
+
             int kichCoNode, khoanCachGiuaCacNode;
             //soLuongPhanTuMacDinh;
             bool rs = int.TryParse(btnNodeSizeChange.Text , out kichCoNode);
@@ -432,7 +432,6 @@ namespace SortVisualiser_v1
 
         private void btnDefault_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             fmain.DataCleared();
             btnStart.Enabled = false;
             SetDefault();
@@ -440,9 +439,7 @@ namespace SortVisualiser_v1
 
         void SetDefault()
         {
-=======
-            fmain.DataCleared();
->>>>>>> 4e8aeccf5b6895c6ff23fecdcfc6dbeeaabb75cc
+
             btnNodeSizeChange.Text = "45";
             Properties.Settings.Default.kichCoNode = ThamSo.KichCoNode = 45;
             btnNodeSpace.Text = "15";
