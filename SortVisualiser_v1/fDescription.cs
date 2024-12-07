@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,12 +15,12 @@ namespace SortVisualiser_v1
     {
         public fDescription()
         {
-            HienThiThuatToan.RichTextBoxChange += rtbAlChange;
+            HienThiThuatToan.RichTextBoxChange += rtbAlChange;//Đăng kí event thay đổi form thông qua HienThiThuatToan
             InitializeComponent();
         }
+        int lineIndex = 0;
 
-        
-
+        #region Thay đổi văn bản/ngôn ngữ ở fdes
         public void DescriptionTextChange()
         {
             if (fMain.isEnglish)
@@ -42,35 +43,39 @@ namespace SortVisualiser_v1
                 tpAlgorithm.Text = LanguageChanged.AlgorithmEN;
             }
         }
+        #endregion
 
+        #region Thay đổi richtextbox
         void rtbAlChange(object sender, EventArgs e)
         {
-            rtbAlgorithm.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));//144, 224, 239
-            rtbAlgorithm.SelectionFont = new Font(rtbAlgorithm.Font, FontStyle.Regular);
-            rtbAlgorithm.SelectionColor = Color.Black;
-            int lineIndex = HienThiThuatToan.number;
             int start = rtbAlgorithm.GetFirstCharIndexFromLine(lineIndex);
-            int length = rtbAlgorithm.Lines[HienThiThuatToan.number].Length;
+            int length = rtbAlgorithm.Lines[lineIndex].Length;
+            rtbAlgorithm.Select(start, length);
+            rtbAlgorithm.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));//144, 224, 239
+            rtbAlgorithm.Select(start, length);
+            rtbAlgorithm.SelectionFont = new Font(rtbAlgorithm.Font, FontStyle.Regular);
+            rtbAlgorithm.Select(start, length);
+            rtbAlgorithm.SelectionColor = Color.Black;
+
+            lineIndex = HienThiThuatToan.number;
+            start = rtbAlgorithm.GetFirstCharIndexFromLine(lineIndex);
+            length = rtbAlgorithm.Lines[HienThiThuatToan.number].Length;
             rtbAlgorithm.Select(start, length);
             rtbAlgorithm.SelectionFont = new Font(rtbAlgorithm.Font, FontStyle.Bold);
-            rtbAlgorithm.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(128)))));
+            rtbAlgorithm.Select(start, length);
+            rtbAlgorithm.SelectionBackColor = Color.Navy;
+            rtbAlgorithm.Select(start, length);
             rtbAlgorithm.SelectionColor = Color.White;
             rtbAlgorithm.ScrollToCaret();
         }
+        #endregion
 
-        private void tbDescription_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Thay đổi của form khi bắt đầu sort
         public void SortStarted()
         {
             tabControl1.SelectedIndex = 1;
         }
+        #endregion
 
-        private void rtbAlgorithm_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
