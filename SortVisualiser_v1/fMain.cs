@@ -49,28 +49,18 @@ namespace SortVisualiser_v1
         public static bool isDebug = false;
         private int SoLuongNode; 
         private List<int> DanhSachThamSo; 
-<<<<<<< HEAD
         private List<ucNode> DanhSachNode;    
         public List<Label> danhSachLabel;
-
         public List<int> MangChuaSapXep;
         private Random rank = new Random(); 
-=======
-        private List<ucNode> DanhSachNode;
-        public List<Label> danhSachLabel;
-
-        public List<int> MangChuaSapXep;
-        private Random rank = new Random();
->>>>>>> 4b6f0733321a1f60b971097fa522991ae3d3531b
-
 
         private int Phut = 0;
         private int Giay = 0;
         //String thông báo
 
 
-        private string thoatMessageBoxName;
-        private string thoat;
+        
+        
         private string hoanTatMessageBoxName;
         private string hoanTat;
         private string strSoLuongNode;

@@ -18,7 +18,7 @@ namespace SortVisualiser_v1
     public partial class fMenu : Form
     {
 
-        fManually fman;
+        
         private fMain fmain;
         public fMenu(fMain fmain)
         {
