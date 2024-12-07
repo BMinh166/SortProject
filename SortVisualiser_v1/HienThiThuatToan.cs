@@ -12,9 +12,8 @@ namespace SortVisualiser_v1
 {
     public class HienThiThuatToan
     {
-        //Một số biến toàn cục
+        #region Một số biến toàn cục
         //public static ListBox codeListBox;
-        public static RichTextBox rtbAl = new RichTextBox();
         public static TextBox yTuongThuatToan;
         public static string yTuongVi;
         public static string yTuongEn;
@@ -23,13 +22,30 @@ namespace SortVisualiser_v1
         public static int number;
         public static ManualResetEvent tamdung = new ManualResetEvent(true);
         public static event EventHandler RichTextBoxChange;
-        
+        #endregion
+
         public static string[] ChuyenText(string doc)
         {
             string[] text;
             text = doc.Split('\n');//Cac string den xuong dong
             return text;
         }
+
+        public static void ChayCodeC(int line)
+        {
+            Thread.Sleep(ThamSo.ThoiGianDoi * 50);
+            // chờ sign nếu có thì đợi đến vô tận 
+            tamdung.WaitOne(Timeout.Infinite);
+
+            //codeListBox.SelectedIndex = line;
+            number = line;
+            RichTextBoxChange?.DynamicInvoke(number, EventArgs.Empty);
+            if (fMain.isDebug == true)
+            {
+                tamdung.Reset();
+            }
+        }
+
         #region Hàm add Ý Tưởng
         private static void addYTuong()
         {
@@ -81,26 +97,8 @@ namespace SortVisualiser_v1
         #endregion
 
         #endregion
-        public static void ChayCodeC(int line)
-        {
-            Thread.Sleep(ThamSo.ThoiGianDoi * 50);
-            // chờ sign nếu có thì đợi đến vô tận 
-            tamdung.WaitOne(Timeout.Infinite);
 
-            //codeListBox.SelectedIndex = line;
-            number = line;
-            UpdateTextbox(number);
-            if (fMain.isDebug == true)
-            {
-                tamdung.Reset();
-            }
-        }
-
-        static void UpdateTextbox(int num)
-        {
-            RichTextBoxChange?.DynamicInvoke(num, EventArgs.Empty);
-        }
-
+        #region Hiển thị từng loại thuật toán
 
         #region Insertion Sort
         public static void InsertionSort(bool tang = true)
@@ -631,5 +629,8 @@ void MergeSort(int a[], int N)
             }
         }
         #endregion
+
+        #endregion
+
     }
 }

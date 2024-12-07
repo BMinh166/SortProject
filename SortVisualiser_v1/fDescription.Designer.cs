@@ -69,7 +69,6 @@
             this.tbDescription.ReadOnly = true;
             this.tbDescription.Size = new System.Drawing.Size(576, 303);
             this.tbDescription.TabIndex = 0;
-            this.tbDescription.TextChanged += new System.EventHandler(this.tbDescription_TextChanged);
             // 
             // tpAlgorithm
             // 
@@ -91,7 +90,6 @@
             this.rtbAlgorithm.Size = new System.Drawing.Size(573, 296);
             this.rtbAlgorithm.TabIndex = 0;
             this.rtbAlgorithm.Text = "";
-            this.rtbAlgorithm.TextChanged += new System.EventHandler(this.rtbAlgorithm_TextChanged);
             // 
             // fDescription
             // 

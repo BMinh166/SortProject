@@ -35,9 +35,6 @@ namespace SortVisualiser_v1
             InitializeComponent();
             BUBClickAction();
             fChildStart();
-            ////
-            /////
-            ///
         }
 
         #region Các biến toàn cục
@@ -52,11 +49,19 @@ namespace SortVisualiser_v1
         public static bool isDebug = false;
         private int SoLuongNode; 
         private List<int> DanhSachThamSo; 
+<<<<<<< HEAD
         private List<ucNode> DanhSachNode;    
         public List<Label> danhSachLabel;
 
         public List<int> MangChuaSapXep;
         private Random rank = new Random(); 
+=======
+        private List<ucNode> DanhSachNode;
+        public List<Label> danhSachLabel;
+
+        public List<int> MangChuaSapXep;
+        private Random rank = new Random();
+>>>>>>> 4b6f0733321a1f60b971097fa522991ae3d3531b
 
 
         private int Phut = 0;
@@ -470,35 +475,7 @@ namespace SortVisualiser_v1
         #endregion
         #endregion
 
-        ///Khởi tạo các biến lưu trữ giá trị cho các form con
-
-        //Biến lưu trữ liên quan đến form con Menu
-        string menu_Language = "Tiếng Việt";
-        string menu_InsOrDes = "Tăng";
-        decimal menu_N = 10;
-        int menu_Speed = 4;
-        
-
-        //Lưu những thay đổi
-        void SaveMenuChange()
-        {
-            menu_Language = fmenu.btnLanguage.Text;
-            menu_InsOrDes = fmenu.btnIncOrDes.Text;
-            menu_N = fmenu.nudN.Value;
-            menu_Speed = fmenu.trbSpeed.Value;
-        }
-
-        //Áp dụng những thay đổi
-        void SetMenuChange()
-        {
-            fmenu.btnLanguage.Text = menu_Language;
-            fmenu.btnIncOrDes.Text = menu_InsOrDes;
-            fmenu.nudN.Value = menu_N;
-            fmenu.trbSpeed.Value = menu_Speed;
-            fmenu.SpeedShowChange();
-        }
-
-        //sự kiện kích hoạt khi button ngôn ngữ của fmenu thay đổi
+        #region Sự kiện kích hoạt khi button ngôn ngữ của fmenu thay đổi
         private void fmenu_LanguageChange(object sender, EventArgs e)
         {
             fdes.DescriptionTextChange();
@@ -517,9 +494,9 @@ namespace SortVisualiser_v1
                 lbMangChuaSapXep.Text = LanguageChanged.OriginArrEN;
             }
         }
+        #endregion
 
-
-        // Cac thong so mac dinh khi form duoc tao ra
+        #region Các thông số mặc định khi form được tạo ra
         private void fMain_Load(object sender, EventArgs e)
         {
 
@@ -579,9 +556,7 @@ namespace SortVisualiser_v1
 
             // setMauAllControl();
         }
-
-
-
+        #endregion
 
         #region Khởi tạo Node
         void VeNut()
