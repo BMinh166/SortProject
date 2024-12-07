@@ -68,6 +68,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -92,6 +100,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -228,7 +244,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Setup1"
+        "ProductName" = "8:The Ultimate Sort Visualizer"
         "ProductCode" = "8:{88D58B2A-6CBB-4F2B-9C03-FE6DFA99AAE3}"
         "PackageCode" = "8:{70E59B27-1E0A-484B-8A4E-DB47FD778647}"
         "UpgradeCode" = "8:{F54AA42D-F815-4077-A85C-1C445B4280AD}"
@@ -238,12 +254,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Tan Lee"
+        "Manufacturer" = "8:Tan&Minh"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Setup1"
+        "Title" = "8:The Ultimate Sort Visualizer"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Tan Lee"
+        "ARPCONTACT" = "8:Tan&Minh"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:The Ultimate Sort Visualizer"
         "ARPURLINFOABOUT" = "8:"
