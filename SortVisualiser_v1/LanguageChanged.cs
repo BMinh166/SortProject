@@ -70,5 +70,11 @@ namespace SortVisualiser_v1
         public static string AnnounEN = "Announcement";
         public static string ExitVN = "Thoát";
         public static string ExitEN = "Exit";
+        public static string IF2MessVN = "Phần tử có giá trị nhỏ hơn 0 hoặc lớn hơn 99";
+        public static string IF2MessEN = "Element has a value less than 0 or greater than 99";
+        public static string IF1MessVN = "Dãy vừa nhập vượt quá ";
+        public static string IF1MessEN = "The previous sequence entered the number of elements exceeding ";
+        public static string IFemptyVN = "Dãy nhập rỗng";
+        public static string IFemptyEN = "The input of range is empty";
     }
 }

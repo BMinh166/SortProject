@@ -34,7 +34,6 @@
             this.btnEsc = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblValue = new System.Windows.Forms.Label();
-            this.lblWrong = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbxdayso
@@ -106,23 +105,11 @@
             this.lblValue.TabIndex = 6;
             this.lblValue.Text = "Giá trị của mỗi phần tử nằm trong khoảng từ 0 đến 99";
             // 
-            // lblWrong
-            // 
-            this.lblWrong.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblWrong.AutoSize = true;
-            this.lblWrong.Location = new System.Drawing.Point(259, 195);
-            this.lblWrong.Name = "lblWrong";
-            this.lblWrong.Size = new System.Drawing.Size(44, 16);
-            this.lblWrong.TabIndex = 7;
-            this.lblWrong.Text = "label3";
-            this.lblWrong.Visible = false;
-            // 
             // fManually
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 303);
-            this.Controls.Add(this.lblWrong);
             this.Controls.Add(this.lblValue);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnEsc);
@@ -147,6 +134,5 @@
         private System.Windows.Forms.Button btnEsc;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblValue;
-        private System.Windows.Forms.Label lblWrong;
     }
 }

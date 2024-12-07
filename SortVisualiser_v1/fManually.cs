@@ -21,7 +21,7 @@ namespace SortVisualiser_v1
         public List<int> DayInput;
         public bool isNhap;
 
-        public void ManualLanguageChange()
+        void ManualLanguageChange()
         {
             if(!fMain.isEnglish)
             {
@@ -64,7 +64,10 @@ namespace SortVisualiser_v1
                     bool result = int.TryParse(item, out temp);
                     if (result == true && (temp < 0 || temp > 99))
                     {
-                        MessageBox.Show("Phần tử có giá trị nhỏ hơn 0 hoặc lớn hơn 99");
+                        if(!fMain.isEnglish)
+                            MessageBox.Show(LanguageChanged.IF2MessVN, LanguageChanged.WarnVN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        else
+                            MessageBox.Show(LanguageChanged.IF2MessEN, LanguageChanged.WarnEN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                     if (result == true)
@@ -77,12 +80,18 @@ namespace SortVisualiser_v1
 
             if (DayInput.Count > ThamSo.SoluongNodeLonNhat)
             {
-                MessageBox.Show("Dãy vừa nhập vượt quá " + ThamSo.SoluongNodeLonNhat);
+                if(!fMain.isEnglish)
+                    MessageBox.Show(LanguageChanged.IF1MessVN + ThamSo.SoluongNodeLonNhat, LanguageChanged.WarnVN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    MessageBox.Show(LanguageChanged.IF1MessEN + ThamSo.SoluongNodeLonNhat, LanguageChanged.WarnEN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (DayInput.Count == 0)
             {
-                MessageBox.Show("Dãy nhập rỗng");
+                if(!fMain.isEnglish)
+                    MessageBox.Show(LanguageChanged.IFemptyVN, LanguageChanged.WarnVN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                    MessageBox.Show(LanguageChanged.IFemptyEN, LanguageChanged.WarnEN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             isNhap = true;
@@ -93,6 +102,7 @@ namespace SortVisualiser_v1
         {
             DayInput = new List<int>();
             isNhap = false;
+            ManualLanguageChange();
         }
 
         private void tbxdayso_TextChanged(object sender, EventArgs e)
