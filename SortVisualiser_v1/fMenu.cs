@@ -67,24 +67,6 @@ namespace SortVisualiser_v1
 
         private void btnHand_Click(object sender, EventArgs e)
         {
-            /*fman = new fManually();
-            fman.ManualLanguageChange();
-            fman.ShowDialog();
-            if (fman.isNhap == true)
-            {
-                string temp = "";
-                fMain.SoLuongNode = fman.DayInput.Count();
-                nudN.Value = fMain.SoLuongNode;
-                Venut?.Invoke(this, EventArgs.Empty);
-            for (int i = 0; i < fMain.SoLuongNode; i++)
-                {
-                    // DanhSachNode[i].Value = input.DayInput[i];
-                    fMain.DanhSachNode[i].Text = fman.DayInput[i].ToString();
-                    fMain.DanhSachThamSo[i] = fman.DayInput[i];
-
-                }
-            MangChuaSapXep?.Invoke(this, EventArgs.Empty);
-        }*/
             fmain.HandInput();
         }
 
@@ -415,14 +397,6 @@ namespace SortVisualiser_v1
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
-            /*if(fMain.isRunning)
-            {
-                StopNow?.Invoke(this, EventArgs.Empty);
-            }
-            //fMain.SoLuongNode = fMain.rank.Next(2, ThamSo.SoluongNodeLonNhat);
-            nudN.Value = fMain.SoLuongNode = NodeTotal;
-            Venut?.Invoke(this, EventArgs.Empty);
-            */
             fmain.RandomInput();
         }
 

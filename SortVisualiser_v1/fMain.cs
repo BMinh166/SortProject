@@ -50,13 +50,13 @@ namespace SortVisualiser_v1
         public int loaiThuatToan;
         HienThiThuatToan HienThuattoan = new HienThiThuatToan();
         public static bool isDebug = false;
-        private int SoLuongNode; //Đã chuyển từ private sang static
-        private List<int> DanhSachThamSo; //Đã chuyển từ private sang static
-        private List<ucNode> DanhSachNode;    //Đã chuyển từ private sang static
+        private int SoLuongNode; 
+        private List<int> DanhSachThamSo; 
+        private List<ucNode> DanhSachNode;    
         public List<Label> danhSachLabel;
 
         public List<int> MangChuaSapXep;
-        private Random rank = new Random(); //Đã chuyển từ private sang static
+        private Random rank = new Random(); 
 
 
         private int Phut = 0;
@@ -82,24 +82,6 @@ namespace SortVisualiser_v1
             fmenu.LanguageChange += fmenu_LanguageChange;//Đăng kí sự kiện LanguageChange của fmenu
         }
 
-        /*public void fmenu_DataCleared(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
-        {
-            chuasapxepPanel.Controls.Clear();
-            pnlMain.Controls.Clear();
-            DanhSachNode.Clear();
-            DanhSachThamSo.Clear();
-           
-        }*/
-
-        /*public void fmenu_Venut(object sender, EventArgs e) //Đăng ký sự kiện DataCleared của fmenu
-        {
-            VeNut();
-        }*/
-
-        /*public void fmenu_MangChuaSapXep(object sender, EventArgs e) //Đăng ký sự kiện của fmenu
-        {
-            Mangchuasapxep();
-        }*/
 
         public void fmenu_IncDesSwap(object sender, EventArgs e)
         {
