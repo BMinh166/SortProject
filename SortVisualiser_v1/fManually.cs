@@ -86,12 +86,12 @@ namespace SortVisualiser_v1
                     MessageBox.Show(LanguageChanged.IF1MessEN + ThamSo.SoluongNodeLonNhat, LanguageChanged.WarnEN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (DayInput.Count == 0)
+            if (DayInput.Count <= 1)
             {
                 if(!fMain.isEnglish)
-                    MessageBox.Show(LanguageChanged.IFemptyVN, LanguageChanged.WarnVN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(LanguageChanged.IFlower1VN, LanguageChanged.WarnVN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
-                    MessageBox.Show(LanguageChanged.IFemptyEN, LanguageChanged.WarnEN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(LanguageChanged.IFlower1EN, LanguageChanged.WarnEN, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             isNhap = true;

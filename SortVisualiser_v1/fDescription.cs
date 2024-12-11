@@ -48,18 +48,18 @@ namespace SortVisualiser_v1
         #region Thay đổi richtextbox
         void rtbAlChange(object sender, EventArgs e)
         {
-            int start = rtbAlgorithm.GetFirstCharIndexFromLine(lineIndex);
-            int length = rtbAlgorithm.Lines[lineIndex].Length;
-            rtbAlgorithm.Select(start, length);
+            //int start = rtbAlgorithm.GetFirstCharIndexFromLine(lineIndex);
+            //int length = rtbAlgorithm.Lines[lineIndex].Length;
+            //rtbAlgorithm.Select(start, length);
             rtbAlgorithm.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(224)))), ((int)(((byte)(239)))));//144, 224, 239
-            rtbAlgorithm.Select(start, length);
+            //rtbAlgorithm.Select(start, length);
             rtbAlgorithm.SelectionFont = new Font(rtbAlgorithm.Font, FontStyle.Regular);
-            rtbAlgorithm.Select(start, length);
+            //rtbAlgorithm.Select(start, length);
             rtbAlgorithm.SelectionColor = Color.Black;
 
             lineIndex = HienThiThuatToan.number;
-            start = rtbAlgorithm.GetFirstCharIndexFromLine(lineIndex);
-            length = rtbAlgorithm.Lines[HienThiThuatToan.number].Length;
+            int start = rtbAlgorithm.GetFirstCharIndexFromLine(lineIndex);
+            int length = rtbAlgorithm.Lines[HienThiThuatToan.number].Length;
             rtbAlgorithm.Select(start, length);
             rtbAlgorithm.SelectionFont = new Font(rtbAlgorithm.Font, FontStyle.Bold);
             rtbAlgorithm.Select(start, length);

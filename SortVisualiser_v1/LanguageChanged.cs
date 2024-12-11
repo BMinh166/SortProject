@@ -74,7 +74,7 @@ namespace SortVisualiser_v1
         public static string IF2MessEN = "Element has a value less than 0 or greater than 99";
         public static string IF1MessVN = "Dãy vừa nhập vượt quá ";
         public static string IF1MessEN = "The previous sequence entered the number of elements exceeding ";
-        public static string IFemptyVN = "Dãy nhập rỗng";
-        public static string IFemptyEN = "The input of range is empty";
+        public static string IFlower1VN = "Số lượng phần tử tối thiểu phải là 2";
+        public static string IFlower1EN = "Minimum number of elements must be 2";
     }
 }
