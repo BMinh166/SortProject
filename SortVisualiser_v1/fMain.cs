@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,12 +27,8 @@ namespace SortVisualiser_v1
             fmenu = new fMenu(this);
             fmenu.Show();
             EventRegister();
-            //fmenu.DataCleared += fmenu_DataCleared; 
-            //fmenu.Venut += fmenu_Venut;
-            //fmenu.MangChuaSapXep += fmenu_MangChuaSapXep;
             fmenu.IncDesSwap += fmenu_IncDesSwap;
             fmenu.TrackBarValueChange += fmenu_trackBarValueChanged;
-            //fmenu.StopNow += picStop_Click;
             InitializeComponent();
             BUBClickAction();
             fChildStart();
@@ -431,7 +428,22 @@ namespace SortVisualiser_v1
 
         private void picArrow_MouseEnter(object sender, EventArgs e)
         {
-            picArrow.Image = new Bitmap(Application.StartupPath + "\\Resources\\Arrow.png");
+            try
+            {
+                string imagePath = Application.StartupPath + "\\Resources\\Arrow.png";
+                if (File.Exists(imagePath))
+                {
+                    picArrow.Image = new Bitmap(imagePath);
+                }
+                else
+                {
+                    MessageBox.Show("Image file not found: " + imagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while loading the image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void picArrow_MouseLeave(object sender, EventArgs e)
@@ -829,7 +841,7 @@ namespace SortVisualiser_v1
             fman.ShowDialog();
             if(fman.isNhap == true)
             {
-                string temp = "";
+                //string temp = "";
                 SoLuongNode = fman.DayInput.Count();
                 fmenu.nudN.Value = SoLuongNode;
                 VeNut();
@@ -1974,11 +1986,15 @@ namespace SortVisualiser_v1
             }
             else
             {
-                picResPau.Enabled = true;
-                HienThiThuatToan.tamdung.Set();
-                ucNode.pauseStatus.Set();
-                ucNode.IsPause = false;
                 isDebug = false;
+                if (isRunning == true)
+                {
+                    picResPau.Enabled = true;
+                    HienThiThuatToan.tamdung.Set();
+                    ucNode.pauseStatus.Set();
+                    ucNode.IsPause = false;
+                    //isDebug = false;
+                }
             }
 
 

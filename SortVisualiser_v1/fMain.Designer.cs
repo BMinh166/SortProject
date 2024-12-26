@@ -354,6 +354,7 @@
             // picStop
             // 
             this.picStop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picStop.ErrorImage = global::SortVisualiser_v1.Properties.Resources.Stop_Off;
             this.picStop.Image = global::SortVisualiser_v1.Properties.Resources.Stop_Off;
             this.picStop.Location = new System.Drawing.Point(560, 3);
             this.picStop.Name = "picStop";
@@ -368,6 +369,7 @@
             // picArrow
             // 
             this.picArrow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picArrow.ErrorImage = global::SortVisualiser_v1.Properties.Resources.Arrow_Off;
             this.picArrow.Image = global::SortVisualiser_v1.Properties.Resources.Arrow_Off;
             this.picArrow.Location = new System.Drawing.Point(672, 7);
             this.picArrow.Name = "picArrow";
@@ -382,6 +384,7 @@
             // picResPau
             // 
             this.picResPau.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picResPau.ErrorImage = global::SortVisualiser_v1.Properties.Resources.Pause;
             this.picResPau.Image = global::SortVisualiser_v1.Properties.Resources.Pause;
             this.picResPau.Location = new System.Drawing.Point(611, 0);
             this.picResPau.Name = "picResPau";
