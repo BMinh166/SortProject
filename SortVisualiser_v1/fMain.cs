@@ -1993,6 +1993,11 @@ namespace SortVisualiser_v1
                     HienThiThuatToan.tamdung.Set();
                     ucNode.pauseStatus.Set();
                     ucNode.IsPause = false;
+                    if (fmenu.trbSpeed.Value > 4)
+                        ThamSo.ThoiGianDoi = (8 - fmenu.trbSpeed.Value) * 3;
+                    else
+                        ThamSo.ThoiGianDoi = (8 - fmenu.trbSpeed.Value) * 5;
+                    
                     //isDebug = false;
                 }
             }
