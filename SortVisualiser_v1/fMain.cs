@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -428,22 +427,7 @@ namespace SortVisualiser_v1
 
         private void picArrow_MouseEnter(object sender, EventArgs e)
         {
-            try
-            {
-                string imagePath = Application.StartupPath + "\\Resources\\Arrow.png";
-                if (File.Exists(imagePath))
-                {
-                    picArrow.Image = new Bitmap(imagePath);
-                }
-                else
-                {
-                    MessageBox.Show("Image file not found: " + imagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred while loading the image: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            picArrow.Image = new Bitmap(Application.StartupPath + "\\Resources\\Arrow.png");
         }
 
         private void picArrow_MouseLeave(object sender, EventArgs e)
