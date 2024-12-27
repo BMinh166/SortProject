@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_19F647B183644CAB91BB95C10F7944F2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3CAB990C28654F05A66775EC45A60A36"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -29,6 +35,36 @@
         {
         "MsmKey" = "8:_8EFB8BFC24E69FA1DD3C6B479D37C16E"
         "OwnerKey" = "8:_3CAB990C28654F05A66775EC45A60A36"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_98A86A67EB1F4D6BB6B931712309684C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_993F60330524457E954B62570A9EACDD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A900BFD27153434EB03FC3C7DF4B37B3"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B3A7C4439D9742E78593B7BA723FB329"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F274054EA90740958C1B32FA7AEF60E9"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -138,6 +174,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_19F647B183644CAB91BB95C10F7944F2"
+            {
+            "SourcePath" = "8:..\\SortVisualiser_v1\\Resources\\Stop.png"
+            "TargetName" = "8:Stop.png"
+            "Tag" = "8:"
+            "Folder" = "8:_326765D6B5614ED1BCE5F8065B1DE7AD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_46778F732C18454F9CF01737C9C0C1DD"
             {
             "SourcePath" = "8:..\\..\\..\\BaoCaoThucTapCoSoMoPhongThuatToan\\Sorting.ico"
@@ -189,6 +245,106 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_98A86A67EB1F4D6BB6B931712309684C"
+            {
+            "SourcePath" = "8:..\\SortVisualiser_v1\\Resources\\Stop_Off1.png"
+            "TargetName" = "8:Stop_Off1.png"
+            "Tag" = "8:"
+            "Folder" = "8:_326765D6B5614ED1BCE5F8065B1DE7AD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_993F60330524457E954B62570A9EACDD"
+            {
+            "SourcePath" = "8:..\\SortVisualiser_v1\\Resources\\Resume.png"
+            "TargetName" = "8:Resume.png"
+            "Tag" = "8:"
+            "Folder" = "8:_326765D6B5614ED1BCE5F8065B1DE7AD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A900BFD27153434EB03FC3C7DF4B37B3"
+            {
+            "SourcePath" = "8:..\\SortVisualiser_v1\\Resources\\Arrow.png"
+            "TargetName" = "8:Arrow.png"
+            "Tag" = "8:"
+            "Folder" = "8:_326765D6B5614ED1BCE5F8065B1DE7AD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B3A7C4439D9742E78593B7BA723FB329"
+            {
+            "SourcePath" = "8:..\\SortVisualiser_v1\\Resources\\Arrow_Off.png"
+            "TargetName" = "8:Arrow_Off.png"
+            "Tag" = "8:"
+            "Folder" = "8:_326765D6B5614ED1BCE5F8065B1DE7AD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F274054EA90740958C1B32FA7AEF60E9"
+            {
+            "SourcePath" = "8:..\\SortVisualiser_v1\\Resources\\Pause.png"
+            "TargetName" = "8:Pause.png"
+            "Tag" = "8:"
+            "Folder" = "8:_326765D6B5614ED1BCE5F8065B1DE7AD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -216,6 +372,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_326765D6B5614ED1BCE5F8065B1DE7AD"
+                    {
+                    "Name" = "8:Resources"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_4D05751442144E28A09FF5E5B933AF20"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_B73F0FBBBACC43C98F83F6C33A7F849D"
@@ -246,7 +413,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:The Ultimate Sort Visualizer"
         "ProductCode" = "8:{88D58B2A-6CBB-4F2B-9C03-FE6DFA99AAE3}"
-        "PackageCode" = "8:{70E59B27-1E0A-484B-8A4E-DB47FD778647}"
+        "PackageCode" = "8:{22C3E60C-40DD-4635-A401-32E080214D42}"
         "UpgradeCode" = "8:{F54AA42D-F815-4077-A85C-1C445B4280AD}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
